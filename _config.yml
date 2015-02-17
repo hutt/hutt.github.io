@@ -1,0 +1,11 @@
+# Site settings
+title: hutt
+email: mail@hutt.wtf
+description: > # hutt's official website
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://hutt.wtf" # the base hostname & protocol for your site
+twitter_username: hutt
+github_username:  77u4
+
+# Build settings
+markdown: kramdown
