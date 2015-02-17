@@ -1,2 +1,2 @@
-# 77u4.github.io
+# hutt.wtf
 Cheapest Jekyll Host available.
