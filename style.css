@@ -1,0 +1,93 @@
+/* Fonts ################################## */
+@import url(http://fonts.googleapis.com/css?family=PT+Sans|Lobster|Changa+One|Patua+One);
+
+html {overflox-y:scroll}
+body {
+	font-family: 'PT Sans',sans-serif;
+	margin:0;
+}
+p {text-align:left;}
+a:link {
+	color:#3683f4;
+}
+a:visited {
+	color:#087bfd;
+}
+a:hover {
+	color:#0030ff;
+}
+a:active {
+	color:#087bfd;
+}
+/* Header ################################# */
+
+h1 {
+	font-family:'Changa One',Fantasy;
+	text-align:center;
+	padding-top:30px;
+	font-weight:400;
+	font-size:30pt;
+}
+h2 {
+	font-family:Lobster,serif;
+	color:#aaa;
+	font-size:18px;
+	text-align:center;
+}
+h3 {
+	font-family:'Patua One',monospace;
+	font-size:18px;
+	font-weight:400;
+}
+
+/* Main ################################### */
+
+#page {
+	/*display:none;*/
+	width:980px;
+	margin:0 auto;
+	padding:0 20px;
+	height:470px;
+}
+
+/* Top #################################### */
+
+.top {
+	text-align:center;
+	margin-top: 100px;
+	margin-bottom: 40px;
+}
+
+/* Parts ################################## */
+
+#parts ul {
+	display:inline;
+	list-style:none;
+	-webkit-padding-start: 0px;
+}
+#parts li {
+	float:left;
+	width:220px;
+	margin-top:50px;
+	margin-left:20px;
+}
+#parts li.last {
+	margin-right:20px;
+}
+#parts h3 {margin-bottom:0px; height:24px;}
+#parts p {margin-top:6px;}
+
+/* Footer ################################# */
+
+.footer {
+	width:980px;
+	float:left;
+	text-align:center;
+	margin-top:60px;
+}
+
+.footer small {
+	font-size:14;
+	color:#bbb;
+}
+
