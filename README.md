@@ -1,2 +1,2 @@
 # hutt.wtf
-Cheapest Jekyll Host available.
+well, initially I wanted to try GitHub pages...
