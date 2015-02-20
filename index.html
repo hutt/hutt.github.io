@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="home">
+    <div class="row">
+      {% for post in site.posts %}
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+        <div class="col-md-4 col-sm-6" style="margin-bottom:10px;">
+          <div class="thumbnail">
+              <img src="{% if post.horizontal-photo %}{{ post.horizontal-photo }}{% else %}{{ post.vertical-photo }}{% endif %}">
+          </div>
+          <div class="post-summary">
+            <h4>{{post.title}}</h4>
+            {%if post.date %}
+              <!--<i>{{ post.date }}</i>-->
+            {% endif %}
+            <p>{{post.desc}}</p>
+          </div>
+        </div>
+        </a>
+      {% endfor %}
+    </div>
+</div>
