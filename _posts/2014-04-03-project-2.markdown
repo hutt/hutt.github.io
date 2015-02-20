@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Political Engagement"
+date:   2014-04-01 23:05:33
+horizontal-photo: https://www.jacobinmag.com/wp-content/uploads/2014/06/506535876_7ddecca11b_z.jpg
+vertical-photo: http://fraktion-dielinke.kdo.de/images/demo10_2_rdax_400x543.jpg
+desc: "I’m a member of The Left and the European Left. Furthermore I’m engaged at linksjugend [‘solid] Karlsruhe."
+awards: [First Award 1st Place, Second Award Finalist, Third Award Runner-Up]
+github-repo: https://github.com/nbedi/jekyllPortfolio
+infolink: http://neilbedi.com
+
+---
+I’m a member of The Left and the European Left. Furthermore I’m engaged at linksjugend [‘solid] Karlsruhe. We're running various projects, e.g. "Freifunk hilft", an action alliance by linksjugend ['solid'], Grüne Jugend Karlruhe and [Entropia e.V.](http://entropia.de) (Chaos Computer Club) which aims to equip the refugee reception centers in Karlsruhe with free [Freifunk](http://freifunk.net) WLAN Routers and Network Infrastructure.
