@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://hutt.wtf" # the base hostname & protocol for your site
 twitter_username: Der_Hutt
 github_username:  77u4
-copyright_notice: 'Copyright &copy; 2014 - 2015 <a href="http://jannishutt.de">hutt</a>'
+copyright_notice: 'Copyright &copy; 2014 - 2015 <a href="http://twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a>'
 pgp: "0x9BAD2EA15BCF1DFF"
 
 # Build settings
