@@ -32,7 +32,7 @@
 						<header class="major">
 							<h2>Wer ich bin</h2>
 						</header>
-						<p>Jannis Hutt ist 18 Jahre alt und nach seinem Abitur in Karlsruhe nach Berlin gezogen. Dort macht er gerade ein Praktikum in der <a href="http://linksfraktion.de">Linksfraktion</a> im Bundestag. Er interessiert sich für Feminismus, Technik und Netzpolitik. Und sehr viel mehr. Außerdem schreibt er in der dritten Person von sich.</p>
+						<p>Jannis Hutt ist 18 Jahre alt und nach seinem Abitur in Karlsruhe nach Berlin gezogen. Dort macht er gerade ein Praktikum in der <a href="http://linksfraktion.de">Linksfraktion</a> im Bundestag. Er interessiert sich für Feminismus, Technik, Netzpolitik und sehr viel mehr. Außerdem schreibt er in der dritten Person von sich.</p>
 					</div>
 					<a href="#two" class="goto-next scrolly">Next</a>
 				</div>
@@ -46,7 +46,7 @@
 						<header class="major">
 							<h2>Was ich mache</h2>
 						</header>
-						<p>Neben politischer Arbeit habe ich ein Faible für alles, was sich programmieren lässt: Egal ob <a href="http://pebble.com">Pebble</a> oder Raspberry Pi. Außerdem photographiere ich leidenschaftlich.</p>
+						<p>Neben politischer Arbeit habe ich ein Faible für alles, was sich programmieren lässt: von <a href="http://pebble.com">Pebble</a> bis Raspberry Pi. Außerdem photographiere ich leidenschaftlich.</p>
 						<ul class="icons-grid">
 							<li>
 								<span class="icon major fa-paperclip"></span>
@@ -62,7 +62,7 @@
 							</li>
 							<li>
 								<span class="icon major fa-coffee"></span>
-								<h3>Coffeinliebhaber</h3>
+								<h3>Coffeingourmet</h3>
 							</li>
 						</ul>
 					</div>
@@ -418,7 +418,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					<form method="post" action="https://jh0.eu/api/contact.php?site=wtf">
 						<div class="row uniform">
 							<div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" required="required" /></div>
-							<div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="E-Mail" required="required" /></div>
+							<div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="E-Mail" required="required" onkeyup="checkFilled()" /></div>
+							<div id="gpgform" class="12u$ invisible"><input type="text" name="gnupg" id="gnupg" placeholder="GnuPG Public Key (optional)" /></div>
 							<div class="12u$"><textarea name="message" id="message" placeholder="Nachricht..." rows="4" required="required"></textarea></div>
 							<div class="12u$">
 								<ul class="actions">
@@ -437,7 +438,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						-->
 						<li><a href="https://bloggenswertes.de" class="icon alt fa-rss"><span class="label">Blog</span></a></li>
 						<li><a href="http://500px.com/jannishutt" class="icon alt fa-500px"><span class="label">500px</span></a></li>
-						<li><a href="mailto:jannis@hutt.wtf" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+						<!--
+						<li><a href="mailto:jannis@hutt.wtf" class="icon alt fa-envelope"><span class="label">Email</span></a></li> 
+						-->
 					</ul>
 					<ul class="copyright">
 						<li>Copyright &copy; 2015 Jannis Hutt</li>
@@ -457,6 +460,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script>
+			function checkFilled() {
+				if($('#name').value != "" && $('#email').value != ""){
+					//$('#gpgform').removeClass("invisible")
+					$('#gpgform').fadeIn("slow")
+				}
+			}
+
 			function getUrlVars() {
 				var vars = {};
 				var parts = window.location.href.replace(/[?&]+([^=&#]+)=([^&#]*)/gi, function(m,key,value) {

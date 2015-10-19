@@ -3031,3 +3031,7 @@
 				}
 
 	}
+	
+	.invisible {
+		display:none;
+	}
