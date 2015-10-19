@@ -461,7 +461,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/main.js"></script>
 			<script>
 			function checkFilled() {
-				if($('#name').value != "" && $('#email').value != ""){
+				if($('#name').value !== null && $('#email').value !== null){
 					//$('#gpgform').removeClass("invisible")
 					$('#gpgform').fadeIn("slow")
 				}
