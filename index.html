@@ -419,8 +419,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<div class="row uniform">
 							<div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" required="required" /></div>
 							<div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="E-Mail" required="required" onblur="checkFilled()" /></div>
-							<div id="gpgform" class="12u$ invisible"><textarea name="gnupg" id="gnupg" placeholder="GnuPG Public Key (optional)" rows="1"></textarea></div>
 							<div class="12u$"><textarea name="message" id="message" placeholder="Nachricht..." rows="4" required="required"></textarea></div>
+							<div id="gpgform" class="12u$ invisible"><textarea name="gnupg" id="gnupg" placeholder="GnuPG Public Key (optional)" rows="1" onpaste="handlePaste()"></textarea></div>
 							<div class="12u$">
 								<ul class="actions">
 									<li><input type="submit" value="Senden" class="special" /></li>
@@ -460,9 +460,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script>
+			function handlePaste() {
+				$('#gnupg').attr('rows', 10)
+			}
+			
 			function checkFilled() {
 				if($('#email').val() != ""){
-					//$('#gpgform').removeClass("invisible")
 					$('#gpgform').fadeIn("slow")
 				}
 			}
