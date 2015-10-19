@@ -466,7 +466,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			
 			function checkFilled() {
 				if($('#email').val() != ""){
-					$('#gpgform').fadeIn("slow")
+					$('#gpgform').fadeIn(1000)
 				}
 			}
 
@@ -487,6 +487,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				}else if(getUrlVars()['type'] == "message"){
 					//message empty
 					document.getElementById('status').innerHTML = 'Nachricht fehlerhaft!'
+				}else if (getUrlVars()['type'] == "gpg"){
+					//GPG fehlerhaft
+					document.getElementById('status').innerHTML = 'Dein GnuPG Key scheint fehlerhaft zu sein!'
 				}else{
 					document.getElementById('status').innerHTML = 'Error!'
 				}
