@@ -419,7 +419,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<div class="row uniform">
 							<div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" required="required" /></div>
 							<div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="E-Mail" required="required" onblur="checkFilled()" /></div>
-							<div id="gpgform" class="12u$ invisible"><input type="text" name="gnupg" id="gnupg" placeholder="GnuPG Public Key (optional)" /></div>
+							<div id="gpgform" class="12u$ invisible"><textarea name="gnupg" id="gnupg" placeholder="GnuPG Public Key (optional)" rows="1"></textarea></div>
 							<div class="12u$"><textarea name="message" id="message" placeholder="Nachricht..." rows="4" required="required"></textarea></div>
 							<div class="12u$">
 								<ul class="actions">
@@ -461,7 +461,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/main.js"></script>
 			<script>
 			function checkFilled() {
-				if($('#email').value !== null || $('#email').value != ""){
+				if($('#email').val() !== null || $('#email').val() != ""){
 					//$('#gpgform').removeClass("invisible")
 					$('#gpgform').fadeIn("slow")
 				}
