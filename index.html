@@ -467,13 +467,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			if(getUrlVars()['show'] == "error"){
 				if(getUrlVars()['type'] == "name"){
 					//name empty
-					document.getElementById('status').innerHTML = 'Name leer!'
+					document.getElementById('status').innerHTML = 'Name fehlerhaft!'
 				}else if (getUrlVars()['type'] == "email"){
 					//email empty
-					document.getElementById('status').innerHTML = 'E-Mail leer!'
+					document.getElementById('status').innerHTML = 'E-Mail fehlerhaft!'
 				}else if(getUrlVars()['type'] == "message"){
 					//message empty
-					document.getElementById('status').innerHTML = 'Nachricht leer!'
+					document.getElementById('status').innerHTML = 'Nachricht fehlerhaft!'
 				}else{
 					document.getElementById('status').innerHTML = 'Error!'
 				}
