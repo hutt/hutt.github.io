@@ -108,6 +108,7 @@
 							<div id="gpgform" class="12u$ invisible"><textarea name="gnupg" id="gnupg" placeholder="GnuPG Public Key (optional)" rows="1" onpaste="handlePaste()"></textarea></div>
 							<div class="12u$">
 								<ul class="actions">
+									<li><input type="reset" value="Reset" onclick="resetForm()" /></li>
 									<li><input type="submit" value="Senden" class="special" /></li>
 								</ul>
 							</div>
@@ -149,9 +150,21 @@
 				$('#gnupg').attr('rows', 10)
 			}
 			
+			function resetForm() {
+				$('#name').val("")
+				$('#email').val("")
+				$('#gpgform').val("")
+				$('#gpgform').fadeOut(1000)
+			}
+			
 			function checkFilled() {
 				if($('#email').val() != ""){
 					$('#gpgform').fadeIn(1000)
+					stateToggle = true
+				}
+				if($('#email').val() == "" && stateToggle){
+					$('#gpgform').fadeOut(1000)
+					stateToggle = false
 				}
 			}
 
@@ -162,6 +175,9 @@
 				});
 				return vars;
 			}
+			
+			var stateToggle = false
+			
 			if(getUrlVars()['show'] == "error"){
 				if(getUrlVars()['type'] == "name"){
 					//name empty
