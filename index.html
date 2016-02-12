@@ -142,6 +142,24 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/custom.js"></script>
+			
+			<!-- Piwik -->
+			<script type="text/javascript">
+			  var _paq = _paq || [];
+			  _paq.push(["setCookieDomain", "*.hutt.wtf"]);
+			  _paq.push(["setDomains", ["*.hutt.wtf","*.jannishutt.de"]]);
+			  _paq.push(['trackPageView']);
+			  _paq.push(['enableLinkTracking']);
+			  (function() {
+			    var u="//piwik.jh0.eu/";
+			    _paq.push(['setTrackerUrl', u+'piwik.php']);
+			    _paq.push(['setSiteId', 3]);
+			    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			  })();
+			</script>
+			<noscript><p><img src="//piwik.jh0.eu/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+			<!-- End Piwik Code -->
 	</body>
 <!-- Wer bist du und was machst du in meinem Quelltext? -->
 </html>
