@@ -1312,7 +1312,7 @@
 	html {
 		background-color: #313a3d;
 		background-attachment: fixed,				fixed;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+		background-image: url("https://hutt.wtf/assets/css/images/overlay.png"), url("../../images/bg.jpg");
 		background-position: top left,				center center;
 		background-repeat: repeat,					none;
 		background-size: auto,						cover;
@@ -2170,7 +2170,7 @@
 	}
 
 		.image:before {
-			background: url("images/overlay.png");
+			background: url("https://hutt.wtf/assets/css/images/overlay.png");
 			content: '';
 			display: block;
 			height: 100%;
