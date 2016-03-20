@@ -6,7 +6,17 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>http://hutt.wtf/</loc>
-  <lastmod>2015-10-20T20:15:11+00:00</lastmod>
+  <lastmod>2016-03-20T20:15:11+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://hutt.wtf/en/</loc>
+  <lastmod>2016-03-20T20:15:11+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://hutt.wtf/de/</loc>
+  <lastmod>2016-03-20T20:15:11+00:00</lastmod>
   <changefreq>weekly</changefreq>
 </url>
 </urlset>
