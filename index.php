@@ -1,7 +1,6 @@
 <?php
-header('HTTP/1.1 301 Moved Permanently');
-header('Location: en/index.html');
-exit();
+header('Location: /en', true, 301);
+exit;
 ?>
 <!DOCTYPE HTML>
 <html>
