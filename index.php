@@ -1,3 +1,8 @@
+<?php
+header('HTTP/1.1 301 Moved Permanently');
+header('Location: en/index.html');
+exit();
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -10,6 +15,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<meta name="description" value="Jannis Hutt - Photograph, Bureauhengst, Nerd und Coffeingourmet.">
 		<meta name="keywords" value="Jannis, Hutt, Janis, Yanis, Giannis, Hut, Hutti, Programmierer, Die Linke, Karlsruhe, Berlin, Kuchen, Cookies, Katzenbabies">
+		<meta http-equiv="refresh" content="0; url=de/">
 		<meta name="robots" content="index, follow">
 	</head>
 	<body>
