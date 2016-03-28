@@ -1,1 +1,1 @@
-Sitemap: https://hutt.wtf/sitemap.xml
+Sitemap: https://hutt.io/sitemap.xml
