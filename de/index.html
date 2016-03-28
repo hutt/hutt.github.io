@@ -101,16 +101,16 @@
 							<div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" required="required" /></div>
 							<div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="E-Mail" required="required" onblur="checkFilled()" /></div>
 							<div class="12u$"><textarea name="message" id="message" placeholder="Nachricht..." rows="4" required="required"></textarea></div>
-							<div id="gpgform" class="12u$ invisible"><textarea name="gnupg" id="gnupg" placeholder="PGP Public Key (optional)" rows="1" onpaste="handlePaste()"></textarea></div>
+							<div id="gpgform" class="12u$ invisible"><textarea name="gnupg" id="gnupg" placeholder="Dein PGP Public Key (optional)" rows="1" onpaste="handlePaste()"></textarea></div>
 							<div class="12u$">
 								<ul class="actions">
-									<li><input type="reset" value="Reset" onclick="resetForm()" /></li>
+									<li><input type="reset" value="Zurücksetzen" onclick="resetForm()" /></li>
 									<li><input type="submit" value="Senden" class="special" /></li>
 								</ul>
 							</div>
 						</div>
 					</form>
-					<p>Gerne kannst du deine Nachricht an mich verschlüsseln. Der Fingerprint meines GPG-Keys ist <code>C59B 6CD5 E980 6365 A69C  9046 9BAD 2EA1 5BCF 1DFF</code>. Den Public Key kannst du <a href="../pubkey.asc">hier herunterladen</a>.</p>
+					<p>Gerne kannst du mir auch eine verschlüsselte E-Mail senden. Der Fingerprint meines GPG-Schlüssels ist <code>C59B 6CD5 E980 6365 A69C  9046 9BAD 2EA1 5BCF 1DFF</code>. Meine E-Mail-Adresse ist im als uid im Public Key enthalten. Den Public Key kannst du <a href="../pubkey.asc">hier herunterladen</a>.</p>
 				</div>
 				<footer>
 					<ul class="icons">

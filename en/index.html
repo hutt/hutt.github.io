@@ -103,7 +103,7 @@
 							<div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="name" required="required" /></div>
 							<div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="email" required="required" onblur="checkFilled()" /></div>
 							<div class="12u$"><textarea name="message" id="message" placeholder="Hey Jannis, I've read that you're interested in…" rows="4" required="required"></textarea></div>
-							<div id="gpgform" class="12u$ invisible"><textarea name="gnupg" id="gnupg" placeholder="PGP Public Key (optional)" rows="1" onpaste="handlePaste()"></textarea></div>
+							<div id="gpgform" class="12u$ invisible"><textarea name="gnupg" id="gnupg" placeholder="your PGP public key (optional)" rows="1" onpaste="handlePaste()"></textarea></div>
 							<div class="12u$">
 								<ul class="actions">
 									<li><input type="reset" value="Reset" onclick="resetForm()" /></li>
@@ -112,7 +112,7 @@
 							</div>
 						</div>
 					</form>
-					<p>Feel free to encrypt your message. My GnuPG key's fingerprint is <code>C59B 6CD5 E980 6365 A69C  9046 9BAD 2EA1 5BCF 1DFF</code>. Download my public key <a href="../pubkey.asc">here</a>.</p>
+					<p>Feel free to send me encrypted email. My GnuPG key's fingerprint is <code>C59B 6CD5 E980 6365 A69C  9046 9BAD 2EA1 5BCF 1DFF</code>. My email address is included as an uid in the public key file. Download it <a href="../pubkey.asc">here</a>.</p>
 				</div>
 				<footer>
 					<ul class="icons">
