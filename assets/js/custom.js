@@ -18,6 +18,9 @@ function checkFilled() {
 		$('#gpgform').fadeOut(1000)
 		stateToggle = false
 	}
+	if($('#message').val() != ""){
+
+	}
 }
 
 function showTimeline() {
