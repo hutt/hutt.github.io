@@ -6,6 +6,8 @@ if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))
 if($lc == "de"){
     header("location: /de");
     exit();
+} elseif ($lc == "fr") {
+	header("location: /fr");
 } else {
     header("location: /en");
     exit();
