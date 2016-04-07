@@ -5,7 +5,7 @@ N:Hutt;Jannis;;;
 FN:Jannis Hutt
 EMAIL;type=INTERNET;type=HOME;type=pref:jannis@hutt.io
 TEL;type=CELL;type=VOICE;type=pref:+49 175 4939782
-NOTE:GnuPG public key fingerprint C59B 6CD5 E980 6365 A69C  9046 9BAD 2EA1 5BCF 1DFF
+NOTE:OpenPGP public key fingerprint C59B 6CD5 E980 6365 A69C  9046 9BAD 2EA1 5BCF 1DFF
 item1.URL;type=pref:https://hutt.io
 item1.X-ABLabel:_$!<HomePage>!$_
 PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAASABIAAD/4QBARXhpZgAATU0AKgAA
