@@ -6,5 +6,5 @@ header('Content-Disposition: inline; filename= "'.$file.'"');
 header('Content-Length: '.filesize($file));  
 
 readfile($file);
-exec('echo "vCard wurde heruntergeladen." | pushover');
+exec('pushover Downloaded vCard.');
 ?>
