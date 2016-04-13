@@ -6,5 +6,5 @@ header('Content-Disposition: inline; filename= "'.$file.'"');
 header('Content-Length: '.filesize($file));  
 
 readfile($file);
-exec('/home/hutt/bin/pushover "vCard wurde heruntergeladen."');
+exec('echo "vCard wurde heruntergeladen." | pushover');
 ?>
