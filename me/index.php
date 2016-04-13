@@ -6,4 +6,5 @@ header('Content-Disposition: inline; filename= "'.$file.'"');
 header('Content-Length: '.filesize($file));  
 
 readfile($file);
+exec('pushover "vCard wurde heruntergeladen."');
 ?>
