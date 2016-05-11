@@ -1,1 +1,3 @@
 Sitemap: https://hutt.io/sitemap.xml
+User-agent: URLMetriken
+Disallow: /
