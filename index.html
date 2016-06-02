@@ -5,7 +5,9 @@
 		<title>Jannis Hutt</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/skeleton.css" />
+		<link rel="stylesheet" href="css/sexy.css" />
 		
 		<link rel="canonical" href="https://hutt.io" />
 		
@@ -21,6 +23,7 @@
 		<meta name="twitter:image:alt" content="profile picture of Jannis Hutt.">
 	</head>
 	<body>
+		<div class="container">
 		<!-- top part of the site -->
 		<section id="header">
 			<header>
@@ -29,12 +32,12 @@
 		</section>
 
 		<!-- social media integration -->
-		<section id="media">
-			<div class="left">
-				<span id="lastTweet"></span>
+		<section id="media" class="row">
+			<div class="left one-half column" id="lastTweet">
+
 			</div>
-			<div class="right">
-				<span id="lastCheckin"></span>
+			<div class="right one-half column" id="lastCheckin">
+
 			</div>
 		</section>
 
@@ -42,36 +45,21 @@
 		<section id="details">
 
 		</section>
+	</div>
 
-		<!-- Skripte -->
+	<!-- Twitter -->
+	<script type="text/javascript" src="js/twitter.js"></script>
 
-		<!-- Twitter -->
-		<script type="text/javascript" src="js/twitterFetcher.min.js"></script>
+	<!-- Foursquare -->
+	<script type="text/javascript" src="js/foursquare.js"></script>
 
-		<!-- jQuery - sorry. -->
-		<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- Custom -->
+	<script type="text/javascript" src="js/scripts.js"></script>
 
-		<!-- Foursquare -->
-		<script type="text/javascript" src="js/swarm.js"></script>
+	<!-- Piwik -->
+	<script type="text/javascript" src="js/piwik.js"></script>
 
-		<!-- Custom -->
-		<script type="text/javascript" src="js/scripts.js"></script>
-
-		<!-- Piwik -->
-		<script type="text/javascript">
-		  var _paq = _paq || [];
-		  _paq.push(["setDomains", ["*.hutt.io","*.jannishutt.de","*.hutt.wtf"]]);
-		  _paq.push(['trackPageView']);
-		  _paq.push(['enableLinkTracking']);
-		  (function() {
-		    var u="https://piwik.jh0.eu/";
-		    _paq.push(['setTrackerUrl', u+'piwik.php']);
-		    _paq.push(['setSiteId', 3]);
-		    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-		    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-		  })();
-		</script>
-		<noscript><p><img src="https://piwik.jh0.eu/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
-		<!-- End Piwik Code -->
+	<!-- Piwik-Fallback -->
+	<noscript><p><img src="https://piwik.jh0.eu/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
 	</body>
 </html>
