@@ -1,28 +1,48 @@
-var lastTweetConfig = {
+twitterFetcher.fetch({
   "id": '737667496900169732',
-  "domId": 'lastTweet',
+  "domId": '',
   "maxTweets": 1,
-  "enableLinks": true
-};
-twitterFetcher.fetch(lastTweetConfig);
+  "enableLinks": true,
+  "showUser": false,
+  "showTime": true,
+  "dateFunction": '',
+  "showRetweet": false,
+  "dataOnly": true,
+  "showInteraction": false,
+  "showPermalinks": true,
+  "customCallback": showTweet
+});
 
-function populateTpl(tweets){
+loadCheckins({
+  "count" : 1, 
+  "customCallback": showCheckin
+});
+
+function showTweet(tweets){
+
   var element = document.getElementById('lastTweet');
-  var html = '<ul>';
-  for (var i = 0, lgth = tweets.length; i < lgth ; i++) {
-    var tweetObject = tweets[i];
-    html += '<li>'
-      + (tweetObject.image ? '<div class="tweet-img"><img src="'+tweetObject.image+'" /></div>' : '')
-      + '<p class="tweet-content">' + tweetObject.tweet + '</p>'
-      + '<p class="tweet-infos">am ' + tweetObject.time + ', von ' + tweetObject.author + '</p>'
-      + '<p class="tweet-link"><a href="' + tweetObject.permalinkURL + '">Link</a></p>'
-    + '</li>';
-  }
-  html += '</ul>';
+  var tweetObject = tweets[0];
+
+  var html = 
+      '<ul>'
+       + '<li class="tweet-body">' + tweetObject.tweet + '</li>'
+       + (tweetObject.image ? '<li class="tweet-image">' + '<img class="image" src="' + tweetObject.image + '" alt="' + tweetObject.tweet + '" />' + '</li>' : '')
+       + '<li class="tweet-info">' + '<a href="' + tweetObject.permalinkURL + '" target="_blank">vor ' + tweetObject.time + '</a>' + '</li>'
+    + '</ul>';
+
   element.innerHTML = html;
 }
 
-function populateSwarmBox(){
-  var lastCheckin = getLastCheckinData();
-  
+function showCheckin(checkin){
+
+  var element = document.getElementById('lastCheckin');
+
+  var html = 
+          '<ul class="swarm">'
+            + '<li class="checkin-desc">Last seen at</li>'
+            + '<li class="checkin-name">' + checkin.venue.name + '</li>'
+            + '<li class="checkin-location">' + (checkin.venue.location.neighborhood ? checkin.venue.location.neighborhood + ', ' : '') + checkin.venue.location.city + ', ' + checkin.venue.location.cc + '</li>'
+        + '</ul>';
+    element.innerHTML = html;
+
 }
