@@ -15,7 +15,8 @@ twitterFetcher.fetch({
 
 loadCheckins({
   "count" : 1, 
-  "customCallback": showCheckin
+  "customCallback": showCheckin,
+  "ignore": ["Residence", "Home (private)", "Food"]
 });
 
 function showTweet(tweets){
@@ -24,9 +25,9 @@ function showTweet(tweets){
   var tweetObject = tweets[0];
 
   var html = 
-      '<ul>'
+      '<ul class="twitter">'
        + '<li class="tweet-body">' + tweetObject.tweet + '</li>'
-       + (tweetObject.image ? '<li class="tweet-image">' + '<img class="image" src="' + tweetObject.image + '" alt="' + tweetObject.tweet + '" />' + '</li>' : '')
+  /**  + (tweetObject.image ? '<li class="tweet-image">' + '<img class="image" src="' + tweetObject.image + '" alt="' + tweetObject.tweet + '" />' + '</li>' : '') **/
        + '<li class="tweet-info">' + '<a href="' + tweetObject.permalinkURL + '" target="_blank">vor ' + tweetObject.time + '</a>' + '</li>'
     + '</ul>';
 
@@ -41,7 +42,7 @@ function showCheckin(checkin){
           '<ul class="swarm">'
             + '<li class="checkin-desc">Last seen at</li>'
             + '<li class="checkin-name">' + checkin.venue.name + '</li>'
-            + '<li class="checkin-location">' + (checkin.venue.location.neighborhood ? checkin.venue.location.neighborhood + ', ' : '') + checkin.venue.location.city + ', ' + checkin.venue.location.cc + '</li>'
+            + '<li class="checkin-location">' + (checkin.venue.location.neighborhood ? checkin.venue.location.neighborhood + ', ' : '') + (checkin.venue.location.city ? checkin.venue.location.city + ', ' : '') + (checkin.venue.location.neighborhood ? checkin.venue.location.cc : checkin.venue.location.country) + '</li>'
         + '</ul>';
     element.innerHTML = html;
 
