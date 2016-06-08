@@ -5,6 +5,7 @@
 
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Karla:400,400italic');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:300');
 
 body {
 	font-family: 'Karla', sans-serif;
@@ -39,6 +40,7 @@ header {
 h1#name {
 	text-align: center;
 	font-size: 3em;
+
 	font-family: 'Karla', sans-serif;
 	font-weight: 400;
 
@@ -153,12 +155,14 @@ p.buzzwords {
 }
 
 .joblist-item {
-	margin-bottom: 8px;
+	margin-bottom: 35px;
 }
 
 .joblist-item h2 {
 	margin-top: 0;
-	margin-bottom: 5px;
+	margin-bottom: 0;
+	font-family: 'Alegreya Sans', serif;
+	font-weight: 300;
 	font-size: 28px;
 }
 
@@ -173,6 +177,7 @@ ul.joblist-details {
 	margin-top: 0;
 	margin-left: 0;
 	font-size: 10px;
+	color: #888;
 }
 
 ul.joblist-details li {
@@ -283,13 +288,13 @@ ul.joblist-details li:last-child:after {
 	}
 
 	#lastTweet {
-		background: #55acee url('twitter.png') left top no-repeat;
+		background: #55ACEE url('twitter.png') left top no-repeat;
 		background-size: 45px;
 		text-align: left;
 	}
 
 	#lastCheckin {
-		background: #FF9600 url('swarm.png') right top no-repeat;
+		background: #FFA633 url('swarm.png') right top no-repeat;
 		background-size: 45px;
 		text-align: right;
 	}
