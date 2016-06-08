@@ -40,7 +40,6 @@ function showCheckin(checkin){
 
   var html = 
           '<ul class="swarm">'
-            + '<li class="checkin-desc">Last seen at</li>'
             + '<li class="checkin-name">' + checkin.venue.name + '</li>'
             + '<li class="checkin-location">' + (checkin.venue.location.neighborhood ? checkin.venue.location.neighborhood + ', ' : '') + (checkin.venue.location.city ? checkin.venue.location.city + ', ' : '') + (checkin.venue.location.neighborhood ? checkin.venue.location.cc : checkin.venue.location.country) + '</li>'
         + '</ul>';

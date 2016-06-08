@@ -1,5 +1,6 @@
+
   var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.hutt.io","*.jannishutt.de","*.hutt.wtf"]]);
+  _paq.push(["setDomains", ["*.hutt.io","*.hutt.tech","*.hutt.wtf"]]);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {

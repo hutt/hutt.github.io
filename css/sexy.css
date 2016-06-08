@@ -1,55 +1,425 @@
+/** Simple Social Photo Theme by Jannis Hutt
+*	Copyright (c) 2016
+*	https://github.com/hutt/hutt.github.io 
+**/
+
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Raleway|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400italic');
 
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Karla', sans-serif;
+	margin: 0;
 }
 
 ::selection {
 	background: #DDD;
 }
 
-.container {
-	margin: auto;
-	width: 80%;
-	height: 100%;
-	padding: 20px;
-}
-
 #top {
-	margin: auto;
-	min-height: 400px;
+	height: 100vh;
 	background-image: url('background.jpg');
 	background-size: cover;
+	/*background-position: right top;*/
+	background-position: calc(100% - 50px) top;
+	background-repeat: no-repeat;
+	background-color: #FFF;
+}
+
+header {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	/*width: 100px;*/
+	height: 3.5em;
 }
 
 h1#name {
 	text-align: center;
 	font-size: 3em;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Karla', sans-serif;
 	font-weight: 400;
-	border: 4px solid #222;
+
+	/*border: 4px solid #222;*/
 
 	width: 100%;
 	max-width: 300px;
 	height: 100%;
 	max-height: 800px;
+
+	margin: 0 auto;
+}
+
+div.line {
+	min-height: 1px;
+	width: 120px;
+	margin: auto;
+	border-bottom: 1px solid #000;
+	height: 1px;
+	padding-top: 4px;
+	padding-bottom: 0;
+}
+
+p.buzzwords {
+	text-align: center;
+	font-size: 1em;
 }
 
 #media {
 	display: flex;
 }
 
-#left {
+#lastTweet {
+	background: #55acee url('twitter.png') left top no-repeat;
+	background-size: 4em;
+	text-align: left;
+}
+
+#lastCheckin {
+	background: #FF9600 url('swarm.png') right top no-repeat;
+	background-size: 4em;
+	text-align: right;
+}
+
+#media {
+	color: #FFF;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+#media a {
+	text-decoration: underline;
+	color: #FFF;
+}
+
+#media ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.twitter li {
+	margin-left: 80px;
+	margin-right: 20px;
+}
+
+.tweet-body {
+	font-size: 1em;
+}
+
+.tweet-info {
+	font-size: 0.8em;
+	text-align: left;
+}
+
+.swarm li {
+	margin-left: 20px;
+	margin-right: 80px;
+}
+
+.checkin-name {
+	font-size: 1em;
+}
+
+.checkin-location {
+	font-size: 0.8em;
+}
+
+.left {
 	float: left;
 	width: 50%;
 }
 
-#right {
+.right {
 	float: right;
 	width: 50%;
 }
 
-ul.twitter, ul.swarm {
-	list-style-type: none;
+.container {
+	margin: auto;
+	width: 70%;
+	height: 100%;
+	padding: 0;
+}
+
+.joblist-heading {
+	font-size: 18px;
+	margin-top: 30px;
+	margin-bottom: 0;
+	margin-left: -4px;
+	color: #696969;
+	font-weight: 400;
+}
+
+.joblist-item {
+	
+}
+
+.joblist-item h2 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 28px;
+}
+
+.joblist-item p {
+	margin-top: 0;
+}
+
+.joblist-details ul {
+
+}
+
+.joblist-details li {
+	
+}
+
+/** Media queries */
+
+@media (min-width: 1920px) and (min-height: 1080px){
+	/* Monstrous Monitors */
+	#top {
+		height: 92vh;
+	}
+
+	#media {
+		height: 8vh;
+	}
+
+	.twitter li {
+		margin-right: 30px;
+	}
+
+	.tweet-body {
+		font-size: 1.3em;
+	}
+
+	.tweet-info {
+		font-size: 1em;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 30px;
+	}
+
+	.checkin-name {
+		font-size: 1.3em;
+	}
+
+	.checkin-location {
+		font-size: 1em;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (max-height: 700px) {
+    /* Alte, graue Monitore auf hässlichen Computern mit schlechten Einstellungen */
+
+	#top {
+		height: 85vh;
+		background-image: url('background.jpg') no-repeat;
+		background-size: cover;
+		background-color: #fff;
+	}
+
+	#media {
+		height: 15vh;
+	}
+
+	.twitter li {
+		margin-left: 65px;
+		margin-right: 10px;
+	}
+
+	.tweet-body {
+		font-size: 13px;
+	}
+
+	.tweet-info {
+		font-size: 10px;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 10px;
+		margin-right: 65px;
+	}
+
+	.checkin-name {
+		font-size: 18px;
+	}
+
+	.checkin-location {
+		font-size: 13px;
+	}
+
+}
+
+@media (max-width: 768px) {
+    /* Mobiltelephone */
+
+	#top {
+		height: 80vh;
+		background-image: url('background.jpg');
+		background-size: cover;
+		background-position: left -140px top 0;
+	}
+
+	#lastTweet {
+		background: #55acee url('twitter.png') left top no-repeat;
+		background-size: 45px;
+		text-align: left;
+	}
+
+	#lastCheckin {
+		background: #FF9600 url('swarm.png') right top no-repeat;
+		background-size: 45px;
+		text-align: right;
+	}
+
+	.twitter li {
+		margin-left: 50px;
+		margin-right: 5px;
+	}
+	
+	.tweet-body {
+		font-size: 10px;
+	}
+
+	.tweet-info {
+		font-size: 8px;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 50px;
+	}
+
+	.checkin-name {
+		font-size: 10px;
+	}
+
+	.checkin-location {
+		font-size: 10px;
+	}
+
+	#media {
+		height: 20vh;
+	}
+
+}
+
+@media (height: 667px) and (width: 375px) {
+	/* iPhone 6 */
+	#top {
+		height: 82vh;
+		background-position: right -140px top 0;
+	}
+
+	#media {
+		height: 18vh;
+	}
+
+	.twitter li {
+		margin-left: 45px;
+		margin-right: 5px;
+	}
+	
+	.tweet-body {
+		font-size: 13px;
+	}
+
+	.tweet-info {
+		font-size: 10px;
+	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 45px;
+	}
+
+	.checkin-name {
+		font-size: 14px;
+	}
+
+	.checkin-location {
+		font-size: 12px;
+	}
+}
+
+@media (height: 736px) and (width: 414px) {
+	/* iPhone 6 Plus */
+	#top {
+		height: 82vh;
+		background-position: right -160px top 0;
+	}
+
+	#media {
+		height: 18vh;
+	}
+
+	.twitter li {
+		margin-left: 45px;
+		margin-right: 5px;
+	}
+	
+	.tweet-body {
+		font-size: 14px;
+	}
+
+	.tweet-info {
+		font-size: 12px;
+	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 45px;
+	}
+
+	.checkin-name {
+		font-size: 17px;
+	}
+
+	.checkin-location {
+		font-size: 14px;
+	}
+}
+
+@media (max-height: 1366px) and (min-height: 1024px) and (max-width: 1024px) and (min-width: 768px) {
+	/* iPad (Pro|Air|mini) Portrait Mode */
+	#top {
+		height: 90vh;
+		background-position: right -180px top 0;
+	}
+
+	#media {
+		height: 10vh;
+	}
+
+	.twitter li {
+		margin-left: 65px;
+		margin-right: 5px;
+	}
+	
+	.tweet-body {
+		font-size: 18px;
+	}
+
+	.tweet-info {
+		font-size: 12px;
+	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 65px;
+	}
+
+	.checkin-name {
+		font-size: 18px;
+	}
+
+	.checkin-location {
+		font-size: 14px;
+	}
 }
