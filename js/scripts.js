@@ -1,5 +1,3 @@
-i18n();
-
 twitterFetcher.fetch({
   "id": '737667496900169732',
   "domId": '',
