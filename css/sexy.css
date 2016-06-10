@@ -1,0 +1,676 @@
+/** Simple Social Photo Theme by Jannis Hutt
+*	Copyright (c) 2016
+*	https://github.com/hutt/hutt.github.io 
+**/
+
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400italic');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:300');
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	font-family: 'Karla', sans-serif;
+	margin: 0;
+}
+
+::selection {
+	background: #DDD;
+}
+
+a, a:hover, a:visited, a:active {
+	color: #000;
+	text-decoration: none;
+}
+
+#top {
+	height: 100vh;
+	background-image: url('background.jpg');
+	background-size: cover;
+	/*background-position: right top;*/
+	background-position: calc(100% - 50px) top;
+	background-repeat: no-repeat;
+	background-color: #FFF;
+}
+
+header {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	/*width: 100px;*/
+	height: 3.5em;
+}
+
+h1#name {
+	text-align: center;
+	font-size: 3em;
+
+	font-family: 'Karla', sans-serif;
+	font-weight: 400;
+
+	/*border: 4px solid #222;*/
+
+	width: 100%;
+	max-width: 300px;
+	/* height: 100%; */
+	max-height: 200px;
+
+	margin: 0 auto;
+}
+
+div.line {
+	min-height: 1px;
+	width: 250px;
+	margin: auto;
+	border-bottom: 1px solid #000;
+	height: 1px;
+	padding-top: 4px;
+	padding-bottom: 0;
+}
+
+p.buzzwords {
+	margin-top: 5px;
+	text-align: center;
+	font-size: 1em;
+}
+
+#media {
+	display: flex;
+}
+
+#lastTweet {
+	background: #55acee url('twitter.png') left top no-repeat;
+	background-size: 4em;
+	text-align: left;
+}
+
+#lastCheckin {
+	background: #FF9600 url('swarm.png') right top no-repeat;
+	background-size: 4em;
+	text-align: right;
+}
+
+#media {
+	color: #FFF;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+#media a {
+	text-decoration: underline;
+	color: #FFF;
+}
+
+#media ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#details {
+	margin-bottom: 60px;
+}
+
+.twitter li {
+	margin-left: 80px;
+	margin-right: 20px;
+}
+
+.tweet-body {
+	font-size: 16px;
+}
+
+.tweet-info {
+	font-size: 0.8em;
+	text-align: left;
+}
+
+.swarm li {
+	margin-left: 20px;
+	margin-right: 80px;
+}
+
+.checkin-name {
+	font-size: 1em;
+}
+
+.checkin-location {
+	font-size: 0.8em;
+}
+
+.left {
+	float: left;
+	width: 50%;
+}
+
+.right {
+	float: right;
+	width: 50%;
+}
+
+.container {
+	margin: auto;
+	width: 60%;
+	max-width: 800px;
+	height: 100%;
+	padding: 0;
+} 
+
+.inline-info {
+	color: #888;
+	font-size: 10px;
+	margin-left: 10px;
+}
+
+.joblist-heading {
+	font-size: 18px;
+	margin-top: 30px;
+	margin-bottom: 0;
+	/*margin-left: -4px; Looks stupid.*/
+	color: #696969;
+	font-weight: 400;
+}
+
+.joblist-item {
+	margin-bottom: 35px;
+}
+
+.joblist-item h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: 'Alegreya Sans', serif;
+	font-weight: 300;
+	font-size: 28px;
+}
+
+.joblist-item p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul.joblist-skills {
+	list-style: none;
+	padding-left: 0;
+	margin-top: 5px;
+	margin-bottom: 0;
+	margin-left: 0;
+	font-size: 10px;
+	color: #888;
+}
+
+ul.joblist-skills li {
+	display: inline-block;
+}
+
+ul.joblist-skills li:after {
+	content: " \00b7";
+}
+
+ul.joblist-skills li:last-child:after {
+	content: none;
+}
+
+ul.joblist-details {
+	list-style: none;
+	padding-left: 0;
+	margin-top: 0;
+	margin-left: 0;
+	font-size: 10px;
+	color: #888;
+}
+
+ul.joblist-details li {
+	display: inline-block;
+}
+
+ul.joblist-details li a {
+	color: #888;
+}
+
+ul.joblist-details li:after {
+	content: " \00b7";
+}
+
+ul.joblist-details li:last-child:after {
+	content: none;
+}
+
+footer {
+	bottom: 0;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+ul.copyright {
+	list-style: none;
+	padding-left: 0;
+	font-size: 14px;
+}
+
+ul.copyright li {
+	display: inline-block;
+}
+
+ul.copyright li:after {
+	content: " \00b7";
+}
+
+ul.copyright li:last-child:after {
+	content: none;
+}
+
+/** Media queries */
+
+@media (min-width: 1920px) {
+	/* Monstrous Monitors */
+	#top {
+		height: 90vh;
+	}
+
+	h1#name {
+		font-size: 55px;
+	}
+
+	p.buzzwords {
+		font-size: 18px;
+	}
+
+	#media {
+		height: 10vh;
+	}
+
+	.twitter li {
+		margin-right: 30px;
+	}
+
+	.tweet-body {
+		font-size: 1.4em;
+	}
+
+	.tweet-info {
+		font-size: 1em;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 30px;
+	}
+
+	.checkin-name {
+		font-size: 2em;
+	}
+
+	.checkin-location {
+		font-size: 1.2em;
+	}
+
+	.container {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1919px) {
+	#top {
+		height: 100vh;
+	}
+
+	h1#name {
+		font-size: 55px;
+	}
+
+	p.buzzwords {
+		font-size: 18px;
+	}
+
+	#media {
+		min-height: 10vh;
+		max-height: 125px;
+	}
+
+	.twitter li {
+		margin-right: 30px;
+	}
+
+	.tweet-body {
+		font-size: 1.3em;
+	}
+
+	.tweet-info {
+		font-size: 1em;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 30px;
+	}
+
+	.checkin-name {
+		font-size: 1.6em;
+	}
+
+	.checkin-location {
+		font-size: 1em;
+	}
+
+	.container {
+		width: 60%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	
+	#top {
+		height: 100vh;
+	}
+
+	h1#name {
+		font-size: 35px;
+	}
+
+	div.line {
+		width: 160px;
+	}
+
+	p.buzzwords {
+		font-size: 12px;
+	}
+
+	#media {
+		max-height: 15vh;
+	}
+
+	#lastTweet {
+		background-size: 3em;
+	}
+
+	#lastCheckin {
+		background-size: 3em;
+	}
+
+	ul.twitter {
+		margin-top: 12px;
+	}
+
+	.twitter li {
+		margin-left: 50px;
+		margin-right: 20px;
+	}
+
+	.tweet-body {
+		font-size: 14px;
+	}
+
+	.tweet-info {
+		font-size: 10px;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 30px;
+		margin-right: 50px;
+	}
+
+	.checkin-name {
+		font-size: 22px;
+	}
+
+	.checkin-location {
+		font-size: 13px;
+	}
+
+	.container {
+		width: 80%;
+	}
+
+}
+
+@media (min-width: 414px) and (max-width: 767px) {
+
+	#top {
+		height: 100vh;
+		background-image: url('background.jpg');
+		background-size: cover;
+		background-position: left 80% top 0;
+	}
+
+	h1#name {
+		font-size: 35px;
+	}
+
+	div.line {
+		width: 160px;
+	}
+
+	p.buzzwords {
+		font-size: 12px;
+	}
+
+	#media {
+		max-height: 15vh;
+	}
+
+	#lastTweet {
+		background-size: 3em;
+	}
+
+	#lastCheckin {
+		background-size: 3em;
+	}
+
+	ul.twitter {
+		margin-top: 15px;
+	}
+
+	@media (orientation:landscape){
+		/* phones in portrait mode */
+		ul.twitter {
+			margin-top: 2%;
+		}
+
+		ul.swarm {
+			margin-top: 2%;
+		}
+	}
+
+	.twitter li {
+		margin-left: 50px;
+		margin-right: 20px;
+	}
+
+	.tweet-body {
+		font-size: 11px;
+	}
+
+	.tweet-info {
+		font-size: 10px;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 30px;
+		margin-right: 50px;
+	}
+
+	.checkin-name {
+		font-size: 22px;
+	}
+
+	.checkin-location {
+		font-size: 13px;
+	}
+
+	.container {
+		width: 80%;
+	}
+}
+
+@media (min-width: 414px) and (max-width: 540px) {
+	/* fix bg image */
+	#top {
+		background-position: right 35% top 0;
+	}
+}
+
+/*
+@media screen and (orientation:landscape){
+	#top {
+		background-size: 120% auto;
+	}
+}
+*/
+
+@media screen and (min-width: 737px) and (orientation:portrait) {
+	/* Portrait mode (Tablets) */
+	#top {
+		background-size: cover;
+		background-position: left 50% top 0;
+	}
+}
+
+@media screen and (max-width: 736px) and (orientation:portrait) {
+	/* mobile phones in portrait mode */
+	#top {
+		background-size: 250% auto;
+		background-position: left 0 top 0;
+	}
+}
+
+@media (min-width: 375px) and (max-width: 413px) {
+    /* Mobiltelephone */
+
+	h1#name {
+		font-size: 35px;
+	}
+
+	div.line {
+		width: 160px;
+	}
+
+	p.buzzwords {
+		font-size: 12px;
+	}
+
+	#lastTweet {
+		background-size: 45px;
+		text-align: left;
+	}
+
+	#lastCheckin {
+		background-size: 45px;
+		text-align: right;
+	}
+
+	.twitter li {
+		margin-left: 50px;
+		margin-right: 5px;
+	}
+	
+	.tweet-body {
+		font-size: 10px;
+	}
+
+	.tweet-info {
+		font-size: 8px;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 50px;
+	}
+
+	.checkin-name {
+		font-size: 18px;
+	}
+
+	.checkin-location {
+		font-size: 10px;
+	}
+
+	#media {
+		height: 15vh;
+	}
+
+	.container {
+		width: 80%;
+	}
+
+}
+
+@media (max-width: 374px) {
+
+	#top {
+		background-size: 250% auto;
+		background-position: left 0 top 0;
+	}
+
+	h1#name {
+		font-size: 30px;
+	}
+
+	div.line {
+		width: 160px;
+	}
+
+	p.buzzwords {
+		font-size: 12px;
+	}
+
+	#lastTweet {
+		background-size: 45px;
+		text-align: left;
+	}
+
+	#lastCheckin {
+		background-size: 45px;
+		text-align: right;
+	}
+
+	ul.twitter {
+		margin-top: 5%;
+	}
+
+	.twitter li {
+		margin-left: 50px;
+		margin-right: 5px;
+	}
+	
+	.tweet-body {
+		font-size: 10px;
+	}
+
+	.tweet-info {
+		font-size: 8px;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 50px;
+	}
+
+	.checkin-name {
+		font-size: 18px;
+	}
+
+	.checkin-location {
+		font-size: 10px;
+	}
+
+	#media {
+		height: 20vh;
+	}
+
+	.container {
+		width: 80%;
+	}
+
+}
