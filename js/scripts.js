@@ -2,7 +2,7 @@ twitterFetcher.fetch({
   "id": '737667496900169732',
   "domId": '',
   "maxTweets": 1,
-  "enableLinks": true,
+  "enableLinks": false,
   "showUser": false,
   "showTime": true,
   "dateFunction": '',
@@ -27,8 +27,7 @@ function showTweet(tweets){
   var html = 
       '<ul class="twitter">'
        + '<li class="tweet-body">' + tweetObject.tweet + '</li>'
-  /**  + (tweetObject.image ? '<li class="tweet-image">' + '<img class="image" src="' + tweetObject.image + '" alt="' + tweetObject.tweet + '" />' + '</li>' : '') **/
-       + '<li class="tweet-info">' + '<a href="' + tweetObject.permalinkURL + '" target="_blank">vor ' + tweetObject.time + '</a>' + '</li>'
+       + '<li class="tweet-info">' + '<a href="' + tweetObject.permalinkURL + '" target="_blank">' + tweetObject.time + '</a>' + '</li>'
     + '</ul>';
 
   element.innerHTML = html;
