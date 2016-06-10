@@ -433,7 +433,7 @@ ul.copyright li:last-child:after {
 }
 
 @media (min-width: 414px) and (max-width: 767px) {
-	
+
 	#top {
 		height: 100vh;
 		background-image: url('background.jpg');
@@ -519,15 +519,32 @@ ul.copyright li:last-child:after {
 	}
 }
 
+/*
+@media screen and (orientation:landscape){
+	#top {
+		background-size: 120% auto;
+	}
+}
+*/
+
+@media screen and (min-width: 737px) and (orientation:portrait) {
+	/* Portrait mode (Tablets) */
+	#top {
+		background-size: cover;
+		background-position: left 50% top 0;
+	}
+}
+
+@media screen and (max-width: 736px) and (orientation:portrait) {
+	/* mobile phones in portrait mode */
+	#top {
+		background-size: 250% auto;
+		background-position: left 0 top 0;
+	}
+}
+
 @media (min-width: 375px) and (max-width: 413px) {
     /* Mobiltelephone */
-
-	#top {
-		height: 85vh;
-		background-image: url('background.jpg');
-		background-size: cover;
-		background-position: left -140px top 0;
-	}
 
 	h1#name {
 		font-size: 35px;
@@ -541,18 +558,12 @@ ul.copyright li:last-child:after {
 		font-size: 12px;
 	}
 
-	header.center-div {
-		margin-top: 50%;
-	}
-
 	#lastTweet {
-		background: #55ACEE url('twitter.png') left top no-repeat;
 		background-size: 45px;
 		text-align: left;
 	}
 
 	#lastCheckin {
-		background: #FFA633 url('swarm.png') right top no-repeat;
 		background-size: 45px;
 		text-align: right;
 	}
@@ -590,18 +601,76 @@ ul.copyright li:last-child:after {
 
 	.container {
 		width: 80%;
-	}	
-
-}
-
-@media screen and (orientation:portrait) {
-	/* Portrait mode */
-	#top {
-		background-size: cover;
-		background-position: left 50% top 0;
 	}
+
 }
 
 @media (max-width: 374px) {
+
+	#top {
+		background-size: 250% auto;
+		background-position: left 0 top 0;
+	}
+
+	h1#name {
+		font-size: 30px;
+	}
+
+	div.line {
+		width: 160px;
+	}
+
+	p.buzzwords {
+		font-size: 12px;
+	}
+
+	#lastTweet {
+		background-size: 45px;
+		text-align: left;
+	}
+
+	#lastCheckin {
+		background-size: 45px;
+		text-align: right;
+	}
+
+	ul.twitter {
+		margin-top: 5%;
+	}
+
+	.twitter li {
+		margin-left: 50px;
+		margin-right: 5px;
+	}
 	
+	.tweet-body {
+		font-size: 10px;
+	}
+
+	.tweet-info {
+		font-size: 8px;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 50px;
+	}
+
+	.checkin-name {
+		font-size: 18px;
+	}
+
+	.checkin-location {
+		font-size: 10px;
+	}
+
+	#media {
+		height: 20vh;
+	}
+
+	.container {
+		width: 80%;
+	}
+
 }
