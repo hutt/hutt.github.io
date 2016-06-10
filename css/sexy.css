@@ -59,15 +59,15 @@ h1#name {
 
 	width: 100%;
 	max-width: 300px;
-	height: 100%;
-	max-height: 800px;
+	/* height: 100%; */
+	max-height: 200px;
 
 	margin: 0 auto;
 }
 
 div.line {
 	min-height: 1px;
-	width: 120px;
+	width: 250px;
 	margin: auto;
 	border-bottom: 1px solid #000;
 	height: 1px;
@@ -76,6 +76,7 @@ div.line {
 }
 
 p.buzzwords {
+	margin-top: 5px;
 	text-align: center;
 	font-size: 1em;
 }
@@ -122,7 +123,7 @@ p.buzzwords {
 }
 
 .tweet-body {
-	font-size: 1em;
+	font-size: 16px;
 }
 
 .tweet-info {
@@ -156,9 +157,10 @@ p.buzzwords {
 .container {
 	margin: auto;
 	width: 60%;
+	max-width: 800px;
 	height: 100%;
 	padding: 0;
-}
+} 
 
 .inline-info {
 	color: #888;
@@ -170,7 +172,7 @@ p.buzzwords {
 	font-size: 18px;
 	margin-top: 30px;
 	margin-bottom: 0;
-	margin-left: -4px;
+	/*margin-left: -4px; Looks stupid.*/
 	color: #696969;
 	font-weight: 400;
 }
@@ -267,14 +269,70 @@ ul.copyright li:last-child:after {
 
 /** Media queries */
 
-@media (min-width: 1920px) and (min-height: 1080px){
+@media (min-width: 1920px) {
 	/* Monstrous Monitors */
 	#top {
-		height: 92vh;
+		height: 90vh;
+	}
+
+	h1#name {
+		font-size: 55px;
+	}
+
+	p.buzzwords {
+		font-size: 18px;
 	}
 
 	#media {
-		height: 8vh;
+		height: 10vh;
+	}
+
+	.twitter li {
+		margin-right: 30px;
+	}
+
+	.tweet-body {
+		font-size: 1.4em;
+	}
+
+	.tweet-info {
+		font-size: 1em;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 30px;
+	}
+
+	.checkin-name {
+		font-size: 2em;
+	}
+
+	.checkin-location {
+		font-size: 1.2em;
+	}
+
+	.container {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1919px) {
+	#top {
+		height: 100vh;
+	}
+
+	h1#name {
+		font-size: 55px;
+	}
+
+	p.buzzwords {
+		font-size: 18px;
+	}
+
+	#media {
+		min-height: 10vh;
+		max-height: 125px;
 	}
 
 	.twitter li {
@@ -295,7 +353,7 @@ ul.copyright li:last-child:after {
 	}
 
 	.checkin-name {
-		font-size: 1.3em;
+		font-size: 1.6em;
 	}
 
 	.checkin-location {
@@ -303,31 +361,51 @@ ul.copyright li:last-child:after {
 	}
 
 	.container {
-		width: 50%;
+		width: 60%;
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1024px) and (max-height: 700px) {
-    /* Alte, graue Monitore auf hässlichen Computern mit schlechten Einstellungen */
-
+@media (min-width: 768px) and (max-width: 1023px) {
+	
 	#top {
-		height: 85vh;
-		background-image: url('background.jpg') no-repeat;
-		background-size: cover;
-		background-color: #fff;
+		height: 100vh;
+	}
+
+	h1#name {
+		font-size: 35px;
+	}
+
+	div.line {
+		width: 160px;
+	}
+
+	p.buzzwords {
+		font-size: 12px;
 	}
 
 	#media {
-		height: 15vh;
+		max-height: 15vh;
+	}
+
+	#lastTweet {
+		background-size: 3em;
+	}
+
+	#lastCheckin {
+		background-size: 3em;
+	}
+
+	ul.twitter {
+		margin-top: 12px;
 	}
 
 	.twitter li {
-		margin-left: 65px;
-		margin-right: 10px;
+		margin-left: 50px;
+		margin-right: 20px;
 	}
 
 	.tweet-body {
-		font-size: 13px;
+		font-size: 14px;
 	}
 
 	.tweet-info {
@@ -336,28 +414,135 @@ ul.copyright li:last-child:after {
 	}
 
 	.swarm li {
-		margin-left: 10px;
-		margin-right: 65px;
+		margin-left: 30px;
+		margin-right: 50px;
 	}
 
 	.checkin-name {
-		font-size: 18px;
+		font-size: 22px;
 	}
 
 	.checkin-location {
 		font-size: 13px;
 	}
 
+	.container {
+		width: 80%;
+	}
+
 }
 
-@media (max-width: 768px) {
+@media (min-width: 414px) and (max-width: 767px) {
+	
+	#top {
+		height: 100vh;
+		background-image: url('background.jpg');
+		background-size: cover;
+		background-position: left 80% top 0;
+	}
+
+	h1#name {
+		font-size: 35px;
+	}
+
+	div.line {
+		width: 160px;
+	}
+
+	p.buzzwords {
+		font-size: 12px;
+	}
+
+	#media {
+		max-height: 15vh;
+	}
+
+	#lastTweet {
+		background-size: 3em;
+	}
+
+	#lastCheckin {
+		background-size: 3em;
+	}
+
+	ul.twitter {
+		margin-top: 15px;
+	}
+
+	@media (orientation:landscape){
+		/* phones in portrait mode */
+		ul.twitter {
+			margin-top: 2%;
+		}
+
+		ul.swarm {
+			margin-top: 2%;
+		}
+	}
+
+	.twitter li {
+		margin-left: 50px;
+		margin-right: 20px;
+	}
+
+	.tweet-body {
+		font-size: 11px;
+	}
+
+	.tweet-info {
+		font-size: 10px;
+		text-align: left;
+	}
+
+	.swarm li {
+		margin-left: 30px;
+		margin-right: 50px;
+	}
+
+	.checkin-name {
+		font-size: 22px;
+	}
+
+	.checkin-location {
+		font-size: 13px;
+	}
+
+	.container {
+		width: 80%;
+	}
+}
+
+@media (min-width: 414px) and (max-width: 540px) {
+	/* fix bg image */
+	#top {
+		background-position: right 35% top 0;
+	}
+}
+
+@media (min-width: 375px) and (max-width: 413px) {
     /* Mobiltelephone */
 
 	#top {
-		height: 80vh;
+		height: 85vh;
 		background-image: url('background.jpg');
 		background-size: cover;
 		background-position: left -140px top 0;
+	}
+
+	h1#name {
+		font-size: 35px;
+	}
+
+	div.line {
+		width: 160px;
+	}
+
+	p.buzzwords {
+		font-size: 12px;
+	}
+
+	header.center-div {
+		margin-top: 50%;
 	}
 
 	#lastTweet {
@@ -392,7 +577,7 @@ ul.copyright li:last-child:after {
 	}
 
 	.checkin-name {
-		font-size: 10px;
+		font-size: 18px;
 	}
 
 	.checkin-location {
@@ -400,7 +585,7 @@ ul.copyright li:last-child:after {
 	}
 
 	#media {
-		height: 20vh;
+		height: 15vh;
 	}
 
 	.container {
@@ -409,116 +594,14 @@ ul.copyright li:last-child:after {
 
 }
 
-@media (height: 667px) and (width: 375px) {
-	/* iPhone 6 */
+@media screen and (orientation:portrait) {
+	/* Portrait mode */
 	#top {
-		height: 82vh;
-		background-position: right -140px top 0;
-	}
-
-	#media {
-		height: 18vh;
-	}
-
-	.twitter li {
-		margin-left: 45px;
-		margin-right: 5px;
-	}
-	
-	.tweet-body {
-		font-size: 13px;
-	}
-
-	.tweet-info {
-		font-size: 10px;
-	}
-
-	.swarm li {
-		margin-left: 5px;
-		margin-right: 45px;
-	}
-
-	.checkin-name {
-		font-size: 14px;
-	}
-
-	.checkin-location {
-		font-size: 12px;
+		background-size: cover;
+		background-position: left 50% top 0;
 	}
 }
 
-@media (height: 736px) and (width: 414px) {
-	/* iPhone 6 Plus */
-	#top {
-		height: 82vh;
-		background-position: right -160px top 0;
-	}
-
-	#media {
-		height: 18vh;
-	}
-
-	.twitter li {
-		margin-left: 45px;
-		margin-right: 5px;
-	}
+@media (max-width: 374px) {
 	
-	.tweet-body {
-		font-size: 14px;
-	}
-
-	.tweet-info {
-		font-size: 12px;
-	}
-
-	.swarm li {
-		margin-left: 5px;
-		margin-right: 45px;
-	}
-
-	.checkin-name {
-		font-size: 17px;
-	}
-
-	.checkin-location {
-		font-size: 14px;
-	}
-}
-
-@media (max-height: 1366px) and (min-height: 1024px) and (max-width: 1024px) and (min-width: 768px) {
-	/* iPad (Pro|Air|mini) Portrait Mode */
-	#top {
-		height: 90vh;
-		background-position: right -180px top 0;
-	}
-
-	#media {
-		height: 10vh;
-	}
-
-	.twitter li {
-		margin-left: 65px;
-		margin-right: 5px;
-	}
-	
-	.tweet-body {
-		font-size: 18px;
-	}
-
-	.tweet-info {
-		font-size: 12px;
-	}
-
-	.swarm li {
-		margin-left: 5px;
-		margin-right: 65px;
-	}
-
-	.checkin-name {
-		font-size: 18px;
-	}
-
-	.checkin-location {
-		font-size: 14px;
-	}
 }
