@@ -4,7 +4,7 @@ function loadUserData(config){
 	//VARS from config
 	var callback = config.customCallback;
 
-	url = 'https://api.jh0.eu/swarm?fetch=user';
+	url = 'https://api.jh0.eu/swarm/?fetch=user';
    	xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function(data) {
     	if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
@@ -29,7 +29,7 @@ function loadCheckins(config){
 	var vague = false;
 
 	if(count > 0 && count < 50){
-		url = 'https://api.jh0.eu/swarm?fetch=checkins&count=' + count;
+		url = 'https://api.jh0.eu/swarm/?fetch=checkins&count=' + count;
 	    xmlHttp = new XMLHttpRequest();
 	    xmlHttp.withCredentials = false;
 	    xmlHttp.onreadystatechange = function(data) {
