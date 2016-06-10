@@ -13,7 +13,7 @@ function loadUserData(config){
     		callback(niceAnswer);
     	}
   	}
-  	xmlHttp.withCredentials = true;
+  	xmlHttp.withCredentials = false;
   	xmlHttp.open("GET", url, true);
     xmlHttp.send();
 }
@@ -82,7 +82,7 @@ function loadCheckins(config){
 	    	}
 	  	}
 	}
-	xmlHttp.withCredentials = true;
+	xmlHttp.withCredentials = false;
     xmlHttp.open("GET", url, true);
     xmlHttp.send();
 }
