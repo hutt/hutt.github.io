@@ -6,7 +6,6 @@ function loadUserData(config){
 
 	url = 'https://api.jh0.eu/swarm?fetch=user';
    	xmlHttp = new XMLHttpRequest();
-   	xmlHttp.withCredentials = false;
     xmlHttp.onreadystatechange = function(data) {
     	if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
 			var answer = JSON.parse(xmlHttp.responseText)
@@ -14,7 +13,7 @@ function loadUserData(config){
     		callback(niceAnswer);
     	}
   	}
-
+  	xmlHttp.withCredentials = true;
   	xmlHttp.open("GET", url, true);
     xmlHttp.send();
 }
@@ -83,7 +82,7 @@ function loadCheckins(config){
 	    	}
 	  	}
 	}
-
+	xmlHttp.withCredentials = true;
     xmlHttp.open("GET", url, true);
     xmlHttp.send();
 }
