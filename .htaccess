@@ -3,3 +3,4 @@ RewriteCond %{HTTPS} !=on
 RewriteCond %{ENV:HTTPS} !=on
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
 Header set Life "1 falsches"
+Header set Access-Control-Allow-Origin "*"
