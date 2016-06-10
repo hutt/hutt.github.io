@@ -5,9 +5,7 @@ function loadUserData(config){
 	var callback = config.customCallback;
 
 	url = 'https://api.jh0.eu/swarm?fetch=user';
-    xmlHttp = new XMLHttpRequest();
-	xmlHttp.setRequestHeader('Access-Control-Allow-Origin', '*');
-	xmlHttp.setRequestHeader('Access-Control-Allow-Methods', 'GET');
+   	xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function(data) {
     	if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
 			
@@ -35,8 +33,6 @@ function loadCheckins(config){
 	if(count > 0 && count < 50){
 		url = 'https://api.jh0.eu/swarm?fetch=checkins&count=' + count;
 	    xmlHttp = new XMLHttpRequest();
-		xmlHttp.setRequestHeader('Access-Control-Allow-Origin', '*');
-		xmlHttp.setRequestHeader('Access-Control-Allow-Methods', 'GET');
 	    xmlHttp.onreadystatechange = function(data) {
 	    	if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
 
