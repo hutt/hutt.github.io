@@ -8,10 +8,16 @@ function loadUserData(config){
     xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function(data) {
     	if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-    		var niceAnswer = JSON.parse(xmlHttp.responseText)[0];
+			
+			var answer = JSON.parse(xmlHttp.responseText)
+    		var niceAnswer = answer[0];
     		callback(niceAnswer);
+    		
     	}
   	}
+
+  	xmlHttp.open("GET", url, true);
+    xmlHttp.send();
 }
 
 function loadCheckins(config){
@@ -29,7 +35,9 @@ function loadCheckins(config){
 	    xmlHttp = new XMLHttpRequest();
 	    xmlHttp.onreadystatechange = function(data) {
 	    	if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-	    		var niceAnswer = JSON.parse(xmlHttp.responseText)[0];
+
+	    		var answer = JSON.parse(xmlHttp.responseText)
+	    		var niceAnswer = answer[0];
 
 				if(typeof config.ignore === 'object'){
 					for(var i = config.ignore.length - 1; i >= 0; i--) {
@@ -78,6 +86,6 @@ function loadCheckins(config){
 	  	}
 	}
 
-    xmlHttp.open( "GET", url, true );
+    xmlHttp.open("GET", url, true);
     xmlHttp.send();
 }
