@@ -267,6 +267,10 @@ ul.copyright li:last-child:after {
 	content: none;
 }
 
+img.Emoji {
+	display: none;
+}
+
 /** Media queries */
 
 @media (min-width: 1920px) {
