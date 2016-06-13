@@ -128,6 +128,11 @@ p.buzzwords {
 	font-size: 2vmin;
 }
 
+img.Emoji {
+	/* do not show ugly twitter emojis */
+	display: none;
+}
+
 .tweet-info {
 	font-size: 12px;
 	text-align: right;
@@ -208,7 +213,7 @@ ul.joblist-skills {
 	margin-top: 5px;
 	margin-bottom: 0;
 	margin-left: 0;
-	font-size: 10px;
+	font-size: 11px;
 	color: #888;
 }
 
@@ -229,7 +234,7 @@ ul.joblist-details {
 	padding-left: 0;
 	margin-top: 0;
 	margin-left: 0;
-	font-size: 10px;
+	font-size: 11px;
 	color: #888;
 }
 
@@ -273,10 +278,6 @@ ul.copyright li:after {
 
 ul.copyright li:last-child:after {
 	content: none;
-}
-
-img.Emoji {
-	display: none;
 }
 
 /** Media queries */
