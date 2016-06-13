@@ -123,12 +123,16 @@ p.buzzwords {
 }
 
 .tweet-body {
-	font-size: 16px;
+	font-size: 18px;
+	/* vw */
+	font-size: 2vmin;
 }
 
 .tweet-info {
-	font-size: 0.8em;
-	text-align: left;
+	font-size: 12px;
+	text-align: right;
+	/* vw */
+	font-size: 1.4vmin;
 }
 
 .swarm li {
@@ -138,10 +142,14 @@ p.buzzwords {
 
 .checkin-name {
 	font-size: 1em;
+	/* vw */
+	font-size: 2vmin;
 }
 
 .checkin-location {
-	font-size: 0.8em;
+	font-size: 12px;
+	/* vw */
+	font-size: 1.4vmin;
 }
 
 .left {
@@ -295,25 +303,8 @@ img.Emoji {
 		margin-right: 30px;
 	}
 
-	.tweet-body {
-		font-size: 1.4em;
-	}
-
-	.tweet-info {
-		font-size: 1em;
-		text-align: left;
-	}
-
 	.swarm li {
 		margin-left: 30px;
-	}
-
-	.checkin-name {
-		font-size: 2em;
-	}
-
-	.checkin-location {
-		font-size: 1.2em;
 	}
 
 	.container {
@@ -343,25 +334,8 @@ img.Emoji {
 		margin-right: 30px;
 	}
 
-	.tweet-body {
-		font-size: 1.3em;
-	}
-
-	.tweet-info {
-		font-size: 1em;
-		text-align: left;
-	}
-
 	.swarm li {
 		margin-left: 30px;
-	}
-
-	.checkin-name {
-		font-size: 1.6em;
-	}
-
-	.checkin-location {
-		font-size: 1em;
 	}
 
 	.container {
@@ -408,26 +382,9 @@ img.Emoji {
 		margin-right: 20px;
 	}
 
-	.tweet-body {
-		font-size: 14px;
-	}
-
-	.tweet-info {
-		font-size: 10px;
-		text-align: left;
-	}
-
 	.swarm li {
 		margin-left: 30px;
 		margin-right: 50px;
-	}
-
-	.checkin-name {
-		font-size: 22px;
-	}
-
-	.checkin-location {
-		font-size: 13px;
 	}
 
 	.container {
@@ -489,26 +446,9 @@ img.Emoji {
 		margin-right: 20px;
 	}
 
-	.tweet-body {
-		font-size: 11px;
-	}
-
-	.tweet-info {
-		font-size: 10px;
-		text-align: left;
-	}
-
 	.swarm li {
 		margin-left: 30px;
 		margin-right: 50px;
-	}
-
-	.checkin-name {
-		font-size: 22px;
-	}
-
-	.checkin-location {
-		font-size: 13px;
 	}
 
 	.container {
@@ -576,27 +516,10 @@ img.Emoji {
 		margin-left: 50px;
 		margin-right: 5px;
 	}
-	
-	.tweet-body {
-		font-size: 10px;
-	}
-
-	.tweet-info {
-		font-size: 8px;
-		text-align: left;
-	}
 
 	.swarm li {
 		margin-left: 5px;
 		margin-right: 50px;
-	}
-
-	.checkin-name {
-		font-size: 18px;
-	}
-
-	.checkin-location {
-		font-size: 10px;
 	}
 
 	#media {
@@ -646,27 +569,10 @@ img.Emoji {
 		margin-left: 50px;
 		margin-right: 5px;
 	}
-	
-	.tweet-body {
-		font-size: 10px;
-	}
-
-	.tweet-info {
-		font-size: 8px;
-		text-align: left;
-	}
 
 	.swarm li {
 		margin-left: 5px;
 		margin-right: 50px;
-	}
-
-	.checkin-name {
-		font-size: 18px;
-	}
-
-	.checkin-location {
-		font-size: 10px;
 	}
 
 	#media {
