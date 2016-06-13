@@ -585,3 +585,35 @@ ul.copyright li:last-child:after {
 	}
 
 }
+
+@media (orientation:portrait) and (max-height: 736px) and (max-width: 414px) {
+	.tweet-body {
+		font-size: 18px;
+		/* vw */
+		font-size: 2vmax;
+	}
+
+	.tweet-info {
+		font-size: 12px;
+		text-align: right;
+		/* vw */
+		font-size: 1.4vmax;
+	}
+
+	.swarm li {
+		margin-left: 20px;
+		margin-right: 80px;
+	}
+
+	.checkin-name {
+		font-size: 1em;
+		/* vw */
+		font-size: 2vmax;
+	}
+
+	.checkin-location {
+		font-size: 12px;
+		/* vw */
+		font-size: 1.4vmax;
+	}
+}
