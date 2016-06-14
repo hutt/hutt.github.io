@@ -148,7 +148,7 @@ img.Emoji {
 .checkin-name {
 	font-size: 1em;
 	/* vw */
-	font-size: 2vmin;
+	font-size: 2vmax;
 }
 
 .checkin-location {
@@ -278,6 +278,27 @@ ul.copyright li:after {
 
 ul.copyright li:last-child:after {
 	content: none;
+}
+
+ul.icons {
+	list-style: none;
+	padding-left: 0;
+	font-size: 25px;
+}
+
+ul.icons li {
+	display: inline-block;
+	padding: 10px;
+	padding: 2vw;
+	padding-bottom: 0;
+}
+
+ul.icons li a i {
+	color: rgba(73, 73, 73, 0.50);
+}
+
+ul.icons li a i:hover {
+	color: rgba(73, 73, 73, 0.75);
 }
 
 /** Media queries */
@@ -586,34 +607,24 @@ ul.copyright li:last-child:after {
 
 }
 
-@media (orientation:portrait) and (height: 736px) and (width: 414px) {
+@media (orientation:portrait) and (height: 667px) and (width: 375px) {
 	.tweet-body {
-		font-size: 18px;
-		/* vw */
-		font-size: 2vmin;
+		font-size: 10px;
 	}
 
 	.tweet-info {
-		font-size: 12px;
+		font-size: 9px;
 		text-align: right;
-		/* vw */
-		font-size: 1.4vmax;
-	}
-
-	.swarm li {
-		margin-left: 20px;
-		margin-right: 80px;
 	}
 
 	.checkin-name {
-		font-size: 1em;
-		/* vw */
-		font-size: 2vmax;
+		font-size: 18px;
+		font-size: 2.5vmax;
 	}
 
 	.checkin-location {
-		font-size: 12px;
+		font-size: 10px;
 		/* vw */
-		font-size: 1.4vmax;
+		font-size: 1.5vmax;
 	}
 }
