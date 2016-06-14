@@ -137,7 +137,7 @@ img.Emoji {
 	font-size: 12px;
 	text-align: right;
 	/* vw */
-	font-size: 1.4vmin;
+	font-size: 1.5vh;
 }
 
 .swarm li {
@@ -154,7 +154,7 @@ img.Emoji {
 .checkin-location {
 	font-size: 12px;
 	/* vw */
-	font-size: 1.4vmin;
+	font-size: 1.4vmax;
 }
 
 .left {
