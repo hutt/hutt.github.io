@@ -238,8 +238,16 @@
       var n = 0;
       if (dataOnly) {
         while (n < x) {
+          if(tweets[n].innerHTML.match(/\<a\shref\=\"/)){
+            //Contains link
+            var t_co_link = tweets[n].getElementsByClassName('link')[0].href;
+            t_co_link = '<a href="' + t_co_link + '">' + t_co_link + '</a>';
+            var dataOnlyTweet = tweets[n].innerHTML.replace(/(?:\<a\shref\=\".*\>)(.*)(?:\<\/a\>)/g, t_co_link);
+          }else{
+            var dataOnlyTweet = tweets[n].innerHTML;
+          }
           arrayTweets.push({
-            tweet: tweets[n].innerHTML,
+            tweet: dataOnlyTweet,
             author: authors[n].innerHTML,
             time: times[n].textContent,
             image: extractImageUrl(images[n]),
