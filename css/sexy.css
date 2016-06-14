@@ -586,11 +586,11 @@ ul.copyright li:last-child:after {
 
 }
 
-@media (orientation:portrait) and (max-height: 736px) and (max-width: 414px) {
+@media (orientation:portrait) and (height: 736px) and (width: 414px) {
 	.tweet-body {
 		font-size: 18px;
 		/* vw */
-		font-size: 2vmax;
+		font-size: 2vmin;
 	}
 
 	.tweet-info {
