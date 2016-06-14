@@ -555,7 +555,7 @@ ul.icons li a i:hover {
 }
 
 @media (max-width: 374px) {
-
+	/* Kleine Smartphones */
 	#top {
 		background-size: 250% auto;
 		background-position: left 0 top 0;
@@ -608,6 +608,7 @@ ul.icons li a i:hover {
 }
 
 @media (orientation:portrait) and (height: 667px) and (width: 375px) {
+	/* iPhone 6(s) */
 	.tweet-body {
 		font-size: 10px;
 	}
