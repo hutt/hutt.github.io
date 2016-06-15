@@ -321,6 +321,14 @@ ul.icons li a i:hover {
 		height: 10vh;
 	}
 
+	.checkin-name {
+		font-size: 25px;
+	}
+
+	.checkin-location {
+		font-size: 20px;
+	}
+
 	.twitter li {
 		margin-right: 30px;
 	}
