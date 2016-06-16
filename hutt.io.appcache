@@ -13,6 +13,6 @@ NETWORK:
 js/twitter.js
 js/foursquare.js
 js/scripts.js
-https://api.jh0.eu/*
+https://*
 
 FALLBACK:
