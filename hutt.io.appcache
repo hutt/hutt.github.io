@@ -1,29 +1,17 @@
 CACHE MANIFEST
-# 2016-06-17 v1.0.0
+# 2016-06-17 v1.0.1
 
 CACHE:
-index.html
 favicon.ico
-css/FontAwesome.otf
-css/fontawesome-webfont.svg
-css/sexy.css
 css/background.jpg
-css/fontawesome-webfont.ttf
 css/swarm.png
-css/font-awesome.css
-css/fontawesome-webfont.woff
 css/twitter.png
-css/fontawesome-webfont.eot
-css/fontawesome-webfont.woff2
-js/scripts.js
-js/foursquare.js
 js/jquery.min.js
 js/jquery.min.map
-js/piwik.js
-js/twitter.js
-
 
 NETWORK:
-
+js/twitter.js
+js/foursquare.js
+js/scripts.js
 
 FALLBACK:
