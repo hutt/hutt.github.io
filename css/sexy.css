@@ -202,6 +202,21 @@ img.Emoji {
 	font-size: 28px;
 }
 
+.joblist-item h2 a {
+	/*cursor: default;*/
+}
+
+.joblist-item h2 a:after {
+	content: " \f0ac";
+	font-family: "FontAwesome";
+	font-size: 0.8em;
+	color: rgba(73, 73, 73, 0.50);
+}
+
+.joblist-item h2 a:hover:after {
+	color: rgba(73, 73, 73, 0.75);
+}
+
 .joblist-item p {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -229,6 +244,21 @@ ul.joblist-skills li:last-child:after {
 	content: none;
 }
 
+.joblist-skills a {
+	color: #888;
+}
+
+.joblist-skills a:after {
+	content: " \f0ac";
+	font-family: "FontAwesome";
+	font-size: 0.8em;
+	color: rgba(73, 73, 73, 0.50);
+}
+
+.joblist-skills a:hover:after {
+	color: rgba(73, 73, 73, 0.75);
+}
+
 ul.joblist-details {
 	list-style: none;
 	padding-left: 0;
@@ -252,6 +282,21 @@ ul.joblist-details li:after {
 
 ul.joblist-details li:last-child:after {
 	content: none;
+}
+
+.joblist-details a {
+	color: #888;
+}
+
+.joblist-details a:after {
+	content: " \f0ac";
+	font-family: "FontAwesome";
+	font-size: 0.8em;
+	color: rgba(73, 73, 73, 0.50);
+}
+
+.joblist-details a:hover:after {
+	color: rgba(73, 73, 73, 0.75);
 }
 
 footer {
