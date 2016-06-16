@@ -1,16 +1,2 @@
 CACHE MANIFEST
-# 2016-06-17 v1.0.5
-
-CACHE:
-favicon.ico
-css/background.jpg
-css/swarm.png
-css/twitter.png
-js/jquery.min.js
-js/jquery.min.map
-
-NETWORK:
-*
-
-
-FALLBACK:
+# 2016-06-17 v1.0.6
