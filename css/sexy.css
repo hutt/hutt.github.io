@@ -406,7 +406,7 @@ input[type=checkbox] {
     visibility: hidden;
 }
 
-div#contact {
+input[type=checkbox]:not(:checked) ~ div#contact {
 	display: none;
 	visibility: hidden;
 }
@@ -554,7 +554,7 @@ input[type=checkbox]:checked ~ [for="contact_link"] span:last-of-type {
 		height: 100vh;
 		background-image: url('background.jpg');
 		background-size: cover;
-		background-position: left 80% top 0;
+		/* background-position: left 80% top 0; */
 	}
 
 	h1#name {
