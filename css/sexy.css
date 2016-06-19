@@ -397,6 +397,11 @@ input[type=checkbox] {
 	position: absolute;
 }
 
+div#contact {
+	display: none;
+	visibility: hidden;
+}
+
 [for="contact_link"]:hover {
 	cursor: pointer;
 }
@@ -404,16 +409,6 @@ input[type=checkbox] {
 [for="contact_link"] span:last-of-type {
     display: none;
     visibility: hidden;
-}
-
-input[type=checkbox]:not(:checked) ~ div#contact {
-	display: none;
-	visibility: hidden;
-}
-
-input[type=checkbox]:checked ~ div#contact {
-    display: inline-block;
-    visibility: visible;
 }
 
 input[type=checkbox]:checked ~ [for="contact_link"] span:first-of-type {
@@ -426,7 +421,12 @@ input[type=checkbox]:checked ~ [for="contact_link"] span:last-of-type {
     visibility: visible;
 }
 
-/** Media queries */
+input[type=checkbox]:checked ~ #contact {
+    display: inline-block;
+    visibility: visible;
+}
+
+/* Media queries */
 
 @media (min-width: 1920px) {
 	/* Monstrous Monitors */
