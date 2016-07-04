@@ -24,6 +24,7 @@ function loadCheckins(config){
 	//VARS from config
 	var count = config.count;
 	var callback = config.customCallback;
+	var ignore = config.ignore;
 	//Setup config.ignore with help of these references: https://developer.foursquare.com/categorytree 
 	
 	var vague = false;
@@ -36,14 +37,13 @@ function loadCheckins(config){
 	    	if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
 	    		var answer = JSON.parse(xmlHttp.responseText)
 	    		var niceAnswer = answer[0];
-				if(typeof config.ignore === 'object'){
-					for(var i = config.ignore.length - 1; i >= 0; i--) {
-						var ignoreListItem = config.ignore[i];
-						for(var i = niceAnswer.venue.categories.length - 1; i >= 0; i--) {
-							var categoryItem = niceAnswer.venue.categories[i].name;
-							if(ignoreListItem == categoryItem){
-								vague = true;
-							}
+
+				for(var i = ignore.length - 1; i >= 0; i--) {
+					var ignoreListItem = ignore[i];
+					for(var j = niceAnswer.venue.categories.length - 1; j >= 0; j--) {
+						var categoryItem = niceAnswer.venue.categories[j].name;
+						if(ignoreListItem == categoryItem){
+							vague = true;
 						}
 					}
 				}
@@ -51,10 +51,10 @@ function loadCheckins(config){
     			if(vague){
 					var checkin = {
 						"venue": {
-							"name": niceAnswer.venue.location.city,
+							"name": (niceAnswer.venue.location.neighborhood ? niceAnswer.venue.location.neighborhood : niceAnswer.venue.location.city),
 							"location": {
 								"neighborhood": '',
-								"city": '',
+								"city": (niceAnswer.venue.location.neighborhood ? niceAnswer.venue.location.city : niceAnswer.venue.location.city),
 								"cc": niceAnswer.venue.location.cc,
 								"country": niceAnswer.venue.location.country,
 								"state": niceAnswer.venue.location.state,

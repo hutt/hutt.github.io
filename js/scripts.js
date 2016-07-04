@@ -16,7 +16,7 @@ twitterFetcher.fetch({
 loadCheckins({
   "count" : 1, 
   "customCallback": showCheckin,
-  "ignore": ["Residence", "Home (private)", "Food"]
+  "ignore": ["Home (private)", "Food", "Residence"]
 });
 
 function showTweet(tweets){
