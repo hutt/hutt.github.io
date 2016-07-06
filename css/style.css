@@ -493,6 +493,14 @@ input[type=checkbox]:checked ~ #contact {
 		margin-left: 30px;
 	}
 
+	.checkin-name {
+		font-size: 20px;
+	}
+
+	.checkin-location {
+		font-size: 15px;
+	}
+
 	.container {
 		width: 60%;
 	}
@@ -752,8 +760,8 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	.checkin-name {
-		font-size: 18px;
-		font-size: 2.5vmax;
+		font-size: 16px;
+		font-size: 2vmax;
 	}
 
 	.checkin-location {
