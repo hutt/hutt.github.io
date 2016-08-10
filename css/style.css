@@ -222,6 +222,21 @@ img.Emoji {
 	margin-bottom: 0;
 }
 
+.joblist-item p a {
+	color: #000;
+}
+
+.joblist-item p a:after {
+	content: "  \f0ac";
+	font-family: "FontAwesome";
+	font-size: 0.8em;
+	color: rgba(73, 73, 73, 0.25);
+}
+
+.joblist-item p a:hover:after {
+	color: rgba(73, 73, 73, 0.50);
+}
+
 ul.joblist-skills {
 	list-style: none;
 	padding-left: 0;
