@@ -25,10 +25,22 @@
 	<body>
 			<!-- top part of the site -->
 			<div id="top">
+				<!-- i18n - lang switch buttons -->
+				<div id="langSwitch">
+					<button id="de-btn">DE</button>
+					<button id="en-btn">EN</button>
+					<button id="fr-btn">FR</button>
+				</div>
+
+				<!-- fancy header thingy -->
 				<header class="center-div">
 					<h1 id="name">Jannis Hutt</h1>
 					<div class="line"></div>
-					<p class="buzzwords">Politik - Coffein - Technologie</p>
+					<p class="buzzwords" data-translatable>
+						<span>Politik - Coffein - Technologie</span>
+						<span>Policy - Caffeine - Technology</span>
+						<span>Politique - Caféine - Technologie</span>
+					</p>
 				</header>
 			</div>
 
@@ -36,13 +48,16 @@
 			<div id="media">
 				<div class="left" id="lastTweet" title="Letzter Tweet">
 				    <ul class="twitter">
-				       <li class="tweet-body">Letzten Tweet laden...</li>
+				       <li class="tweet-body">
+				       		<span>Letzten Tweet laden...</span>
 				       <li class="tweet-info"></li>
 				    </ul>
 				</div>
 				<div class="right" id="lastCheckin" title="Letzter Swarm-Checkin">
 				    <ul class="swarm">
-				       <li class="checkin-name">Letzten Swarm-Checkin laden...</li>
+				       <li class="checkin-name">
+				       		<span>Letzten Swarm-Checkin laden...</span>
+				       	</li>
 				       <li class="checkin-location"></li>
 				    </ul>
 				</div>
@@ -51,147 +66,341 @@
 			<!-- detail view -->
 			<div id="details" class="container">
 
-				<h1 class="joblist-heading">Erfahrung</h1>
+				<h1 class="joblist-heading" data-translatable>
+					<span>Erfahrung</span>
+					<span>experience</span>
+					<span>expérience</span>
+				</h1>
 				<section class="joblist-item">
-					<h2>Europäisches Parlament</h2>
-					<p>Communications Trainee bei <a href="https://juliareda.eu">Julia Reda, MdEP</a>.</p>
+					<h2 data-translatable>
+						<span>Europäisches Parlament</span>
+						<span>European Parliament</span>
+						<span>Parlement européen</span>
+					</h2>
+					<p data-translatable>
+						<span>Communications Trainee bei <a href="https://juliareda.eu">Julia Reda, MdEP</a>.</span>
+						<span>Communications Trainee in the office of <a href="https://juliareda.eu">MEP Julia Reda</a>.</span>
+					</p>
 					<ul class="joblist-skills">
-						<li>Öffentlichkeitsarbeit</li>
-						<li>Social Media</li>
-						<li>Wordpress Theme Development</li>
+						<li data-translatable>
+							<span>Öffentlichkeitsarbeit</span>
+							<span>Public Relations</span>
+						</li>
+						<li data-translatable>
+							<span>Social Media</span>
+							<span>Social Media</span>
+						</li>
+						<li data-translatable>
+							<span>Wordpress Theme Development</span>
+							<span>Wordpress Theme Development</span>
+						</li>
 					</ul>
 					<ul class="joblist-details">
-						<li>seit Juli '16</li>
-						<li>Brüssel</li>
-						<li>Berlin</li>
-						<li>Stra&szlig;burg</li>
+						<li data-translatable>
+							<span>seit Juli '16</span>
+							<span>since Juli '16</span>
+						</li>
+						<li data-translatable>
+							<span>Brüssel</span>
+							<span>Brussels</span>
+						</li>
+						<li data-translatable>
+							<span>Berlin</span>
+							<span>Berlin</span>
+						</li>
+						<li data-translatable>
+							<span>Stra&szlig;burg</span>
+							<span>Strasbourg</span>
+						</li>
 					</ul>
 				</section>
 
 				<section class="joblist-item">
 					<h2><a href="https://mein-grundeinkommen.de">Mein Grundeinkommen</a></h2>
-					<p><em>Was würdest du tun, wenn du ein bedingungsloses Grundeinkommen hättest?</em> Hier wird die Frage nicht nur gestellt, wir probieren es aus.</p>
+					<p data-translatable>
+						<span><em>Was würdest du tun, wenn du ein bedingungsloses Grundeinkommen hättest?</em> Hier wird die Frage nicht nur gestellt, wir probieren es aus.</span>
+						<span><em>What would you do if your income were taken care of?</em> We don't only ask this question. We try it out and document the results.</span>
+					</p>
 					<ul class="joblist-skills">
-						<li>Öffentlichkeitsarbeit</li>
-						<li>Social Media</li>
-						<li>Livestreaming</li>
-						<li>Event-Photographie</li>
+						<li data-translatable>
+							<span>Öffentlichkeitsarbeit</span>
+							<span>Public Relations</span>
+						</li>
+						<li data-translatable>
+							<span>Social Media</span>
+							<span>Social Media</span>
+						</li>
+						<li data-translatable>
+							<span>Livestreaming</span>
+							<span>Live Streaming</span>
+						</li>
+						<li data-translatable>
+							<span>Event-Photographie</span>
+							<span>Event Photography</span>
+						</li>
 					</ul>
 					<ul class="joblist-details">
-						<li>November '15 – Juli '16</li>
-						<li>Berlin</li>
+						<li data-translatable>
+							<span>November '15 – Juli '16</span>
+							<span>November '15 – July '16</span>
+						</li>
+						<li data-translatable>
+							<span>Berlin</span>
+							<span>Berlin</span>
+						</li>
 					</ul>
 				</section>
 
 				<section class="joblist-item">
 					<h2><a href="https://sanktionsfrei.de">Sanktionsfrei</a></h2>
-					<p>Die deutschen Jobcenter dürfen ihre Hilfen unter das Existenzminimum kürzen. Das ist nicht okay. Sanktionsfrei informiert ALG II-Leistungsberechtigte über ihre Rechte und hilft bei deren Durchsetzung. Im Rahmen einer Crowdfunding-Kampagne haben wir über 126.000 € gesammelt.</p>
+					<p data-translatable>
+						<span>Die deutschen Jobcenter dürfen ihre Hilfen unter das Existenzminimum kürzen. Das ist nicht okay. Sanktionsfrei informiert ALG II-Leistungsberechtigte über ihre Rechte und hilft bei deren Durchsetzung. Im Rahmen einer Crowdfunding-Kampagne haben wir über 126.000 € gesammelt.</span>
+						<span>So-called 'Jobcenters' are allowed to cut social security benefits to zero. That's not okay. We inform people about their rights and help to enforce them.</span>
+					</p>
 					<ul class="joblist-skills">
-						<li>Crowdfunding Website</li>
-						<li>Social Media</li>
-						<li>Öffentlichkeitsarbeit</li>
+						<li data-translatable>
+							<span>Crowdfunding Website</span>
+							<span>Crowdfunding Website</span>
+						</li>
+						<li data-translatable>
+							<span>Social Media</span>
+							<span>Social Media</span>
+						</li>
+						<li data-translatable>
+							<span>Öffentlichkeitsarbeit</span>
+							<span>Public Relations</span>
+						</li>
 					</ul>
 					<ul class="joblist-details">
-						<li>November '15 – Juli '16</li>
-						<li>Berlin</li>
+						<li data-translatable>
+							<span>November '15 – Juli '16</span>
+							<span>November '15 – July '16</span>
+						</li>
+						<li data-translatable>
+							<span>Berlin</span>
+							<span>Berlin</span>
+						</li>
 					</ul>
 				</section>
 
 				<section class="joblist-item">
 					<h2><a href="https://votesapp.net">Votesapp</a></h2>
-					<p>Demokratische Partizipation ins 21. Jahrhundert bringen. Mit der in Entwicklung befindlichen App wird das gemeinsame Treffen von Entscheidungen ein leichtes. Diskurs- und Konsensorientiert.</p>
+					<p data-translatable>
+						<span>Demokratische Partizipation ins 21. Jahrhundert bringen. Mit der in Entwicklung befindlichen App wird das gemeinsame Treffen von Entscheidungen ein leichtes. Diskurs- und Konsensorientiert.</span>
+						<span>Bringing democratic participation into the 21st century. With our app in development, the joint decision making gets easy, discourse- and consensus-oriented.</span>
+					</p>
 					<ul class="joblist-skills">
-						<li>Backend</li>
-						<li>Pitches</li>
+						<li data-translatable>
+							<span>Backend</span>
+							<span>Backend</span>
+						</li>
+						<li data-translatable>
+							<span>Pitches</span>
+							<span>Pitches</span>
+						</li>
 					</ul>
 					<ul class="joblist-details">
-						<li>November '15 – Juni '16</li>
-						<li>Berlin</li>
+						<li data-translatable>
+							<span>November '15 – Juni '16</span>
+							<span>November '15 – June '16</span>
+						</li>
+						<li data-translatable>
+							<span>Berlin</span>
+							<span>Berlin</span>
+						</li>
 					</ul>
 				</section>
 
 				<section class="joblist-item">
 					<h2><a href="https://tersee.com">Tersee</a></h2>
-					<p>Tersee ist eine schnelle Echtzeit-Suchmaschine für News und Events.</p>
+					<p data-translatable>
+						<span>Tersee ist eine schnelle Echtzeit-Suchmaschine für News und Events.</span>
+						<span>Tersee is a real‐time search engine for news and current events.</span>
+					</p>
 					<ul class="joblist-skills">
-						<li>Networking</li>
-						<li>Politische Kommunikation</li>
-						<li>Pitches</li>
+						<li data-translatable>
+							<span>Networking</span>
+							<span>Networking</span>
+						</li>
+						<li data-translatable>
+							<span>Politische Kommunikation</span>
+							<span>Political Communication</span>
+						</li>
+						<li data-translatable>
+							<span>Pitches</span>
+							<span>Pitches</span>
+						</li>
 					</ul>
 					<ul class="joblist-details">
-						<li>Dezember '15 – April '16</li>
-						<li>Berlin</li>
+						<li data-translatable>
+							<span>Dezember '15 – April '16</span>
+							<span>December '15 – April '16</span>
+						</li>
+						<li data-translatable>
+							<span>Berlin</span>
+							<span>Berlin</span>
+						</li>
 					</ul>
 				</section>
 
 				<section class="joblist-item">
-					<h2>Deutscher Bundestag</h2>
-					<p>Praktikum bei <a href="http://www.karin-binder.de">Karin Binder, MdB</a>. Unter anderem Mitarbeit an einem Gutachten zur Nutzung von Pfefferspray auf Versammlungen. Weiterer Schwerpunkt: Glyphosat.</p>
+					<h2 data-translatable>
+						<span>Deutscher Bundestag</span>
+						<span>Bundestag (German Parliament)</span>
+						<span>Bundestag (parlement allemand)</span>
+					</h2>
+					<p data-translatable>
+						<span>Praktikum bei <a href="http://www.karin-binder.de">Karin Binder, MdB</a>. Unter anderem Mitarbeit an einem Gutachten zur Nutzung von Pfefferspray auf Versammlungen. Weiterer Schwerpunkt: Glyphosat.</span>
+						<span>Internship in the office of <a href="http://www.karin-binder.de">MP Karin Binder</a>. Worked on a report on the use of pepper spray by German police forces and Glyphosate.</span>
+					</p>
 					<ul class="joblist-skills">
-						<li>Recherche &amp; Gutachten</li>
-						<li>Büroorganisation</li>
+						<li data-translatable>
+							<span>Recherche &amp; Gutachten</span>
+							<span>Investigation &amp; Reports</span>
+						</li>
+						<li data-translatable>
+							<span>Büroorganisation</span>
+							<span>office organization</span>
+						</li>
 					</ul>
 					<ul class="joblist-details">
-						<li>September '15 – November '15</li>
-						<li>Berlin</li>
+						<li data-translatable>
+							<span>September '15 – November '15</span>
+							<span>September '15 – November '15</span>
+						</li>
+						<li data-translatable>
+							<span>Berlin</span>
+							<span>Berlin</span>
+						</li>
 					</ul>
 				</section>
 
 				<section class="joblist-item">
-					<h2>Systembetreuung und IT-Support</h2>
-					<p>Aufbau von rechts- und datenschutzkonformer IT-Infrastruktur in Zahnarztpraxen.</p>
+					<h2 data-translatable>
+						<span>Systembetreuung und IT-Support</span>
+						<span>IT Systems Support</span>
+					</h2>
+					<p data-translatable>
+						<span>Aufbau von rechts- und datenschutzkonformer IT-Infrastruktur in Zahnarztpraxen.</span>
+						<span>Built IT infrastructure compliant with German data protection laws for dental practices.</span>
+					</p>
 					<ul class="joblist-skills">
-						<li>Backupautomatisierung</li>
-						<li>Netzwerkvirtualisierung</li>
-						<li>Dampsoft</li>
-						<li>Digitale Röntgentechnik</li>
+						<li data-translatable>
+							<span>Backupautomatisierung</span>
+							<span>Automated Backup Solutions</span>
+						</li>
+						<li data-translatable>
+							<span>Netzwerkvirtualisierung</span>
+							<span>Virtual Networks</span>
+						</li>
+						<li data-translatable>
+							<span>Dampsoft</span>
+							<span>Dampsoft</span>
+						</li>
 					</ul>
 					<ul class="joblist-details">
-						<li>März '14 – Oktober '15</li>
-						<li>Karlsruhe</li>
+						<li data-translatable>
+							<span>März '14 – Oktober '15</span>
+							<span>March '14 – October '15</span>
+						</li>
+						<li data-translatable>
+							<span>Karlsruhe</span>
+							<span>Karlsruhe</span>
+						</li>
 					</ul>
 				</section>
 
-				<h1 class="joblist-heading">Mitgliedschaften</h1>
+				<h1 class="joblist-heading" data-translatable>
+					<span>Mitgliedschaften</span>
+					<span>memberships</span>
+					<span>adhésions</span>
+				</h1>
 				<section class="joblist-item">
-					<h2><a href="http://forum-ds.de">Forum Demokratischer Sozialismus</a></h2>
-					<p>Innerparteilicher Zusammenschluss in der Partei DIE LINKE.</p>
+					<h2 data-translatable>
+						<span><a href="http://forum-ds.de">Forum Demokratischer Sozialismus</a></span>
+						<span><a href="http://forum-ds.de">Forum Demokratischer Sozialismus</a></span>
+					</h2>
+					<p data-translatable>
+						<span>Innerparteilicher Zusammenschluss in der Partei DIE LINKE.</span>
+						<span>Organization within the party DIE LINKE.</span>
+					</p>
 					<ul class="joblist-details">
-						<li>seit Juni '16</li>
+						<li data-translatable>
+							<span>seit Juni '16</span>
+							<span>since June '16</span>
+						</li>
 					</ul>
 				</section>
 
 				<section class="joblist-item">
-					<h2><a href="https://www.die-linke.de/partei/zusammenschluesse/emanzipatorische-linke/">Emanzipatorische Linke</a></h2>
-					<p>Innerparteilicher Zusammenschluss in der Partei DIE LINKE.<span style="display:none;">Ich distanziere mich von den Landesverbänden Hamburg und NRW. Mindestens.</span></p>
+					<h2 data-translatable>
+						<span><a href="https://www.die-linke.de/partei/zusammenschluesse/emanzipatorische-linke/">Emanzipatorische Linke</a></span>
+						<span><a href="https://www.die-linke.de/partei/zusammenschluesse/emanzipatorische-linke/">Emanzipatorische Linke</a></span>
+					</h2>
+					<p data-translatable>
+						<span>Innerparteilicher Zusammenschluss in der Partei DIE LINKE.<span style="display:none;">Ich distanziere mich von den Landesverbänden Hamburg und NRW. Mindestens.</span></span>
+						<span>Organization within the party DIE LINKE.</span>
+					</p>
 					<ul class="joblist-details">
-						<li>seit Januar '16</li>
+						<li data-translatable>
+							<span>seit Januar '16</span>
+							<span>since January '16</span>
+						</li>
 					</ul>
 				</section>
 
 				<section class="joblist-item">
-					<h2>linksjugend ['solid]</h2>
-					<p>Jugendorganisation der Partei DIE LINKE.</p>
+					<h2 data-translatable>
+						<span>linksjugend ['solid]</span>
+						<span>linksjugend ['solid]</span>
+					</h2>
+					<p data-translatable>
+						<span>Jugendorganisation der Partei DIE LINKE.</span>
+						<span>Youth wing of the political party DIE LINKE.</span>
+					</p>
 					<ul class="joblist-skills">
-						<li>Arbeitskreis Wahlkampf 2016 (Baden-Württemberg)</li>
-						<li><a href="http://bak-shalom.de">BAK Shalom (Bundesweit)</a></li>
+						<li data-translatable>
+							<span><a href="http://bak-shalom.de">BAK Shalom (Bundesweit)</a></span>
+							<span><a href="http://bak-shalom.de">BAK Shalom</a></span>
+						</li>
 					</ul>
 					<ul class="joblist-details">
-						<li>seit Juni '14</li>
-						<li>Karlsruhe</li>
-						<li>Berlin</li>
+						<li data-translatable>
+							<span>seit Juni '14</span>
+							<span>since June '14</span>
+						</li>
+						<li data-translatable>
+							<span>Karlsruhe</span>
+							<span>Karlsruhe</span>
+						</li>
+						<li data-translatable>
+							<span>Berlin</span>
+							<span>Berlin</span>
+						</li>
 					</ul>
 				</section>
 
 				<section class="joblist-item">
-					<h2>DIE LINKE</h2>
-					<p>Partei</p>
+					<h2 data-translatable>
+						<span>DIE LINKE</span>
+						<span>DIE LINKE</span>
+					</h2>
+					<p data-translatable>
+						<span>Partei</span>
+						<span>Party</span>
+					</p>
 					<ul class="joblist-skills">
 						<li><a href="http://www.die-linke-berlin.de/die_linke/partei/lag_und_ig_plattformen/die_linkequeer/">LAG queer (Berlin)</a></li>
 					</ul>
 					<ul class="joblist-details">
-						<li>seit Mai '14</li>
-						<li>Bundesweit</li>
+						<li data-translatable>
+							<span>seit Mai '14</span>
+							<span>since May '14</span>
+						</li>
+						<li data-translatable>
+							<span>Bundesweit</span>
+							<span>Germany</span>
+						</li>
 					</ul>
 				</section>
 
@@ -205,13 +414,19 @@
 							<li><a href="https://bloggenswertes.de/"><i class="fa fa-paragraph"></i></a></li>
 						</ul>
 						<div id="contact">
-								<h2>Analog</h2>
+								<h2 data-translatable>
+									<span>Analog</span>
+									<span>retro</span>
+								</h2>
 									<ul>
 										<li>Jannis Hutt</li>
 										<li>Postfach 22401</li>
 										<li>10126 Berlin</li>
 									</ul><br/>
-								<h2>E-Mail</h2>
+								<h2 data-translatable>
+									<span>E-Mail</span>
+									<span>email</span>
+								</h2>
 									<ul>
 										<li><a href="mailto:jannis@hutt.io">jannis@hutt.io</a></li>
 										<li><a href="./pubkey.asc">Public Key</a></li>
@@ -231,7 +446,11 @@
 									<span>Kontaktdaten ausblenden</span>
 								</label>
 							</li>
-							<li><a href="https://bloggenswertes.de/impressum/">Impressum</a></li>
+							<li data-translatable>
+								<span><a href="https://bloggenswertes.de/impressum/">Impressum</a></span>
+								<span><a href="https://bloggenswertes.de/impressum/">Imprint</a></span>
+								<span><a href="https://bloggenswertes.de/impressum/">Empreinte</a></span>
+							</li>
 						</ul>
 				</footer>
 
@@ -239,6 +458,55 @@
 
 	<!-- i18n -->
 	<script type="text/javascript" src="js/i18n.js"></script>
+    <script>
+		//i18n init
+		var deButton = document.getElementById('de-btn'),
+			enButton = document.getElementById('en-btn'),
+			frButton = document.getElementById('fr-btn'),
+			languages = ['de', 'en', 'fr'],
+			defaultLanguage = 'de',
+			currentLanguage = 'de'
+			i18n = domI18n({
+				selector: '[data-translatable]',
+				separator: ' // ',
+				languages: languages,
+				defaultLanguage: defaultLanguage,
+				currentLanguage: currentLanguage
+			});
+
+		// function to style language buttons based on currentLanguage
+		function toggleLangStyles(id) {
+			var i, e,
+				ancestor = document.getElementById('langSwitch'),
+    			descendents = ancestor.getElementsByTagName('button');
+    		for (i = 0; i < descendents.length; i++) {
+    			e = descendents[i];
+    			if(e.id != id){
+    				e.style.border = 'dotted #000 1px';
+    			}
+    		}
+			document.getElementById(id).style.border = 'solid #000 1px';
+		}
+
+		// define actions for language buttons
+		deButton.onclick = function () {
+			i18n.changeLanguage('de');
+			toggleLangStyles(deButton.id);
+		};
+
+		enButton.onclick = function () {
+			i18n.changeLanguage('en');
+			toggleLangStyles(enButton.id);
+		};
+
+		frButton.onclick = function () {
+			i18n.changeLanguage('fr');
+			toggleLangStyles(frButton.id);
+		};
+
+		// style border of current language's button
+		toggleLangStyles(defaultLanguage + '-btn');
+    </script>
 	<!-- Twitter -->
 	<script type="text/javascript" src="js/twitter.js"></script>
 	<!-- Foursquare -->
