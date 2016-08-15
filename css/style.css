@@ -37,6 +37,32 @@ a, a:hover, a:visited, a:active {
 	background-color: #FFF;
 }
 
+#langSwitch {
+	z-index: 1;
+	float: right;
+	display: inline;
+	margin-top: 5px; 
+	margin-right: 5px;
+}
+
+#langSwitch button {
+	color: #000;
+	background-color: transparent;
+	font-size: 11px;
+	padding: 5px;
+	border: dotted #000 1px;
+	text-decoration: none;
+}
+
+#langSwitch button .current {
+	border: solid #000 1px;
+}
+
+#langSwitch button:hover {
+	cursor: pointer;
+	border: solid #000 1px;
+}
+
 header {
 	position: absolute;
 	margin: auto;
