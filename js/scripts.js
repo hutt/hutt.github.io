@@ -27,7 +27,7 @@ function showTweet(tweets){
   var html = 
       '<ul class="twitter">'
        + '<li class="tweet-body">' + tweetObject.tweet + '</li>'
-       + '<li class="tweet-info">' + '<a href="' + tweetObject.permalinkURL + '" target="_blank">' + tweetObject.time + '</a>' + '</li>'
+       + '<li class="tweet-info">' + '<a href="' + tweetObject.permalinkURL + '" target="_blank" rel="noopener noreferrer">' + tweetObject.time + '</a>' + '</li>'
     + '</ul>';
 
   element.innerHTML = html;
