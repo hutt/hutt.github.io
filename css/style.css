@@ -488,11 +488,13 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	.checkin-name {
-		font-size: 25px;
+		font-size: 28px;
+		font-size: 2.4vh;
 	}
 
 	.checkin-location {
-		font-size: 20px;
+		font-size: 22px;
+		font-size: 1.2vh;
 	}
 
 	.twitter li {
@@ -535,11 +537,11 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	.checkin-name {
-		font-size: 20px;
+		font-size: 22px;
 	}
 
 	.checkin-location {
-		font-size: 15px;
+		font-size: 16px;
 	}
 
 	.container {
@@ -816,19 +818,21 @@ input[type=checkbox]:checked ~ #contact {
 	/* iPhone 6 Plus */
 	.tweet-body {
 		font-size: 12px;
+		font-size: 1.55vh;
 	}
 
 	.tweet-info {
 		font-size: 10px;
+		font-size: 1.35vh;
 	}
 
 	.checkin-name {
 		font-size: 18px;
-		font-size: 2.4vmax;
+		font-size: 2.5vh;
 	}
 
 	.checkin-location {
 		font-size: 12px;
-		font-size: 1.8vmax;
+		font-size: 1.9vh;
 	}
 }
