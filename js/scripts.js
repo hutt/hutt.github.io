@@ -19,6 +19,8 @@ loadCheckins({
   "ignore": ["Home (private)", "Food", "Residence"]
 });
 
+// scaleText('tweet-body');
+
 function showTweet(tweets){
 
   var element = document.getElementById('lastTweet');
@@ -43,5 +45,22 @@ function showCheckin(checkin){
             + '<li class="checkin-location">' + (checkin.venue.location.neighborhood ? checkin.venue.location.neighborhood + ', ' : '') + (checkin.venue.location.city ? checkin.venue.location.city + ', ' : '') + (checkin.venue.location.neighborhood ? checkin.venue.location.cc : checkin.venue.location.country) + '</li>'
         + '</ul>';
     element.innerHTML = html;
+
+}
+
+function scaleText(id){
+
+  var length = document.getElementsByClassName(id)[0].text().length;
+  var newSize = 0;
+
+  if(length < 80){
+    newSize = 12;
+  }else if(length >= 80 && length < 100){
+    newSize = 11;
+  }else if(length >= 100){
+    newSize = 10;
+  }
+
+  document.getElementById(id).style.fontSize = newSize;
 
 }
