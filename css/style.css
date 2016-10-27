@@ -811,3 +811,24 @@ input[type=checkbox]:checked ~ #contact {
 		font-size: 1.6vmax;
 	}
 }
+
+@media (orientation:portrait) and (height: 736px) and (width: 414px) {
+	/* iPhone 6 Plus */
+	.tweet-body {
+		font-size: 12px;
+	}
+
+	.tweet-info {
+		font-size: 10px;
+	}
+
+	.checkin-name {
+		font-size: 18px;
+		font-size: 2.4vmax;
+	}
+
+	.checkin-location {
+		font-size: 12px;
+		font-size: 1.8vmax;
+	}
+}
