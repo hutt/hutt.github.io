@@ -238,7 +238,7 @@
       var n = 0;
       if (dataOnly) {
         while (n < x) {
-          if(tweets[n].innerHTML.match(/\<a\shref\=\".*\"\>(http|https|ftp)\:\/\/.*\<\/a\>/)){
+          if(tweets[n].innerHTML.match(/\<a\shref\=\".*\"\>(http|https|ftp)\:\/\/.*\<\/a\>/) && !(tweets[n].innerHTML.match(/\<a\shref\=\".*\"\>(http|https)\:\/\/pic.twitter.com.\/[0-9a-zA-Z]+\<\/a\>/))){
             //Contains link
             //alert("Link!");
             var t_co_link = tweets[n].getElementsByClassName('link')[0].href;
