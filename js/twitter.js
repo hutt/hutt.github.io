@@ -238,7 +238,8 @@
       var n = 0;
       if (dataOnly) {
         while (n < x) {
-          if(tweets[n].innerHTML.match(/\<a\shref\=\".*\"\>(http|https|ftp)\:\/\/.*\<\/a\>/) && !(tweets[n].innerHTML.match(/\<a\shref\=\".*\"\>(http|https)\:\/\/pic.twitter.com.\/[0-9a-zA-Z]+\<\/a\>/))){
+          console.log(tweets[n]);
+          if(tweets[n].innerHTML.match(/\<a\shref\=\".*\"\>(http|https|ftp)\:\/\/.*\<\/a\>/)){
             //Contains link
             //alert("Link!");
             var t_co_link = tweets[n].getElementsByClassName('link')[0].href;
@@ -247,6 +248,11 @@
           }else{
             var dataOnlyTweet = tweets[n].innerHTML;
           }
+
+          if(images[n]){
+            dataOnlyTweet = dataOnlyTweet + ' <a href="' + permalinksURL[n].href + '">pic.twitter.com</a>';
+          }
+
           arrayTweets.push({
             tweet: dataOnlyTweet,
             author: authors[n].innerHTML,
