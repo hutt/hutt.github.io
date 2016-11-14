@@ -16,6 +16,11 @@ html, body {
 body {
 	font-family: 'Karla', sans-serif;
 	margin: 0;
+
+    text-rendering: optimizeLegibility;
+    -moz-font-feature-settings: "liga" 1, "kern" 1;
+    font-feature-settings: "liga" 1, "kern" 1;
+    -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -228,18 +233,23 @@ img.Emoji {
 	font-size: 28px;
 }
 
-.joblist-item h2 a {
+.joblist-item h2 a:hover {
 	/*cursor: default;*/
 }
 
 .joblist-item h2 a:after {
+	/*
 	content: " \f0ac";
 	font-family: "FontAwesome";
 	font-size: 0.7em;
 	color: rgba(73, 73, 73, 0.25);
+	*/
 }
 
 .joblist-item h2 a:hover:after {
+	content: " \f0ac";
+	font-family: "FontAwesome";
+	font-size: 0.7em;
 	color: rgba(73, 73, 73, 0.50);
 }
 
@@ -248,19 +258,26 @@ img.Emoji {
 	margin-bottom: 0;
 }
 
-.joblist-item p a {
+.joblist-item p a:hover {
+	/*
 	color: #000;
+	*/
+	border-bottom: 1px solid #1b1b1b;
 }
 
 .joblist-item p a:after {
+	/*
 	content: "  \f0ac";
 	font-family: "FontAwesome";
 	font-size: 0.8em;
 	color: rgba(73, 73, 73, 0.25);
+	*/
 }
 
 .joblist-item p a:hover:after {
+	/*
 	color: rgba(73, 73, 73, 0.50);
+	*/
 }
 
 ul.joblist-skills {
@@ -289,15 +306,23 @@ ul.joblist-skills li:last-child:after {
 	color: #888;
 }
 
+.joblist-skills a:hover {
+	border-bottom: 1px solid #1b1b1b;
+}
+
 .joblist-skills a:before {
+	/*
 	content: "\f0ac  ";
 	font-family: "FontAwesome";
 	font-size: 0.8em;
 	color: rgba(73, 73, 73, 0.50);
+	*/
 }
 
 .joblist-skills a:hover:before {
+	/*
 	color: rgba(73, 73, 73, 0.75);
+	*/
 }
 
 ul.joblist-details {
@@ -329,15 +354,23 @@ ul.joblist-details li:last-child:after {
 	color: #888;
 }
 
+.joblist-details a:hover {
+	border-bottom: 1px solid #1b1b1b;
+}
+
 .joblist-details a:before {
+	/*
 	content: "\f0ac  ";
 	font-family: "FontAwesome";
 	font-size: 0.8em;
 	color: rgba(73, 73, 73, 0.50);
+	*/
 }
 
 .joblist-details a:hover:before {
+	/*
 	color: rgba(73, 73, 73, 0.75);
+	*/
 }
 
 footer {
