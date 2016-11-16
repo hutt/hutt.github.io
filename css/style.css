@@ -235,6 +235,8 @@ img.Emoji {
 
 .joblist-item h2 a:hover {
 	/*cursor: default;*/
+	vertical-align: baseline;
+	border-bottom: 1px solid #1b1b1b;
 }
 
 .joblist-item h2 a:after {
@@ -247,10 +249,12 @@ img.Emoji {
 }
 
 .joblist-item h2 a:hover:after {
+	/*
 	content: " \f0ac";
 	font-family: "FontAwesome";
 	font-size: 0.7em;
 	color: rgba(73, 73, 73, 0.50);
+	*/
 }
 
 .joblist-item p {
@@ -307,7 +311,7 @@ ul.joblist-skills li:last-child:after {
 }
 
 .joblist-skills a:hover {
-	border-bottom: 1px solid #1b1b1b;
+	border-bottom: 1px solid #888;
 }
 
 .joblist-skills a:before {
@@ -355,7 +359,7 @@ ul.joblist-details li:last-child:after {
 }
 
 .joblist-details a:hover {
-	border-bottom: 1px solid #1b1b1b;
+	border-bottom: 1px solid #888;
 }
 
 .joblist-details a:before {
