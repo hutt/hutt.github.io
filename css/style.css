@@ -1,11 +1,11 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400italic');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:300');
+
 /** Simple Social Photo Theme by Jannis Hutt
 *	Copyright (c) 2016
 *	https://github.com/hutt/hutt.github.io 
 **/
-
-@charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Karla:400,400italic');
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:300');
 
 html, body {
 	margin: 0;
@@ -484,7 +484,7 @@ ul.icons li a i:hover {
 /* Show/hide Contact Area */
 input[type=checkbox] {
 	border: 0;
-	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
 	height: 1px;
 	width: 1px;
 	margin: -1px;
@@ -691,17 +691,6 @@ input[type=checkbox]:checked ~ #contact {
 		margin-top: 15px;
 	}
 
-	@media (orientation:landscape){
-		/* phones in portrait mode */
-		ul.twitter {
-			margin-top: 2%;
-		}
-
-		ul.swarm {
-			margin-top: 2%;
-		}
-	}
-
 	.twitter li {
 		margin-left: 50px;
 		margin-right: 20px;
@@ -716,6 +705,19 @@ input[type=checkbox]:checked ~ #contact {
 		width: 80%;
 	}
 }
+
+	@media screen and (min-width: 414px) and (max-width: 767px) and (orientation:landscape) {
+		
+		/* phones in portrait mode */
+
+		ul.twitter {
+			margin-top: 2%;
+		}
+
+		ul.swarm {
+			margin-top: 2%;
+		}
+	}
 
 @media (min-width: 414px) and (max-width: 540px) {
 	/* fix bg image */
@@ -916,25 +918,63 @@ input[type=checkbox]:checked ~ #contact {
 
 }
 
-@media (orientation:portrait) and (height: 736px) and (width: 414px) {
+@media (orientation:portrait) and (min-height: 736px) and (min-width: 414px) {
 	/* iPhone 6 Plus */
+
+	h1#name {
+		font-size: 50px;
+	}
+
+	div.line {
+		width: 245px;
+	}
+
+	p.buzzwords {
+		font-size: 18px;
+	}
+
+	#lastTweet {
+		background-size: 50px;
+		text-align: left;
+	}
+
+	#lastCheckin {
+		background-size: 50px;
+		text-align: right;
+	}
+
+	ul.twitter {
+		margin-top: 5%;
+	}
+
+	.twitter li {
+		margin-left: 50px;
+		margin-right: 5px;
+	}
+
 	.tweet-body {
-		font-size: 12px;
-		font-size: 1.55vh;
+		font-size: 13px;
 	}
 
 	.tweet-info {
 		font-size: 10px;
-		font-size: 1.35vh;
+		text-align: right;
 	}
 
 	.checkin-name {
-		font-size: 18px;
-		font-size: 2.5vh;
+		font-size: 14px;
 	}
 
 	.checkin-location {
 		font-size: 12px;
-		font-size: 1.9vh;
+	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 50px;
+	}
+
+	.container {
+		width: 80%;
 	}
 }
