@@ -157,6 +157,12 @@ p.buzzwords {
 	font-size: 18px;
 	/* vw */
 	font-size: 2vmin;
+   
+   -moz-hyphens: auto;
+   -o-hyphens: auto;
+   -webkit-hyphens: auto;
+   -ms-hyphens: auto;
+   hyphens: auto; 
 }
 
 img.Emoji {
@@ -180,12 +186,24 @@ img.Emoji {
 	font-size: 1em;
 	/* vw */
 	font-size: 2vmax;
+
+   -moz-hyphens: auto;
+   -o-hyphens: auto;
+   -webkit-hyphens: auto;
+   -ms-hyphens: auto;
+   hyphens: auto; 
 }
 
 .checkin-location {
 	font-size: 12px;
 	/* vw */
 	font-size: 1.4vmax;
+
+   -moz-hyphens: auto;
+   -o-hyphens: auto;
+   -webkit-hyphens: auto;
+   -ms-hyphens: auto;
+   hyphens: auto; 
 }
 
 .left {
@@ -783,15 +801,15 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	h1#name {
-		font-size: 30px;
+		font-size: 35px;
 	}
 
 	div.line {
-		width: 160px;
+		width: 170px;
 	}
 
 	p.buzzwords {
-		font-size: 12px;
+		font-size: 13px;
 	}
 
 	#lastTweet {
@@ -809,17 +827,25 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	.twitter li {
-		margin-left: 50px;
+		margin-left: 42px;
 		margin-right: 5px;
+	}
+
+	.tweet-body {
+		font-size: 12px;
+	}
+
+	.checkin-name {
+		font-size: 14px;
+	}
+
+	.checkin-location {
+		font-size: 12px;
 	}
 
 	.swarm li {
 		margin-left: 5px;
-		margin-right: 50px;
-	}
-
-	#media {
-		height: 20vh;
+		margin-right: 42px;
 	}
 
 	.container {
@@ -830,8 +856,36 @@ input[type=checkbox]:checked ~ #contact {
 
 @media (orientation:portrait) and (height: 667px) and (width: 375px) {
 	/* iPhone 6(s) */
-	.tweet-body {
-		font-size: 11px;
+
+	h1#name {
+		font-size: 40px;
+	}
+
+	div.line {
+		width: 200px;
+	}
+
+	p.buzzwords {
+		font-size: 15px;
+	}
+
+	#lastTweet {
+		background-size: 46px;
+		text-align: left;
+	}
+
+	#lastCheckin {
+		background-size: 46px;
+		text-align: right;
+	}
+
+	ul.twitter {
+		margin-top: 5%;
+	}
+
+	.twitter li {
+		margin-left: 42px;
+		margin-right: 5px;
 	}
 
 	.tweet-info {
@@ -839,16 +893,27 @@ input[type=checkbox]:checked ~ #contact {
 		text-align: right;
 	}
 
+	.tweet-body {
+		font-size: 12px;
+	}
+
 	.checkin-name {
-		font-size: 16px;
-		font-size: 2.2vmax;
+		font-size: 14px;
 	}
 
 	.checkin-location {
-		font-size: 10px;
-		/* vw */
-		font-size: 1.6vmax;
+		font-size: 12px;
 	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 42px;
+	}
+
+	.container {
+		width: 80%;
+	}
+
 }
 
 @media (orientation:portrait) and (height: 736px) and (width: 414px) {
