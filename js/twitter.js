@@ -55,6 +55,14 @@
         '');
   }
 
+  function checkEmoji(tweet){
+    if(tweet.match(/\<img class=\"Emoji Emoji--forText\" [^>]+ alt=\"([^>]*)\"[^>]+>/)){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
   function targetLinksToNewWindow(el) {
     var links = el.getElementsByTagName('a');
     for (var i = links.length - 1; i >= 0; i--) {
