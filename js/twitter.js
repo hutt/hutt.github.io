@@ -154,7 +154,8 @@
         }
         script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = 'https://cdn.syndication.twimg.com/widgets/timelines/' +
+        script.id 	=  'rawData';
+        script.src 	= 'https://cdn.syndication.twimg.com/widgets/timelines/' +
             config.id + '?&lang=' + (config.lang || lang) +
             '&callback=twitterFetcher.callback&' +
             'suppress_response_codes=true&rnd=' + Math.random();
