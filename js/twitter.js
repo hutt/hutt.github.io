@@ -157,7 +157,7 @@
         script.id 	=  'rawData';
         script.src 	= 'https://cdn.syndication.twimg.com/widgets/timelines/' +
             config.id + '?&lang=' + (config.lang || lang) +
-            '&callback=twitterFetcher.callback&' +
+            '&callback=__twttrf.callback&' +
             'suppress_response_codes=true&rnd=' + Math.random();
         head.appendChild(script);
       }
@@ -270,7 +270,7 @@
             rt: rts[n],
             tid: tids[n],
             permalinkURL: (permalinksURL[n] === undefined) ?
-                '' : permalinksURL[n].href 
+                '' : permalinksURL[n].href
           });
           n++;
         }
@@ -375,6 +375,7 @@
   };
 
   // It must be a global variable because it will be called by JSONP.
+  window.__twttrf = twitterFetcher;
   window.twitterFetcher = twitterFetcher;
   return twitterFetcher;
 }));
