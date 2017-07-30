@@ -522,6 +522,20 @@ input[type=checkbox]:checked ~ #contact {
     visibility: visible;
 }
 
+/* Contact Page */
+.contactList h1 {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.contactList p {
+	margin-top: 0;
+}
+
+.contactList p a {
+	text-decoration: underline;
+}
+
 /* Media queries */
 
 @media (min-width: 1920px) {
