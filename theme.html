@@ -8,11 +8,41 @@
 	<link rel="stylesheet" href="css/font-awesome.css" />
 </head>
 <body>
+	<!-- i18n - lang switch buttons -->
+	<div id="langSwitch">
+		<button id="de-btn">DE</button>
+		<button id="en-btn">EN</button>
+	</div>
 	<div class="container">
 		<h1>Clean &amp; Simple Portfolio Theme</h1>
-		<p>This website's source code is <a href="https://github.com/hutt/hutt.github.io" style="text-decoration: underline;">available on GitHub</a>, released under MIT License:</p>
-		<pre>
-MIT License
+		<p data-translatable>
+			<span>Der Quellcode dieser Website ist unter der MIT-Lizenz <a href="https://github.com/hutt/hutt.github.io" style="text-decoration: underline;">auf GitHub verfügbar</a>:</span>
+			<span>This website's source code is <a href="https://github.com/hutt/hutt.github.io" style="text-decoration: underline;">available on GitHub</a>, released under MIT License:</span>
+		</p>
+		<pre data-translatable>
+<div>MIT-Lizenz
+
+Copyright (c) 2017 Jannis Hutt
+
+Hiermit wird unentgeltlich jeder Person, die eine Kopie 
+der Software und der zugehörigen Dokumentationen (die "Software") erhält, 
+die Erlaubnis erteilt, sie uneingeschränkt zu nutzen, inklusive und ohne 
+Ausnahme mit dem Recht, sie zu verwenden, zu kopieren, zu verändern, zusammenzufügen, 
+zu veröffentlichen, zu verbreiten, zu unterlizenzieren und/oder zu verkaufen, 
+und Personen, denen diese Software überlassen wird, diese Rechte zu verschaffen, 
+unter den folgenden Bedingungen:
+
+Der obige Urheberrechtsvermerk und dieser Erlaubnisvermerk sind in allen 
+Kopien oder Teilkopien der Software beizulegen.
+
+DIE SOFTWARE WIRD OHNE JEDE AUSDRÜCKLICHE ODER IMPLIZIERTE GARANTIE 
+BEREITGESTELLT, EINSCHLIEẞLICH DER GARANTIE ZUR BENUTZUNG FÜR DEN 
+VORGESEHENEN ODER EINEM BESTIMMTEN ZWECK SOWIE JEGLICHER RECHTSVERLETZUNG, 
+JEDOCH NICHT DARAUF BESCHRÄNKT. IN KEINEM FALL SIND DIE AUTOREN ODER 
+COPYRIGHTINHABER FÜR JEGLICHEN SCHADEN ODER SONSTIGE ANSPRÜCHE HAFTBAR ZU MACHEN, 
+OB INFOLGE DER ERFÜLLUNG EINES VERTRAGES, EINES DELIKTES ODER ANDERS IM 
+ZUSAMMENHANG MIT DER SOFTWARE ODER SONSTIGER VERWENDUNG DER SOFTWARE ENTSTANDEN.</div>
+<div>MIT License
 
 Copyright (c) 2017 Jannis Hutt
 
@@ -32,12 +62,65 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+SOFTWARE.</div>
 		</pre>
-		<p>I'm using an unofficial Swarm API hack in order to receive the last checkin data. It's <a href="https://github.com/hutt/php-simple-swarm-api" style="text-decoration: underline;">available on GitHub</a> as well. Have fun.</p>
+		<p data-translatable>
+			<span>Zum Anzeigen meiner Checkins habe ich einen Swarm-API-Hack geschrieben. Der ist (leider nicht gut dokumentiert) auch <a href="https://github.com/hutt/php-simple-swarm-api" style="text-decoration: underline;">auf GitHub</a> zu finden. Have fun.</span>
+			<span>I'm using an unofficial Swarm API hack in order to receive the last checkin data. It's <a href="https://github.com/hutt/php-simple-swarm-api" style="text-decoration: underline;">available on GitHub</a> as well. Have fun.</span>
+		</p>
 		<p style="font-size: 60px; text-align: center;"><a href="https://github.com/hutt/hutt.github.io" title="Theme page on GitHub." ><i class="fa fa-github"> </i></a></p>
 		<br />
 		<a href="/">&laquo; Zurück</a>
 	</div>
+	<!-- i18n -->
+	<script type="text/javascript" src="js/i18n.js"></script>
+    <script>
+		//i18n init
+		var deButton = document.getElementById('de-btn'),
+			enButton = document.getElementById('en-btn'),
+			languages = ['de', 'en'],
+			defaultLanguage = 'de',
+			currentLanguage = 'de'
+			i18n = domI18n({
+				selector: '[data-translatable]',
+				separator: ' // ',
+				languages: languages,
+				defaultLanguage: defaultLanguage,
+				currentLanguage: currentLanguage
+			});
+
+		// function to style language buttons based on currentLanguage
+		function toggleLangStyles(id) {
+			var i, e,
+				ancestor = document.getElementById('langSwitch'),
+    			descendents = ancestor.getElementsByTagName('button');
+    		for (i = 0; i < descendents.length; i++) {
+    			e = descendents[i];
+    			if(e.id != id){
+    				e.style.border = 'dotted #000 1px';
+    			}
+    		}
+			document.getElementById(id).style.border = 'solid #000 1px';
+		}
+
+		// define actions for language buttons
+		deButton.onclick = function () {
+			i18n.changeLanguage('de');
+			toggleLangStyles(deButton.id);
+		};
+
+		enButton.onclick = function () {
+			i18n.changeLanguage('en');
+			toggleLangStyles(enButton.id);
+		};
+
+		// style border of current language's button
+		toggleLangStyles(defaultLanguage + '-btn');
+    </script>
+	<!-- Piwik -->
+	<script type="text/javascript" src="js/piwik.js"></script>
+	<!-- Piwik-Fallback -->
+	<noscript><p><img src="https://piwik.jh0.eu/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+	<!-- Was ist das für 1 Life? -->
 </body>
 </html>
