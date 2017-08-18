@@ -69,8 +69,17 @@
 		var deButton = document.getElementById('de-btn'),
 			enButton = document.getElementById('en-btn'),
 			languages = ['de', 'en'],
-			defaultLanguage = 'de',
-			currentLanguage = 'de'
+			defaultLanguage = 'de'
+
+			// Check if cookie with language parameter was set
+			if (getCookie("lang") == "en"){
+				var currentLanguage = "en";
+				toggleLangStyles(enButton.id);
+			} else {
+				var currentLanguage = "de";
+				toggleLangStyles(deButton.id);
+			}
+
 			i18n = domI18n({
 				selector: '[data-translatable]',
 				separator: ' // ',
@@ -97,15 +106,17 @@
 		deButton.onclick = function () {
 			i18n.changeLanguage('de');
 			toggleLangStyles(deButton.id);
+			setCookie("lang", "de", 30);
 		};
 
 		enButton.onclick = function () {
 			i18n.changeLanguage('en');
 			toggleLangStyles(enButton.id);
+			setCookie("lang", "en", 30);
 		};
 
 		// style border of current language's button
-		toggleLangStyles(defaultLanguage + '-btn');
+		toggleLangStyles(currentLanguage + '-btn');
     </script>
 	<!-- Piwik -->
 	<script type="text/javascript" src="js/piwik.js"></script>
