@@ -247,6 +247,7 @@
       if (dataOnly) {
         while (n < tweets.length) {
           var dataOnlyTweet;
+        /*  
           if(tweets[n].innerHTML.match(/\<a\shref\=\".*\"\>(http|https|ftp)\:\/\/.*\<\/a\>/)){
             //Contains link
             //alert("Link!");
@@ -257,13 +258,16 @@
               dataOnlyTweet += tweets[n].innerHTML.replace(/(?:\<a\shref\=\".*\>)(.+)?(?=\<\/a\>)/g, t_co_link);
             }
           }else{
+        */
             dataOnlyTweet = tweets[n].innerHTML;
+        /*
           }
-
+        */
+        /*
           if(images[n]){
             dataOnlyTweet = dataOnlyTweet + ' <a href="' + permalinksURL[n].href + '">pic.twitter.com</a>';
           }
-
+        */
           arrayTweets.push({
             // tweet: dataOnlyTweet,
             tweet: tweets[n].innerHTML,
