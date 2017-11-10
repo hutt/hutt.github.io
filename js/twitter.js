@@ -243,19 +243,21 @@
       }
 
       var arrayTweets = [];
-      var x = tweets.length;
       var n = 0;
       if (dataOnly) {
-        while (n < x) {
-          console.log(tweets[n]);
+        while (n < tweets.length) {
+          var dataOnlyTweet;
           if(tweets[n].innerHTML.match(/\<a\shref\=\".*\"\>(http|https|ftp)\:\/\/.*\<\/a\>/)){
             //Contains link
             //alert("Link!");
-            var t_co_link = tweets[n].getElementsByClassName('link')[0].href;
-            t_co_link = '<a href="' + t_co_link + '">' + t_co_link + '</a>';
-            var dataOnlyTweet = tweets[n].innerHTML.replace(/(?:\<a\shref\=\".*\>)(.*)(?:\<\/a\>)/g, t_co_link);
+            console.log(tweets[n].getElementsByClassName('link'))
+            for (var i = tweets[n].getElementsByClassName('link').length - 1; i >= 0; i--) {
+              var t_co_link = tweets[n].getElementsByClassName('link')[i].href;
+              t_co_link = '<a href="' + t_co_link + '">' + t_co_link + '</a>';
+              dataOnlyTweet += tweets[n].innerHTML.replace(/(?:\<a\shref\=\".*\>)(.+)?(?=\<\/a\>)/g, t_co_link);
+            }
           }else{
-            var dataOnlyTweet = tweets[n].innerHTML;
+            dataOnlyTweet = tweets[n].innerHTML;
           }
 
           if(images[n]){
@@ -263,7 +265,8 @@
           }
 
           arrayTweets.push({
-            tweet: dataOnlyTweet,
+            // tweet: dataOnlyTweet,
+            tweet: tweets[n].innerHTML,
             author: authors[n].innerHTML,
             time: times[n].textContent,
             image: extractImageUrl(images[n]),
