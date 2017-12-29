@@ -177,6 +177,8 @@
 
       var tweets = [];
       var authors = [];
+      var replyToUser = [];
+      var replyToURL = [];
       var times = [];
       var images = [];
       var rts = [];
@@ -194,6 +196,14 @@
           }
           if (!rts[x] || rts[x] && showRts) {
             tweets.push(tmp[x].getElementsByClassName('timeline-Tweet-text')[0]);
+            replyToUser.push(tmp[x].getElementsByClassName('TweetAuthor-screenName Identity-screenName')[0].innerHTML);
+            replyToURL.push(tmp[x].getElementsByClassName('u-linkBlend')[0].href);
+
+/* Coming soon. Or not too soon, idk.
+            console.log(tmp[x].getElementsByClassName('TweetAuthor-screenName Identity-screenName')[0].innerHTML);
+            console.log(tmp[x].getElementsByClassName('u-linkBlend')[0].href);
+            console.log(tmp[x].getElementsByClassName('timeline-Tweet-text')[0]);
+*/            
             tids.push(tmp[x].getAttribute('data-tweet-id'));
             authors.push(swapDataSrc(tmp[x]
                 .getElementsByClassName('timeline-Tweet-author')[0]));
