@@ -25,6 +25,7 @@
   var customCallbackFunction = null;
   var showInteractionLinks = true;
   var showImages = false;
+  var useEmoji = false;
   var targetBlank = true;
   var lang = 'en';
   var permalinks = true;
@@ -55,18 +56,11 @@
         '');
   }
 
-  function checkEmoji(tweet){
-    if(tweet.match(/\<img class=\"Emoji Emoji--forText\" [^>]+ alt=\"([^>]*)\"[^>]+>/)){
-      return true;
-    }else{
-      return false;
-    }
-  }
-
   function targetLinksToNewWindow(el) {
     var links = el.getElementsByTagName('a');
     for (var i = links.length - 1; i >= 0; i--) {
       links[i].setAttribute('target', '_blank');
+      links[i].setAttribute('rel', 'noopener');
     }
   }
 
@@ -83,12 +77,12 @@
   }
 
   function extractImageUrl(image_data) {
-    if (image_data !== undefined && image_data.innerHTML.indexOf('data-srcset') >= 0) {
-      var data_src = image_data.innerHTML
-          .match(/data-srcset="([A-z0-9%_\.-]+)/i)[0];
-      return decodeURIComponent(data_src).split('"')[1];
+    if (image_data !== undefined && image_data.innerHTML.indexOf('data-image') >= 0) {
+      var data_src = image_data.innerHTML.match(/data-image=\"([A-z0-9]+:\/\/[A-z0-9]+\.[A-z0-9]+\.[A-z0-9]+\/[A-z0-9]+\/[A-z0-9\-]+)/i)[1];
+      return decodeURIComponent(data_src) + '.jpg';
     }
   }
+ 
 
   var twitterFetcher = {
     fetch: function(config) {
@@ -119,6 +113,9 @@
       if (config.showImages === undefined) {
         config.showImages = false;
       }
+      if (config.useEmoji === undefined) {
+        config.useEmoji = false;
+      }
       if (config.linksInNewWindow === undefined) {
         config.linksInNewWindow = true;
       }
@@ -144,6 +141,7 @@
         customCallbackFunction = config.customCallback;
         showInteractionLinks = config.showInteraction;
         showImages = config.showImages;
+  useEmoji = config.useEmoji;
         targetBlank = config.linksInNewWindow;
         permalinks = config.showPermalinks;
         dataOnly = config.dataOnly;
@@ -154,15 +152,58 @@
         }
         script = document.createElement('script');
         script.type = 'text/javascript';
-        script.id 	=  'rawData';
-        script.src 	= 'https://cdn.syndication.twimg.com/widgets/timelines/' +
-            config.id + '?&lang=' + (config.lang || lang) +
-            '&callback=__twttrf.callback&' +
-            'suppress_response_codes=true&rnd=' + Math.random();
+        if (config.list !== undefined) {
+          script.src = 'https://syndication.twitter.com/timeline/list?' +
+              'callback=__twttrf.callback&dnt=false&list_slug=' +
+              config.list.listSlug + '&screen_name=' + config.list.screenName +
+              '&suppress_response_codes=true&lang=' + (config.lang || lang) +
+              '&rnd=' + Math.random();
+        } else if (config.profile !== undefined) {
+          script.src = 'https://syndication.twitter.com/timeline/profile?' +
+              'callback=__twttrf.callback&dnt=false' +
+              '&screen_name=' + config.profile.screenName +
+              '&suppress_response_codes=true&lang=' + (config.lang || lang) +
+              '&rnd=' + Math.random();
+        } else if (config.likes !== undefined) {
+          script.src = 'https://syndication.twitter.com/timeline/likes?' +
+              'callback=__twttrf.callback&dnt=false' +
+              '&screen_name=' + config.likes.screenName +
+              '&suppress_response_codes=true&lang=' + (config.lang || lang) +
+              '&rnd=' + Math.random();
+        } else {
+          script.src = 'https://cdn.syndication.twimg.com/widgets/timelines/' +
+              config.id + '?&lang=' + (config.lang || lang) +
+              '&callback=__twttrf.callback&' +
+              'suppress_response_codes=true&rnd=' + Math.random();
+        }
         head.appendChild(script);
       }
     },
     callback: function(data) {
+      if (data === undefined || data.body === undefined) {
+        inProgress = false;
+
+        if (queue.length > 0) {
+          twitterFetcher.fetch(queue[0]);
+          queue.splice(0,1);
+        }
+        return;
+      }
+
+      // Remove emoji and summary card images.
+      if(!useEmoji){
+        data.body = data.body.replace(/(<img[^c]*class="Emoji[^>]*>)|(<img[^c]*class="u-block[^>]*>)/g, '');
+      }
+
+      // Remove display images.
+      if (!showImages) {
+        data.body = data.body.replace(/(<img[^c]*class="NaturalImage-image[^>]*>|(<img[^c]*class="CroppedImage-image[^>]*>))/g, '');
+      }
+      // Remove avatar images.
+      if (!printUser) {
+        data.body = data.body.replace(/(<img[^c]*class="Avatar"[^>]*>)/g, '');
+      }
+
       var div = document.createElement('div');
       div.innerHTML = data.body;
       if (typeof(div.getElementsByClassName) === 'undefined') {
@@ -171,14 +212,21 @@
 
       function swapDataSrc(element) {
         var avatarImg = element.getElementsByTagName('img')[0];
-        avatarImg.src = avatarImg.getAttribute('data-src-2x');
+        if (avatarImg) {
+          avatarImg.src = avatarImg.getAttribute('data-src-2x');
+        } else {
+          var screenName = element.getElementsByTagName('a')[0]
+              .getAttribute('href').split('twitter.com/')[1];
+          var img = document.createElement('img');
+          img.setAttribute('src', 'https://twitter.com/' + screenName + 
+              '/profile_image?size=bigger');
+          element.prepend(img);
+        }
         return element;
-      };
+      }
 
       var tweets = [];
       var authors = [];
-      var replyToUser = [];
-      var replyToURL = [];
       var times = [];
       var images = [];
       var rts = [];
@@ -196,17 +244,10 @@
           }
           if (!rts[x] || rts[x] && showRts) {
             tweets.push(tmp[x].getElementsByClassName('timeline-Tweet-text')[0]);
-            replyToUser.push(tmp[x].getElementsByClassName('TweetAuthor-screenName Identity-screenName')[0].innerHTML);
-            replyToURL.push(tmp[x].getElementsByClassName('u-linkBlend')[0].href);
-
-/* Coming soon. Or not too soon, idk.
-            console.log(tmp[x].getElementsByClassName('TweetAuthor-screenName Identity-screenName')[0].innerHTML);
-            console.log(tmp[x].getElementsByClassName('u-linkBlend')[0].href);
-            console.log(tmp[x].getElementsByClassName('timeline-Tweet-text')[0]);
-*/            
             tids.push(tmp[x].getAttribute('data-tweet-id'));
-            authors.push(swapDataSrc(tmp[x]
-                .getElementsByClassName('timeline-Tweet-author')[0]));
+            if (printUser) {
+              authors.push(swapDataSrc(tmp[x].getElementsByClassName('timeline-Tweet-author')[0]));
+            }
             times.push(tmp[x].getElementsByClassName('dt-updated')[0]);
             permalinksURL.push(tmp[x].getElementsByClassName('timeline-Tweet-timestamp')[0]);
             if (tmp[x].getElementsByClassName('timeline-Tweet-media')[0] !==
@@ -229,8 +270,9 @@
           if (!rts[x] || rts[x] && showRts) {
             tweets.push(getElementsByClassName(tmp[x], 'timeline-Tweet-text')[0]);
             tids.push(tmp[x].getAttribute('data-tweet-id'));
-            authors.push(swapDataSrc(getElementsByClassName(tmp[x],
-                'timeline-Tweet-author')[0]));
+            if (printUser) {
+              authors.push(swapDataSrc(getElementsByClassName(tmp[x],'timeline-Tweet-author')[0]));
+            }
             times.push(getElementsByClassName(tmp[x], 'dt-updated')[0]);
             permalinksURL.push(getElementsByClassName(tmp[x], 'timeline-Tweet-timestamp')[0]);
             if (getElementsByClassName(tmp[x], 'timeline-Tweet-media')[0] !== undefined) {
@@ -253,36 +295,23 @@
       }
 
       var arrayTweets = [];
+      var x = tweets.length;
       var n = 0;
       if (dataOnly) {
-        while (n < tweets.length) {
-          var dataOnlyTweet;
-        /*  
-          if(tweets[n].innerHTML.match(/\<a\shref\=\".*\"\>(http|https|ftp)\:\/\/.*\<\/a\>/)){
-            //Contains link
-            //alert("Link!");
-            console.log(tweets[n].getElementsByClassName('link'))
-            for (var i = tweets[n].getElementsByClassName('link').length - 1; i >= 0; i--) {
-              var t_co_link = tweets[n].getElementsByClassName('link')[i].href;
-              t_co_link = '<a href="' + t_co_link + '">' + t_co_link + '</a>';
-              dataOnlyTweet += tweets[n].innerHTML.replace(/(?:\<a\shref\=\".*\>)(.+)?(?=\<\/a\>)/g, t_co_link);
-            }
-          }else{
-        */
-            dataOnlyTweet = tweets[n].innerHTML;
-        /*
-          }
-        */
-        /*
-          if(images[n]){
-            dataOnlyTweet = dataOnlyTweet + ' <a href="' + permalinksURL[n].href + '">pic.twitter.com</a>';
-          }
-        */
+        while (n < x) {
           arrayTweets.push({
-            // tweet: dataOnlyTweet,
             tweet: tweets[n].innerHTML,
-            author: authors[n].innerHTML,
+            author: authors[n] ? authors[n].innerHTML : 'Unknown Author',
+            author_data: {
+              profile_url: authors[n] ? authors[n].querySelector('[data-scribe="element:user_link"]').href : null,
+              profile_image: authors[n] ? 
+              'https://twitter.com/' + authors[n].querySelector('[data-scribe="element:screen_name"]').title.split('@')[1] + '/profile_image?size=bigger' : null,
+              profile_image_2x: authors[n] ? 'https://twitter.com/' + authors[n].querySelector('[data-scribe="element:screen_name"]').title.split('@')[1] + '/profile_image?size=original' : null,
+              screen_name: authors[n] ? authors[n].querySelector('[data-scribe="element:screen_name"]').title : null,
+              name: authors[n] ? authors[n].querySelector('[data-scribe="element:name"]').title : null
+            },
             time: times[n].textContent,
+            timestamp: times[n].getAttribute('datetime').replace('+0000', 'Z').replace(/([\+\-])(\d\d)(\d\d)/, '$1$2:$3'),
             image: extractImageUrl(images[n]),
             rt: rts[n],
             tid: tids[n],
@@ -361,22 +390,25 @@
             op += '<p class="interact"><a href="https://twitter.com/intent/' +
                 'tweet?in_reply_to=' + tids[n] +
                 '" class="twitter_reply_icon"' +
-                (targetBlank ? ' target="_blank">' : '>') +
+                (targetBlank ? ' target="_blank" rel="noopener">' : '>') +
                 'Reply</a><a href="https://twitter.com/intent/retweet?' +
                 'tweet_id=' + tids[n] + '" class="twitter_retweet_icon"' +
-                (targetBlank ? ' target="_blank">' : '>') + 'Retweet</a>' +
+                (targetBlank ? ' target="_blank" rel="noopener">' : '>') + 'Retweet</a>' +
                 '<a href="https://twitter.com/intent/favorite?tweet_id=' +
                 tids[n] + '" class="twitter_fav_icon"' +
-                (targetBlank ? ' target="_blank">' : '>') + 'Favorite</a></p>';
+                (targetBlank ? ' target="_blank" rel="noopener">' : '>') + 'Favorite</a></p>';
           }
-
-          if (showImages && images[n] !== undefined) {
+          if (showImages && images[n] !== undefined && extractImageUrl(images[n]) !== undefined) {
             op += '<div class="media">' +
                 '<img src="' + extractImageUrl(images[n]) +
                 '" alt="Image from tweet" />' + '</div>';
           }
+          if (showImages) {
+            arrayTweets.push(op);
+          } else if (!showImages && tweets[n].textContent.length) {
+            arrayTweets.push(op);
+          }
 
-          arrayTweets.push(op);
           n++;
         }
       }
@@ -396,3 +428,29 @@
   window.twitterFetcher = twitterFetcher;
   return twitterFetcher;
 }));
+
+
+// Prepend polyfill for IE/Edge.
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('prepend')) {
+      return;
+    }
+    Object.defineProperty(item, 'prepend', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function prepend() {
+        var argArr = Array.prototype.slice.call(arguments),
+          docFrag = document.createDocumentFragment();
+        
+        argArr.forEach(function (argItem) {
+          var isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+        
+        this.insertBefore(docFrag, this.firstChild);
+      }
+    });
+  });
+})([Element.prototype, Document.prototype, DocumentFragment.prototype]);

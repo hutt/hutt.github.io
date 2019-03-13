@@ -1,5 +1,5 @@
 twitterFetcher.fetch({
-  "id": '737667496900169732',
+  "profile": {"screenName": 'aluhutt'},
   "domId": '',
   "maxTweets": 1,
   "enableLinks": false,
