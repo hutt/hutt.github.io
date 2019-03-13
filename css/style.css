@@ -997,6 +997,7 @@ input[type=checkbox]:checked ~ #contact {
 	/* iPhone X(S|R) */
 
 	#top {
+		height: 120vh;
 		background-size: 280% auto;
 		background-position: left 0 top 0;
 	}
