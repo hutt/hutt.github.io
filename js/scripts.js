@@ -57,8 +57,10 @@ function scaleText(id){
     newSize = 12;
   }else if(length >= 80 && length < 100){
     newSize = 11;
-  }else if(length >= 100){
+  }else if(length >= 100 && length < 200){
     newSize = 10;
+  }else if(length >= 100){
+    newSize = 8;
   }
 
   document.getElementById(id).style.fontSize = newSize;
