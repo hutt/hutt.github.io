@@ -992,3 +992,69 @@ input[type=checkbox]:checked ~ #contact {
 		width: 80%;
 	}
 }
+
+@media (orientation:portrait) and (min-height: 812px) and (min-width: 375px) {
+	/* iPhone X(S|R) */
+
+	#top {
+		background-size: 280% auto;
+		background-position: left 0 top 0;
+	}
+
+	h1#name {
+		font-size: 50px;
+	}
+
+	div.line {
+		width: 245px;
+	}
+
+	p.buzzwords {
+		font-size: 18px;
+	}
+
+	#lastTweet {
+		background-size: 50px;
+		text-align: left;
+	}
+
+	#lastCheckin {
+		background-size: 50px;
+		text-align: right;
+	}
+
+	ul.twitter {
+		margin-top: 5%;
+	}
+
+	.twitter li {
+		margin-left: 50px;
+		margin-right: 5px;
+	}
+
+	.tweet-body {
+		font-size: 14px;
+	}
+
+	.tweet-info {
+		font-size: 10px;
+		text-align: right;
+	}
+
+	.checkin-name {
+		font-size: 14px;
+	}
+
+	.checkin-location {
+		font-size: 12px;
+	}
+
+	.swarm li {
+		margin-left: 5px;
+		margin-right: 50px;
+	}
+
+	.container {
+		width: 80%;
+	}
+}
