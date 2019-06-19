@@ -32,7 +32,7 @@ a, a:hover, a:visited, a:active {
 }
 
 #top {
-	height: 100vh;
+	height: 100%;
 	background-image: url('background.jpg');
 	background-size: cover;
 	/*background-position: right top;*/
@@ -174,7 +174,7 @@ img.Emoji {
 	font-size: 12px;
 	text-align: right;
 	/* vw */
-	font-size: 1.5vh;
+	font-size: 1.5%;
 }
 
 .swarm li {
@@ -249,6 +249,9 @@ img.Emoji {
 	font-family: 'Catamaran', sans-serif;
 	font-weight: 300;
 	font-size: 30px;
+
+	display: inline-block;
+	line-height: 32px;
 }
 
 .joblist-item h2 a:hover {
@@ -545,7 +548,7 @@ input[type=checkbox]:checked ~ #contact {
 @media (min-width: 1920px) {
 	/* Monstrous Monitors */
 	#top {
-		height: 90vh;
+		height: 90%;
 	}
 
 	h1#name {
@@ -557,17 +560,17 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	#media {
-		height: 10vh;
+		height: 10%;
 	}
 
 	.checkin-name {
 		font-size: 28px;
-		font-size: 2.4vh;
+		font-size: 2.4%;
 	}
 
 	.checkin-location {
 		font-size: 22px;
-		font-size: 1.2vh;
+		font-size: 1.2%;
 	}
 
 	.twitter li {
@@ -585,7 +588,7 @@ input[type=checkbox]:checked ~ #contact {
 
 @media (min-width: 1024px) and (max-width: 1919px) {
 	#top {
-		height: 100vh;
+		height: 100%;
 	}
 
 	h1#name {
@@ -597,7 +600,7 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	#media {
-		min-height: 10vh;
+		min-height: 10%;
 		max-height: 125px;
 	}
 
@@ -625,7 +628,7 @@ input[type=checkbox]:checked ~ #contact {
 @media (min-width: 768px) and (max-width: 1023px) {
 	
 	#top {
-		height: 100vh;
+		height: 100%;
 	}
 
 	h1#name {
@@ -641,7 +644,7 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	#media {
-		max-height: 15vh;
+		max-height: 15%;
 	}
 
 	#lastTweet {
@@ -675,7 +678,7 @@ input[type=checkbox]:checked ~ #contact {
 @media (min-width: 414px) and (max-width: 767px) {
 
 	#top {
-		height: 100vh;
+		height: 100%;
 		background-image: url('background.jpg');
 		background-size: cover;
 		/* background-position: left 80% top 0; */
@@ -694,7 +697,7 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	#media {
-		max-height: 0vh;
+		max-height: 0%;
 	}
 
 	#lastTweet {
@@ -745,7 +748,7 @@ input[type=checkbox]:checked ~ #contact {
 
 	/* hide Swarm & Twitter */
 	#media {
-		max-height: 0vh;
+		max-height: 0%;
 	}
 }
 
@@ -766,7 +769,7 @@ input[type=checkbox]:checked ~ #contact {
 	
 	/* hide Swarm & Twitter */
 	#media {
-		max-height: 0vh;
+		max-height: 0%;
 	}
 }
 
@@ -779,7 +782,7 @@ input[type=checkbox]:checked ~ #contact {
 
 	/* hide Swarm & Twitter */
 	#media {
-		max-height: 0vh;
+		max-height: 0%;
 	}
 }
 
@@ -820,7 +823,7 @@ input[type=checkbox]:checked ~ #contact {
 
 	/* hide twitter & swarm */
 	#media {
-		height: 0vh;
+		height: 0%;
 	}
 
 	.container {
@@ -886,7 +889,7 @@ input[type=checkbox]:checked ~ #contact {
 
 	/* hide twitter & swarm */
 	#media {
-		height: 0vh;
+		height: 0%;
 	}
 
 	.container {
@@ -953,7 +956,7 @@ input[type=checkbox]:checked ~ #contact {
 
 	/* hide twitter & swarm */
 	#media {
-		height: 0vh;
+		height: 0%;
 	}
 
 	.container {
@@ -1020,7 +1023,7 @@ input[type=checkbox]:checked ~ #contact {
 
 	/* hide twitter & swarm */
 	#media {
-		height: 0vh;
+		height: 0%;
 	}
 
 	.container {
@@ -1032,7 +1035,7 @@ input[type=checkbox]:checked ~ #contact {
 	/* iPhone X(S|R) */
 
 	#top {
-		height: 120vh;
+		height: 120%;
 		background-size: 280% auto;
 		background-position: left 0 top 0;
 	}
@@ -1092,7 +1095,7 @@ input[type=checkbox]:checked ~ #contact {
 
 	/* hide twitter & swarm */
 	#media {
-		height: 0vh;
+		height: 0%;
 	}
 
 	.container {
