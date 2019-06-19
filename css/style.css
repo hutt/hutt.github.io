@@ -690,7 +690,7 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	#media {
-		max-height: 15vh;
+		max-height: 0vh;
 	}
 
 	#lastTweet {
@@ -738,6 +738,11 @@ input[type=checkbox]:checked ~ #contact {
 	#top {
 		background-position: right 35% top 0;
 	}
+
+	/* hide Swarm & Twitter */
+	#media {
+		max-height: 0vh;
+	}
 }
 
 /*
@@ -754,6 +759,11 @@ input[type=checkbox]:checked ~ #contact {
 		background-size: cover;
 		background-position: left 50% top 0;
 	}
+	
+	/* hide Swarm & Twitter */
+	#media {
+		max-height: 0vh;
+	}
 }
 
 @media screen and (max-width: 736px) and (orientation:portrait) {
@@ -761,6 +771,11 @@ input[type=checkbox]:checked ~ #contact {
 	#top {
 		background-size: 250% auto;
 		background-position: left 0 top 0;
+	}
+
+	/* hide Swarm & Twitter */
+	#media {
+		max-height: 0vh;
 	}
 }
 
@@ -799,8 +814,9 @@ input[type=checkbox]:checked ~ #contact {
 		margin-right: 50px;
 	}
 
+	/* hide twitter & swarm */
 	#media {
-		height: 15vh;
+		height: 0vh;
 	}
 
 	.container {
@@ -862,6 +878,11 @@ input[type=checkbox]:checked ~ #contact {
 	.swarm li {
 		margin-left: 5px;
 		margin-right: 42px;
+	}
+
+	/* hide twitter & swarm */
+	#media {
+		height: 0vh;
 	}
 
 	.container {
@@ -926,6 +947,11 @@ input[type=checkbox]:checked ~ #contact {
 		margin-right: 42px;
 	}
 
+	/* hide twitter & swarm */
+	#media {
+		height: 0vh;
+	}
+
 	.container {
 		width: 80%;
 	}
@@ -986,6 +1012,11 @@ input[type=checkbox]:checked ~ #contact {
 	.swarm li {
 		margin-left: 5px;
 		margin-right: 50px;
+	}
+
+	/* hide twitter & swarm */
+	#media {
+		height: 0vh;
 	}
 
 	.container {
@@ -1053,6 +1084,11 @@ input[type=checkbox]:checked ~ #contact {
 	.swarm li {
 		margin-left: 5px;
 		margin-right: 50px;
+	}
+
+	/* hide twitter & swarm */
+	#media {
+		height: 0vh;
 	}
 
 	.container {
