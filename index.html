@@ -80,27 +80,12 @@
 				</header>
 			</div>
 
-			<!-- social media integration -->
-			<div id="media">
-				<div class="left" id="lastTweet" title="Letzter Tweet">
-				    <ul class="twitter">
-				       <li class="tweet-body">
-				       		<span>Letzten Tweet laden...</span>
-				       <li class="tweet-info"></li>
-				    </ul>
-				</div>
-				<div class="right" id="lastCheckin" title="Letzter Swarm-Checkin">
-				    <ul class="swarm">
-				       <li class="checkin-name">
-				       		<span>Letzten Swarm-Checkin laden...</span>
-				       	</li>
-				       <li class="checkin-location"></li>
-				    </ul>
-				</div>
-			</div>
-
 			<!-- detail view -->
 			<div id="details" class="container">
+
+				<section class="intro">
+					<p id="intro-text">Hi, mein Name ist Jannis Hutt und wenn du JavaScript einschaltest, steht hier etwas mehr über mich.</p>
+				</section>
 
 				<h1 class="joblist-heading" data-translatable>
 					<span>Erfahrung</span>
@@ -636,20 +621,20 @@
 			i18n.changeLanguage('de');
 			toggleLangStyles(deButton.id);
 			setCookie("lang", "de", 30);
+			refreshIntro();
 		};
 
 		enButton.onclick = function () {
 			i18n.changeLanguage('en');
 			toggleLangStyles(enButton.id);
 			setCookie("lang", "en", 30);
+			refreshIntro();
 		};
 
 		// style border of current language's button
 		toggleLangStyles(currentLanguage + '-btn');
     </script>
 
-	<!-- Twitter -->
-	<script type="text/javascript" src="js/twitter.js"></script>
 	<!-- Foursquare -->
 	<script type="text/javascript" src="js/foursquare.js"></script>
 	<!-- Custom -->

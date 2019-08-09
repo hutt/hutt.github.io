@@ -20,6 +20,7 @@ function loadUserData(config){
 
 function loadCheckins(config){
 	var data, url, xmlHttp;
+	var checkinText = [2];
 
 	//VARS from config
 	var count = config.count;
@@ -48,37 +49,63 @@ function loadCheckins(config){
 					}
 				}
 
-    			if(vague){
-					var checkin = {
-						"venue": {
-							"name": (niceAnswer.venue.location.neighborhood ? niceAnswer.venue.location.neighborhood : niceAnswer.venue.location.city),
-							"location": {
-								"neighborhood": '',
-								"city": (niceAnswer.venue.location.neighborhood ? niceAnswer.venue.location.city : niceAnswer.venue.location.city),
-								"cc": niceAnswer.venue.location.cc,
-								"country": niceAnswer.venue.location.country,
-								"state": niceAnswer.venue.location.state,
-							},
-							"categories": niceAnswer.venue.categories
-						}
-					}
-				}else{
-					var checkin = {
-						"venue": {
-							"name": niceAnswer.venue.name,
-							"location": {
-								"neighborhood": niceAnswer.venue.location.neighborhood,
-								"city": niceAnswer.venue.location.city,
-								"cc": niceAnswer.venue.location.cc,
-								"country": niceAnswer.venue.location.country,
-								"state": niceAnswer.venue.location.state,
-							},
-							"categories": niceAnswer.venue.categories
-						}
+				var checkin = {
+					"venue": {
+						"name": niceAnswer.venue.name,
+						"location": {
+							"neighborhood": niceAnswer.venue.location.neighborhood,
+							"city": niceAnswer.venue.location.city,
+							"cc": niceAnswer.venue.location.cc,
+							"country": niceAnswer.venue.location.country,
+							"state": niceAnswer.venue.location.state,
+						},
+						"categories": niceAnswer.venue.categories
 					}
 				}
 
-	    		callback(checkin);
+				//de
+				if(vague){
+					checkinText.de = 'in ' + (niceAnswer.venue.location.neighborhood ? niceAnswer.venue.location.neighborhood + ', ' + niceAnswer.venue.location.city : niceAnswer.venue.location.city) + (niceAnswer.venue.location.cc == "DE" ? "" : niceAnswer.venue.location.cc);
+				}else{
+					if(niceAnswer.venue.categories[0].name == "Neighborhood" || niceAnswer.venue.categories[0].name == "City" || niceAnswer.venue.categories[0].name == "County" || niceAnswer.venue.categories[0].name == "Town" || niceAnswer.venue.categories[0].name == "Village" || niceAnswer.venue.categories[0].name == "State"){
+						// "in"
+						checkinText.de = 'in ';
+						if(niceAnswer.venue.categories[0].name == "Neighborhood"){
+							checkinText.de += niceAnswer.venue.name + ', ' + niceAnswer.venue.location.city;
+						}else if(niceAnswer.venue.categories[0].name == "City" || niceAnswer.venue.categories[0].name == "County" || niceAnswer.venue.categories[0].name == "Village"){
+							checkinText.de += niceAnswer.venue.name + ', ' + niceAnswer.venue.location.state;
+						}else if(niceAnswer.venue.categories[0].name == "State"){
+							checkinText.de += niceAnswer.venue.name + ', ' + niceAnswer.venue.location.cc;
+						}
+					}else{
+						//"bei"
+						checkinText.de = 'bei ' + '<em>' + niceAnswer.venue.name + '</em>';
+						checkinText.de+= ' in ' + (niceAnswer.venue.location.neighborhood ? niceAnswer.venue.location.neighborhood + ', ' + niceAnswer.venue.location.city : niceAnswer.venue.location.city);
+					}
+				}
+
+				//en
+				if(vague){
+					checkinText.en = 'in ' + (niceAnswer.venue.location.neighborhood ? niceAnswer.venue.location.neighborhood + ', ' + niceAnswer.venue.location.city : niceAnswer.venue.location.city) + (niceAnswer.venue.location.cc == "DE" ? "" : niceAnswer.venue.location.cc);
+				}else{
+					if(niceAnswer.venue.categories[0].name == "Neighborhood" || niceAnswer.venue.categories[0].name == "City" || niceAnswer.venue.categories[0].name == "County" || niceAnswer.venue.categories[0].name == "Town" || niceAnswer.venue.categories[0].name == "Village" || niceAnswer.venue.categories[0].name == "State"){
+						// "in"
+						checkinText.en = 'in ';
+						if(niceAnswer.venue.categories[0].name == "Neighborhood"){
+							checkinText.en += niceAnswer.venue.name + ', ' + niceAnswer.venue.location.city;
+						}else if(niceAnswer.venue.categories[0].name == "City" || niceAnswer.venue.categories[0].name == "County" || niceAnswer.venue.categories[0].name == "Village"){
+							checkinText.en += niceAnswer.venue.name + ', ' + niceAnswer.venue.location.state;
+						}else if(niceAnswer.venue.categories[0].name == "State"){
+							checkinText.en += niceAnswer.venue.name + ', ' + niceAnswer.venue.location.cc;
+						}
+					}else{
+						//"at"
+						checkinText.en = 'at ' + '<em>' + niceAnswer.venue.name + '</em>';
+						checkinText.en+= ' in ' + (niceAnswer.venue.location.neighborhood ? niceAnswer.venue.location.neighborhood + ', ' + niceAnswer.venue.location.city : niceAnswer.venue.location.city);
+					}
+				}
+
+	    		callback(checkinText);
 	    	}
 	  	}
 	}

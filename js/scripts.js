@@ -1,68 +1,50 @@
-twitterFetcher.fetch({
-  "profile": {"screenName": 'aluhutt'},
-  "domId": '',
-  "maxTweets": 1,
-  "enableLinks": false,
-  "showUser": false,
-  "showTime": true,
-  "dateFunction": '',
-  "showRetweet": false,
-  "dataOnly": true,
-  "showInteraction": false,
-  "showPermalinks": true,
-  "customCallback": showTweet
-});
-
 loadCheckins({
-  "count" : 1, 
-  "customCallback": showCheckin,
-  "ignore": ["Home (private)", "Food", "Residence"]
+  "count" : 1,
+  "ignore": ["Home (private)", "Food", "Residence"],
+  "customCallback": showIntroText
 });
 
-// scaleText('tweet-body');
-
-function showTweet(tweets){
-
-  var element = document.getElementById('lastTweet');
-  var tweetObject = tweets[0];
-
-  var html = 
-      '<ul class="twitter">'
-       + '<li class="tweet-body">' + tweetObject.tweet + '</li>'
-       + '<li class="tweet-info">' + '<a href="' + tweetObject.permalinkURL + '" target="_blank" rel="noopener noreferrer">' + tweetObject.time + '</a>' + '</li>'
-    + '</ul>';
-
-  element.innerHTML = html;
+function refreshIntro(){
+  loadCheckins({
+    "count" : 1,
+    "ignore": ["Home (private)", "Food", "Residence"],
+    "customCallback": showIntroText
+  });
 }
 
-function showCheckin(checkin){
+function getAge() {
+  var element = document.getElementById('age');
+  var today = new Date();
+  var birthday = new Date(1997, 2, 3);
 
-  var element = document.getElementById('lastCheckin');
+  var jahr = today.getFullYear() - birthday.getFullYear();
 
-  var html = 
-          '<ul class="swarm">'
-            + '<li class="checkin-name">' + checkin.venue.name + '</li>'
-            + '<li class="checkin-location">' + (checkin.venue.location.neighborhood ? checkin.venue.location.neighborhood + ', ' : '') + (checkin.venue.location.city ? checkin.venue.location.city + ', ' : '') + (checkin.venue.location.neighborhood ? checkin.venue.location.cc : checkin.venue.location.country) + '</li>'
-        + '</ul>';
-    element.innerHTML = html;
+  var m = today.getMonth() - birthday.getMonth();
 
-}
-
-function scaleText(id){
-
-  var length = document.getElementsByClassName(id)[0].text().length;
-  var newSize = 0;
-
-  if(length < 80){
-    newSize = 12;
-  }else if(length >= 80 && length < 100){
-    newSize = 11;
-  }else if(length >= 100 && length < 200){
-    newSize = 10;
-  }else if(length >= 100){
-    newSize = 8;
+  if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
+          jahr--;
   }
 
-  document.getElementById(id).style.fontSize = newSize;
+  var monat = ((today.getMonth() - birthday.getMonth()) / 12).toPrecision(1)*10;
 
+  return jahr + ',' + (monat);
+}
+
+function showIntroText(lastSeen) {
+  var element = document.getElementById('intro-text');
+  var text;
+
+  var de = 'Hi, mein Name ist Jannis. '
+           + 'Ich bin ' + getAge() + ' Jahre alt und wurde zuletzt ' + lastSeen.de + ' gesehen.';
+
+  var en ='Hi, I\'m Jannis. '
+           + 'I\'m ' + getAge() + ' years old and I was seen ' + lastSeen.en + ' the last time.';
+
+  if(getCookie('lang') == "en"){
+    text = en;
+  }else{
+    text = de;
+  }
+
+  element.innerHTML = text;
 }

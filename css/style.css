@@ -112,108 +112,18 @@ p.buzzwords {
 	font-size: 1em;
 }
 
-#media {
-	display: flex;
+.intro {
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
-#lastTweet {
-	background: #55acee url('twitter.png') left top no-repeat;
-	background-size: 4em;
-	text-align: left;
-}
-
-#lastCheckin {
-	background: #FF9600 url('swarm.png') right top no-repeat;
-	background-size: 4em;
-	text-align: right;
-}
-
-#media {
-	color: #FFF;
-	word-wrap: normal;
-	word-break: normal;
-}
-
-#media a {
-	text-decoration: underline;
-	color: #FFF;
-}
-
-#media ul {
-	list-style-type: none;
-	padding: 0;
+.intro p {
+	font-size: 24px;
+	font-family: 'Catamaran', sans-serif;
 }
 
 #details {
 	margin-bottom: 60px;
-}
-
-.twitter li {
-	margin-left: 80px;
-	margin-right: 20px;
-}
-
-.tweet-body {
-	font-size: 18px;
-	/* vw */
-	font-size: 2vmin;
-   
-   -moz-hyphens: auto;
-   -o-hyphens: auto;
-   -webkit-hyphens: auto;
-   -ms-hyphens: auto;
-   hyphens: auto; 
-}
-
-img.Emoji {
-	/* do not show ugly twitter emojis */
-	display: none;
-}
-
-.tweet-info {
-	font-size: 12px;
-	text-align: right;
-	/* vw */
-	font-size: 1.5%;
-}
-
-.swarm li {
-	margin-left: 20px;
-	margin-right: 80px;
-}
-
-.checkin-name {
-	font-size: 1em;
-	/* vw */
-	font-size: 2vmax;
-
-   -moz-hyphens: auto;
-   -o-hyphens: auto;
-   -webkit-hyphens: auto;
-   -ms-hyphens: auto;
-   hyphens: auto; 
-}
-
-.checkin-location {
-	font-size: 12px;
-	/* vw */
-	font-size: 1.4vmax;
-
-   -moz-hyphens: auto;
-   -o-hyphens: auto;
-   -webkit-hyphens: auto;
-   -ms-hyphens: auto;
-   hyphens: auto; 
-}
-
-.left {
-	float: left;
-	width: 50%;
-}
-
-.right {
-	float: right;
-	width: 50%;
 }
 
 .container {
@@ -547,9 +457,6 @@ input[type=checkbox]:checked ~ #contact {
 
 @media (min-width: 1920px) {
 	/* Monstrous Monitors */
-	#top {
-		height: 90%;
-	}
 
 	h1#name {
 		font-size: 55px;
@@ -557,28 +464,6 @@ input[type=checkbox]:checked ~ #contact {
 
 	p.buzzwords {
 		font-size: 18px;
-	}
-
-	#media {
-		height: 10%;
-	}
-
-	.checkin-name {
-		font-size: 28px;
-		font-size: 2.4%;
-	}
-
-	.checkin-location {
-		font-size: 22px;
-		font-size: 1.2%;
-	}
-
-	.twitter li {
-		margin-right: 30px;
-	}
-
-	.swarm li {
-		margin-left: 30px;
 	}
 
 	.container {
@@ -587,37 +472,12 @@ input[type=checkbox]:checked ~ #contact {
 }
 
 @media (min-width: 1024px) and (max-width: 1919px) {
-	#top {
-		height: 100%;
-	}
-
 	h1#name {
 		font-size: 55px;
 	}
 
 	p.buzzwords {
 		font-size: 18px;
-	}
-
-	#media {
-		min-height: 10%;
-		max-height: 125px;
-	}
-
-	.twitter li {
-		margin-right: 30px;
-	}
-
-	.swarm li {
-		margin-left: 30px;
-	}
-
-	.checkin-name {
-		font-size: 22px;
-	}
-
-	.checkin-location {
-		font-size: 16px;
 	}
 
 	.container {
@@ -627,10 +487,6 @@ input[type=checkbox]:checked ~ #contact {
 
 @media (min-width: 768px) and (max-width: 1023px) {
 	
-	#top {
-		height: 100%;
-	}
-
 	h1#name {
 		font-size: 35px;
 	}
@@ -641,32 +497,6 @@ input[type=checkbox]:checked ~ #contact {
 
 	p.buzzwords {
 		font-size: 12px;
-	}
-
-	#media {
-		max-height: 15%;
-	}
-
-	#lastTweet {
-		background-size: 3em;
-	}
-
-	#lastCheckin {
-		background-size: 3em;
-	}
-
-	ul.twitter {
-		margin-top: 12px;
-	}
-
-	.twitter li {
-		margin-left: 50px;
-		margin-right: 20px;
-	}
-
-	.swarm li {
-		margin-left: 30px;
-		margin-right: 50px;
 	}
 
 	.container {
@@ -677,13 +507,6 @@ input[type=checkbox]:checked ~ #contact {
 
 @media (min-width: 414px) and (max-width: 767px) {
 
-	#top {
-		height: 100%;
-		background-image: url('background.jpg');
-		background-size: cover;
-		/* background-position: left 80% top 0; */
-	}
-
 	h1#name {
 		font-size: 35px;
 	}
@@ -696,59 +519,15 @@ input[type=checkbox]:checked ~ #contact {
 		font-size: 12px;
 	}
 
-	#media {
-		max-height: 0%;
-	}
-
-	#lastTweet {
-		background-size: 3em;
-	}
-
-	#lastCheckin {
-		background-size: 3em;
-	}
-
-	ul.twitter {
-		margin-top: 15px;
-	}
-
-	.twitter li {
-		margin-left: 50px;
-		margin-right: 20px;
-	}
-
-	.swarm li {
-		margin-left: 30px;
-		margin-right: 50px;
-	}
-
 	.container {
 		width: 80%;
 	}
 }
 
-	@media screen and (min-width: 414px) and (max-width: 767px) and (orientation:landscape) {
-		
-		/* phones in portrait mode */
-
-		ul.twitter {
-			margin-top: 2%;
-		}
-
-		ul.swarm {
-			margin-top: 2%;
-		}
-	}
-
 @media (min-width: 414px) and (max-width: 540px) {
 	/* fix bg image */
 	#top {
 		background-position: right 35% top 0;
-	}
-
-	/* hide Swarm & Twitter */
-	#media {
-		max-height: 0%;
 	}
 }
 
@@ -766,11 +545,6 @@ input[type=checkbox]:checked ~ #contact {
 		background-size: cover;
 		background-position: left 50% top 0;
 	}
-	
-	/* hide Swarm & Twitter */
-	#media {
-		max-height: 0%;
-	}
 }
 
 @media screen and (max-width: 736px) and (orientation:portrait) {
@@ -778,11 +552,6 @@ input[type=checkbox]:checked ~ #contact {
 	#top {
 		background-size: 250% auto;
 		background-position: left 0 top 0;
-	}
-
-	/* hide Swarm & Twitter */
-	#media {
-		max-height: 0%;
 	}
 }
 
@@ -799,31 +568,6 @@ input[type=checkbox]:checked ~ #contact {
 
 	p.buzzwords {
 		font-size: 12px;
-	}
-
-	#lastTweet {
-		background-size: 45px;
-		text-align: left;
-	}
-
-	#lastCheckin {
-		background-size: 45px;
-		text-align: right;
-	}
-
-	.twitter li {
-		margin-left: 50px;
-		margin-right: 5px;
-	}
-
-	.swarm li {
-		margin-left: 5px;
-		margin-right: 50px;
-	}
-
-	/* hide twitter & swarm */
-	#media {
-		height: 0%;
 	}
 
 	.container {
@@ -851,47 +595,6 @@ input[type=checkbox]:checked ~ #contact {
 		font-size: 13px;
 	}
 
-	#lastTweet {
-		background-size: 45px;
-		text-align: left;
-	}
-
-	#lastCheckin {
-		background-size: 45px;
-		text-align: right;
-	}
-
-	ul.twitter {
-		margin-top: 5%;
-	}
-
-	.twitter li {
-		margin-left: 42px;
-		margin-right: 5px;
-	}
-
-	.tweet-body {
-		font-size: 12px;
-	}
-
-	.checkin-name {
-		font-size: 14px;
-	}
-
-	.checkin-location {
-		font-size: 12px;
-	}
-
-	.swarm li {
-		margin-left: 5px;
-		margin-right: 42px;
-	}
-
-	/* hide twitter & swarm */
-	#media {
-		height: 0%;
-	}
-
 	.container {
 		width: 80%;
 	}
@@ -913,52 +616,6 @@ input[type=checkbox]:checked ~ #contact {
 		font-size: 15px;
 	}
 
-	#lastTweet {
-		background-size: 46px;
-		text-align: left;
-	}
-
-	#lastCheckin {
-		background-size: 46px;
-		text-align: right;
-	}
-
-	ul.twitter {
-		margin-top: 5%;
-	}
-
-	.twitter li {
-		margin-left: 42px;
-		margin-right: 5px;
-	}
-
-	.tweet-info {
-		font-size: 9px;
-		text-align: right;
-	}
-
-	.tweet-body {
-		font-size: 12px;
-	}
-
-	.checkin-name {
-		font-size: 14px;
-	}
-
-	.checkin-location {
-		font-size: 12px;
-	}
-
-	.swarm li {
-		margin-left: 5px;
-		margin-right: 42px;
-	}
-
-	/* hide twitter & swarm */
-	#media {
-		height: 0%;
-	}
-
 	.container {
 		width: 80%;
 	}
@@ -966,7 +623,7 @@ input[type=checkbox]:checked ~ #contact {
 }
 
 @media (orientation:portrait) and (min-height: 736px) and (min-width: 414px) {
-	/* iPhone 6 Plus */
+	/* iPhone 6 Plus and bigger */
 
 	h1#name {
 		font-size: 50px;
@@ -978,52 +635,6 @@ input[type=checkbox]:checked ~ #contact {
 
 	p.buzzwords {
 		font-size: 18px;
-	}
-
-	#lastTweet {
-		background-size: 50px;
-		text-align: left;
-	}
-
-	#lastCheckin {
-		background-size: 50px;
-		text-align: right;
-	}
-
-	ul.twitter {
-		margin-top: 5%;
-	}
-
-	.twitter li {
-		margin-left: 50px;
-		margin-right: 5px;
-	}
-
-	.tweet-body {
-		font-size: 13px;
-	}
-
-	.tweet-info {
-		font-size: 10px;
-		text-align: right;
-	}
-
-	.checkin-name {
-		font-size: 14px;
-	}
-
-	.checkin-location {
-		font-size: 12px;
-	}
-
-	.swarm li {
-		margin-left: 5px;
-		margin-right: 50px;
-	}
-
-	/* hide twitter & swarm */
-	#media {
-		height: 0%;
 	}
 
 	.container {
@@ -1050,52 +661,6 @@ input[type=checkbox]:checked ~ #contact {
 
 	p.buzzwords {
 		font-size: 18px;
-	}
-
-	#lastTweet {
-		background-size: 50px;
-		text-align: left;
-	}
-
-	#lastCheckin {
-		background-size: 50px;
-		text-align: right;
-	}
-
-	ul.twitter {
-		margin-top: 5%;
-	}
-
-	.twitter li {
-		margin-left: 50px;
-		margin-right: 5px;
-	}
-
-	.tweet-body {
-		font-size: 14px;
-	}
-
-	.tweet-info {
-		font-size: 10px;
-		text-align: right;
-	}
-
-	.checkin-name {
-		font-size: 14px;
-	}
-
-	.checkin-location {
-		font-size: 12px;
-	}
-
-	.swarm li {
-		margin-left: 5px;
-		margin-right: 50px;
-	}
-
-	/* hide twitter & swarm */
-	#media {
-		height: 0%;
 	}
 
 	.container {
