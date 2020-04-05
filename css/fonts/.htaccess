@@ -1,4 +1,4 @@
-<filesMatch ".(eot|otf|svg|ttf|woff|woff2)$">
+<filesMatch "\.(eot|otf|svg|ttf|woff|woff2)$">
  # 7 Tage = 604800s
  Header set Cache-Control "max-age=604800, public"
 </filesMatch>

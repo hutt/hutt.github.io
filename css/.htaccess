@@ -1,4 +1,4 @@
-<filesMatch ".css$">
+<filesMatch "\.css$">
  # 1 Tag = 86400s
  Header set Cache-Control "max-age=86400, public"
 </filesMatch>

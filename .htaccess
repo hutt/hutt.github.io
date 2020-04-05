@@ -6,7 +6,13 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application
 Header set Life "1 falsches"
 Header set Access-Control-Allow-Origin "*"
 
-<filesMatch ".(ico)$">
+<filesMatch "\.ico$">
  # 7 Tage = 604800s
  Header set Cache-Control "max-age=604800, public"
 </filesMatch>
+
+<FilesMatch "\.(php|cgi|pl|htm)$">
+ExpiresDefault A0
+Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform"
+Header set Pragma "no-cache"
+</FilesMatch>
