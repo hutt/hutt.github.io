@@ -26,11 +26,10 @@ function getAge() {
   }
 
   if (today.getMonth() < birthday.getMonth()) {
-    var monat =
-      ((12 + today.getMonth() - birthday.getMonth()) / 12).toPrecision(1) * 10;
+    var monat = ((12 + today.getMonth() - birthday.getMonth()) / 12).toPrecision(1) * 10;
   } else {
-    var monat =
-      ((today.getMonth() - birthday.getMonth()) / 12).toPrecision(1) * 10;
+    var monat = ((today.getMonth() - birthday.getMonth()) / 12).toPrecision(1) * 10;
+    var monat = (monat > 1) ? (monat) : (1)
   }
 
   return jahr + "," + monat;
