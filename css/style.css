@@ -51,25 +51,41 @@ a, a:hover, a:visited, a:active {
 	display: inline;
 	margin-top: 5px; 
 	margin-right: 5px;
-
-    box-shadow: 0px 1px 128px 1px rgba(0,0,0,0.5);
 }
 
 #langSwitch button {
-	color: #FFF;
+	color: #000;
 	background-color: transparent;
 	font-size: 11px;
 	padding: 5px;
-	border: dotted #FFF 1px;
+	border: dotted #000 1px;
 	text-decoration: none;
 }
 
 #langSwitch button .current {
-	border: solid #FFF 1px !important;
+	border: solid #000 1px !important;
 }
 
 #langSwitch button:hover {
 	cursor: pointer;
+	border: solid #000 1px !important;
+}
+
+/* langSwitch auf der Startseite */
+#top #langSwitch {
+	box-shadow: 0px 1px 128px 1px rgba(0,0,0,0.5);
+}
+
+#top #langSwitch button {
+	color: #FFF;
+	border: dotted #FFF 1px;
+}
+
+#top #langSwitch button .current {
+	border: solid #FFF 1px !important;
+}
+
+#top #langSwitch button:hover {
 	border: solid #FFF 1px !important;
 }
 
@@ -443,6 +459,12 @@ input[type=checkbox]:checked ~ #contact {
 
 .contactList p a {
 	text-decoration: underline;
+}
+
+.subpageHeading {
+	margin-block-start: 0;
+	margin-top: 0;
+	padding-top: 35px;
 }
 
 /* Media queries */
