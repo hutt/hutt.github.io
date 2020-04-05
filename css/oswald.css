@@ -4,56 +4,50 @@
 * https://github.com/hutt/hutt.github.io 
 **/
 
-/* font mit variable font-weight */
 @font-face {
   font-family: "Oswald";
-  src: url("fonts/Oswald-VariableFontwght.eot"); /* IE9 Compat Modes */
-  src: url("fonts/Oswald-VariableFontwght.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("fonts/Oswald-VariableFontwght.otf") format("opentype"), /* Open Type Font */
-    url("fonts/Oswald-VariableFontwght.svg") format("svg"), /* Legacy iOS */
-    url("fonts/Oswald-VariableFontwght.ttf") format("truetype"), /* Safari, Android, iOS */
-    url("fonts/Oswald-VariableFontwght.woff") format("woff"), /* Modern Browsers */
-    url("fonts/Oswald-VariableFontwght.woff2") format("woff2"); /* Modern Browsers */
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* static fonts (fallback) */
-@font-face {
-  font-family: "Oswald";
-  src: url("fonts/static/Oswald-Regular.eot"); /* IE9 Compat Modes */
-  src: url("fonts/static/Oswald-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("fonts/static/Oswald-Regular.otf") format("opentype"), /* Open Type Font */
-    url("fonts/static/Oswald-Regular.svg") format("svg"), /* Legacy iOS */
-    url("fonts/static/Oswald-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
-    url("fonts/static/Oswald-Regular.woff") format("woff"), /* Modern Browsers */
-    url("fonts/static/Oswald-Regular.woff2") format("woff2"); /* Modern Browsers */
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Oswald";
-  src: url("fonts/static/Oswald-Medium.eot"); /* IE9 Compat Modes */
-  src: url("fonts/static/Oswald-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("fonts/static/Oswald-Medium.otf") format("opentype"), /* Open Type Font */
-    url("fonts/static/Oswald-Medium.svg") format("svg"), /* Legacy iOS */
-    url("fonts/static/Oswald-Medium.ttf") format("truetype"), /* Safari, Android, iOS */
-    url("fonts/static/Oswald-Medium.woff") format("woff"), /* Modern Browsers */
-    url("fonts/static/Oswald-Medium.woff2") format("woff2"); /* Modern Browsers */
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Oswald";
-  src: url("fonts/static/Oswald-Light.eot"); /* IE9 Compat Modes */
-  src: url("fonts/static/Oswald-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("fonts/static/Oswald-Light.otf") format("opentype"), /* Open Type Font */
-    url("fonts/static/Oswald-Light.svg") format("svg"), /* Legacy iOS */
-    url("fonts/static/Oswald-Light.ttf") format("truetype"), /* Safari, Android, iOS */
-    url("fonts/static/Oswald-Light.woff") format("woff"), /* Modern Browsers */
-    url("fonts/static/Oswald-Light.woff2") format("woff2"); /* Modern Browsers */
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
+
+  src: local("Oswald"),
+    local("Oswald-Light"),
+    url("fonts/Oswald-Light.woff") format("woff"), /* Modern Browsers */
+    url("fonts/Oswald-Light.woff2") format("woff2"), /* Modern Browsers */
+    url("fonts/Oswald-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("fonts/Oswald-Light.otf") format("opentype"), /* Open Type Font */
+    url("fonts/Oswald-Light.svg") format("svg"), /* Legacy iOS */
+    url("fonts/Oswald-Light.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+
+  src: local("Oswald"),
+    local("Oswald-Regular"),
+    url("fonts/Oswald-Regular.woff") format("woff"), /* Modern Browsers */
+    url("fonts/Oswald-Regular.woff2") format("woff2"), /* Modern Browsers */
+    url("fonts/Oswald-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("fonts/Oswald-Regular.otf") format("opentype"), /* Open Type Font */
+    url("fonts/Oswald-Regular.svg") format("svg"), /* Legacy iOS */
+    url("fonts/Oswald-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+
+  src: local("Oswald"),
+    local("Oswald-Medium"),
+    url("fonts/Oswald-Medium.woff") format("woff"), /* Modern Browsers */
+    url("fonts/Oswald-Medium.woff2") format("woff2"), /* Modern Browsers */
+    url("fonts/Oswald-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("fonts/Oswald-Medium.otf") format("opentype"), /* Open Type Font */
+    url("fonts/Oswald-Medium.svg") format("svg"), /* Legacy iOS */
+    url("fonts/Oswald-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
 }
