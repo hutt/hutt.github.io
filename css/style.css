@@ -483,6 +483,10 @@ input[type=checkbox]:checked ~ #contact {
 		margin-bottom: 23px;
 	}
 
+	ul.icons li {
+		padding: 26px !important;
+	}
+
 }
 
 /* Geräte im Portraitmodus */
