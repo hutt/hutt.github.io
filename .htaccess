@@ -6,6 +6,7 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application
 Header set Life "1 falsches"
 Header set Access-Control-Allow-Origin "*"
 
-<filesMatch ".(ico|jpg|jpeg|png|gif|js|css|eot|otf|svg|ttf|woff|woff2)$">
- Header set Cache-Control "max-age=1209600, public"
+<filesMatch ".(ico)$">
+ # 7 Tage = 604800s
+ Header set Cache-Control "max-age=604800, public"
 </filesMatch>

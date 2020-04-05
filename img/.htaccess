@@ -1,0 +1,4 @@
+<filesMatch ".(ico|jpg|jpeg|png|gif)$">
+ # 7 Tage = 604800s
+ Header set Cache-Control "max-age=604800, public"
+</filesMatch>
