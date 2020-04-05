@@ -16,25 +16,23 @@
 
 		<link rel="canonical" href="https://hutt.io" />
 
-		<!-- preload general styles -->
-		<link rel="preload" as="style" href="css/style.css" />
-
 		<!-- preload fonts -->
 		<link rel="preload" as="font" href="css/fonts/Oswald-Medium.woff2" type="font/woff2" />
 		<link rel="preload" as="font" href="css/fonts/Oswald-Regular.woff2" type="font/woff2" />
 		<link rel="preload" as="font" href="css/fonts/Oswald-Light.woff2" type="font/woff2" />
 		<link rel="preload" as="font" href="css/fonts/OpenSans-Light.woff2" type="font/woff2" />
 		<link rel="preload" as="font" href="css/fonts/OpenSans-Regular.woff2" type="font/woff2" />
-		<link rel="preload" as="font" href="css/fonts/fontawesome-webfont.woff2" type="font/woff2" />
 
-		<!-- preload font styles -->
-		<link rel="preload" as="style" href="css/font-awesome.css" />
+		<!-- preload styles -->
+		<link rel="preload" as="style" href="css/style.css" />
 		<link rel="preload" as="style" href="css/oswald.css" />
 		<link rel="preload" as="style" href="css/open-sans.css" />
 
-		<!-- prefetch cross origin ressources -->
-		<link rel="dns-prefetch" href="//api.jh0.eu/" />
-		<link rel="dns-prefetch" href="//piwik.jh0.eu/" />
+		<!-- preload cross origin ressources -->
+		<link rel="preload" as="fetch" href="https://api.jh0.eu/swarm/?fetch=checkins&count=1" crossorigin="anonymous">
+
+		<!-- preconnect to piwik server -->
+		<link rel="preconnect" href="//piwik.jh0.eu" crossorigin="anonymous" />
 
 		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 		
