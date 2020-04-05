@@ -78,7 +78,7 @@
 				</div>
 
 				<!-- fancy header thingy -->
-				<header class="center-div">
+				<header>
 					<h1 id="name">Jannis Hutt</h1>
 					<div class="line"></div>
 					<p class="buzzwords" data-translatable>
@@ -559,12 +559,10 @@
 						</div>
 						<ul class="copyright">
 							<li>Copyright &copy; 2010 - 2020 Jannis Hutt</li>
-						<!--
 							<li data-translatable>
-								<span><a href="/theme.html">Theme</a></span>
-								<span><a href="/theme.html">Theme</a></span>
+								<span>Header-Protrait von <a href="http://c3o.org">c3o</a></span>
+								<span>Portrait shot by <a href="http://c3o.org">c3o</a></span>
 							</li>
-						-->
 							<li>
 								<label for="contact_link">
 									<span data-translatable>Kontakt // Contact</span>
@@ -618,10 +616,10 @@
     		for (i = 0; i < descendents.length; i++) {
     			e = descendents[i];
     			if(e.id != id){
-    				e.style.border = 'dotted #000 1px';
+    				e.style.border = 'dotted #FFF 1px';
     			}
     		}
-			document.getElementById(id).style.border = 'solid #000 1px';
+			document.getElementById(id).style.border = 'solid #FFF 1px';
 		}
 
 		// define actions for language buttons
