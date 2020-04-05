@@ -1,10 +1,13 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i|Oswald:300,400&display=swap&subset=latin-ext');
 
 /** Simple Social Photo Theme by Jannis Hutt
 *	Copyright (c) 2016
 *	https://github.com/hutt/hutt.github.io 
 **/
+
+@import url("font-awesome.css");
+@import url("open-sans.css");
+@import url("oswald.css");
 
 html, body {
 	margin: 0;
@@ -85,7 +88,7 @@ h1#name {
 	text-align: center;
 	font-size: 6vmax;
 	font-family: 'Oswald', sans-serif;
-	font-weight: 400;
+	font-weight: 500;
 	width: 100%;
 	margin: 0 auto;
 	margin-bottom: -2vmax;
@@ -94,7 +97,7 @@ h1#name {
 p.buzzwords {
 	margin-top: 1vh;
 	text-align: center;
-	font-size: 1.8vmax;
+	font-size: 1.85vmax;
 }
 
 .intro {
@@ -127,12 +130,13 @@ p.buzzwords {
 }
 
 .joblist-heading {
-	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400 !important;
+	font-size: 16px;
 	margin-top: 30px;
 	margin-bottom: 0;
 	/*margin-left: -4px; Looks stupid.*/
 	color: #696969;
-	font-weight: 400;
 }
 
 .joblist-item {
@@ -145,15 +149,15 @@ p.buzzwords {
 	font-family: 'Oswald', sans-serif;
 	font-weight: 400;
 	font-size: 30px;
-
 	display: inline-block;
 	line-height: 32px;
 }
 
 .joblist-item h2 a:hover {
-	/*cursor: default;*/
+	cursor: pointer;
 	vertical-align: baseline;
-	border-bottom: 1px solid #1b1b1b;
+
+	/*border-bottom: 1px solid #1b1b1b;*/
 
 	/* untere linie etwas hochziehen */
 	display: inline-block;
@@ -179,15 +183,17 @@ p.buzzwords {
 }
 
 .joblist-item p {
+	color: #313131;
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
+.joblist-item p a {
+	color: #313131;
+}
+
 .joblist-item p a:hover {
-	/*
 	color: #000;
-	*/
-	border-bottom: 1px solid #1b1b1b;
 }
 
 .joblist-item p a:after {
@@ -450,7 +456,7 @@ input[type=checkbox]:checked ~ #contact {
 	}
 
 	p.buzzwords {
-		font-size: 23px;
+		font-size: 24px;
 		margin-top: 7px;
 		margin-bottom: 23px;
 	}
