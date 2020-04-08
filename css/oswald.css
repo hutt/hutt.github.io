@@ -12,8 +12,8 @@
 
   src: local("Oswald"),
     local("Oswald-Regular"),
-    url("fonts/Oswald-Regular.woff") format("woff"), /* Modern Browsers */
     url("fonts/Oswald-Regular.woff2") format("woff2"), /* Modern Browsers */
+    url("fonts/Oswald-Regular.woff") format("woff"), /* Modern Browsers */
     url("fonts/Oswald-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     url("fonts/Oswald-Regular.otf") format("opentype"), /* Open Type Font */
     url("fonts/Oswald-Regular.svg") format("svg"), /* Legacy iOS */
@@ -28,8 +28,8 @@
 
   src: local("Oswald"),
     local("Oswald-Medium"),
-    url("fonts/Oswald-Medium.woff") format("woff"), /* Modern Browsers */
     url("fonts/Oswald-Medium.woff2") format("woff2"), /* Modern Browsers */
+    url("fonts/Oswald-Medium.woff") format("woff"), /* Modern Browsers */
     url("fonts/Oswald-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     url("fonts/Oswald-Medium.otf") format("opentype"), /* Open Type Font */
     url("fonts/Oswald-Medium.svg") format("svg"), /* Legacy iOS */
