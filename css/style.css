@@ -451,13 +451,9 @@ input[type=checkbox]:checked ~ #contact {
 }
 
 /* subpages */
-
-.subpage {
-
-}
-
 .subpage h1, .subpage h2 {
 	font-family: 'Oswald', sans-serif;
+	hyphens: auto;
 	marign-block-start: 0;
 }
 
