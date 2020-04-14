@@ -469,8 +469,12 @@ input[type=checkbox]:checked ~ #contact {
 
 /* Media queries */
 
-/* Bildschirme breiter als 1920px */
+/* Bildschirme breiter als 1280px */
 @media screen and (min-width: 1280px) {
+
+	#top #langSwitch button {
+		font-size: 14px;
+	}
 	
 	h1#name {
 		font-size: 77px;
