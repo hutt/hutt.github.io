@@ -30,8 +30,8 @@
 		<link rel="preload" as="fetch" href="https://api.jh0.eu/swarm/?fetch=checkins&count=1" crossorigin="anonymous" />
 
 		<!-- preload piwik js/image -->
-		<link rel="preload" as="script" href="https://piwik.jh0.eu/piwik.js" crossorigin="anonymous" />
-		<link rel="preload" as="image" href="https://piwik.jh0.eu/piwik.php?idsite=3" crossorigin="anonymous" />
+		<link rel="preload" as="script" href="https://piwik.jh0.eu/matomo.js" crossorigin="anonymous" />
+		<link rel="preload" as="image" href="https://piwik.jh0.eu/matomo.php?idsite=3" crossorigin="anonymous" />
 		
 		<!-- meta information & seo stuff -->
 		<link rel="canonical" href="https://hutt.io" />
@@ -605,8 +605,9 @@
 
 		<!-- i18n -->
 		<script type="text/javascript" src="js/i18n.js"></script>
+
+		<!-- i18n init -->
 	    <script>
-			//i18n init
 			var deButton = document.getElementById('de-btn'),
 				enButton = document.getElementById('en-btn'),
 				languages = ['de', 'en'],
@@ -629,7 +630,6 @@
 					currentLanguage: currentLanguage
 				});
 
-			// function to style language buttons based on currentLanguage
 			function toggleLangStyles(id) {
 				var i, e,
 					ancestor = document.getElementById('langSwitch'),
@@ -645,7 +645,6 @@
 				document.getElementById(id).style.boxShadow = 'inset 0px 0px 10px 10px rgba(0,0,0,0.1)';
 			}
 
-			// define actions for language buttons
 			deButton.onclick = function () {
 				i18n.changeLanguage('de');
 				toggleLangStyles(deButton.id);
@@ -660,31 +659,29 @@
 				refreshIntro();
 			};
 
-			// style border of current language's button
 			toggleLangStyles(currentLanguage + '-btn');
 	    </script>
 
-		<!-- Foursquare -->
+		<!-- Foursquare/Swarm -->
 		<script type="text/javascript" src="js/foursquare.js"></script>
 
 		<!-- Custom -->
 		<script type="text/javascript" src="js/scripts.js"></script>
 
-		<!-- Piwik -->
+		<!-- Piwik / Matomo -->
 		<script type="text/javascript">
-			var _paq = _paq || [];
-			_paq.push(["disableCookies"]);
+			var _paq = window._paq || [];
 			_paq.push(['trackPageView']);
 			_paq.push(['enableLinkTracking']);
 			(function() {
 			var u="https://piwik.jh0.eu/";
-			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			_paq.push(['setTrackerUrl', u+'matomo.php']);
 			_paq.push(['setSiteId', '3']);
 			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 			})();
 		</script>
-		<noscript><img src="https://piwik.jh0.eu/piwik.php?idsite=3" style="border:0;" alt="" /></noscript>
+		<noscript><p><img src="https://piwik.jh0.eu/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 
 		<!-- Was ist das für 1 Life? -->
 
