@@ -450,24 +450,77 @@ input[type=checkbox]:checked ~ #contact {
     visibility: visible;
 }
 
-/* Contact Page */
-.contactList h1 {
-	font-size: 18px;
+/* subpages */
+
+.subpage {
+
+}
+
+.subpage h1, .subpage h2 {
+	font-family: 'Oswald', sans-serif;
+	marign-block-start: 0;
+}
+
+.subpage h1 {
+	font-size: 50px;
+	font-weight: 500;
+	margin-top: 0;
 	margin-bottom: 5px;
-}
-
-.contactList p {
-	margin-top: 0;
-}
-
-.contactList p a {
-	text-decoration: underline;
-}
-
-.subpageHeading {
-	margin-block-start: 0;
-	margin-top: 0;
 	padding-top: 35px;
+}
+
+.subpage h2 {
+	font-size: 25px;
+	font-weight: 400;
+	margin-bottom: 0;
+}
+
+.subpage p, .subpage article span p {
+	margin-top: 5px;
+}
+
+.subpage p, .subpage p span {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.subpage p img {
+	display: inline;
+	height: 16px;
+	width: auto;
+	vertical-align: middle;
+}
+
+.subpage p a {
+	text-decoration: underline;
+	text-decoration-style: dashed;
+}
+
+.subpage p a:hover {
+	text-decoration-style: solid;
+}
+
+.subpage ul {
+	margin-top: 5px;
+}
+
+.subpage .logo-link {
+	font-size: 60px; 
+	text-align: center;
+	margin: 5vh auto 5vh auto;
+}
+
+.logo-link a i {
+	color: rgba(73, 73, 73, 0.75);
+}
+
+.logo-link a:hover i {
+	color: rgba(0, 0, 0, 1);
+}
+
+.subpage .link-back {
+	padding-bottom: 5vh;
 }
 
 /* Media queries */
