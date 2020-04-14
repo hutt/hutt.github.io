@@ -72,15 +72,17 @@ a, a:hover, a:visited, a:active {
 	font-size: 1.5vmax;
 	color: #FFF;
 	border: dotted #FFF 1px;
-	box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.05);
+	box-shadow: inset 0px 0px 10px 10px rgba(0,0,0,0.05);
 }
 
 #top #langSwitch button .current {
 	border: solid #FFF 1px !important;
+	box-shadow: inset 0px 0px 10px 10px rgba(0,0,0,0.05);
 }
 
 #top #langSwitch button:hover {
 	border: solid #FFF 1px !important;
+	box-shadow: inset 0px 0px 10px 10px rgba(0,0,0,0.025);
 }
 
 header {
