@@ -395,11 +395,17 @@ ul.icons li {
 }
 
 ul.icons li a i {
+	display: inline-block;
 	color: rgba(73, 73, 73, 0.50);
 }
 
 ul.icons li a i:hover {
+	display: inline-block;
 	color: rgba(73, 73, 73, 0.75);
+}
+
+ul.icons li a span {
+	display: none;
 }
 
 /* Show/hide Contact Area */
