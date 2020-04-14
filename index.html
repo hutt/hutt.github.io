@@ -14,8 +14,6 @@
 
 		-->
 
-		<link rel="canonical" href="https://hutt.io" />
-
 		<!-- preload fonts -->
 		<link rel="preload" as="font" href="css/fonts/Oswald-Medium.woff2" type="font/woff2" />
 		<link rel="preload" as="font" href="css/fonts/Oswald-Regular.woff2" type="font/woff2" />
@@ -24,28 +22,23 @@
 
 		<!-- preload styles -->
 		<link rel="preload" as="style" href="css/style.css" />
-
 		<link rel="preload" as="style" href="css/oswald.css" />
 		<link rel="preload" as="style" href="css/open-sans.css" />
 		<link rel="preload" as="style" href="css/font-awesome.css" />
 
-		<!-- preconnecting to cross origin ressources server -->
-		<link rel="preconnect" href="https://api.jh0.eu" crossorigin="anonymous" />
-		<link rel="preconnect" href="https://piwik.jh0.eu" crossorigin="anonymous" />
+		<!-- preload swarm request -->
+		<link rel="preload" as="fetch" href="https://api.jh0.eu/swarm/?fetch=checkins&count=1" crossorigin="anonymous" />
 
-		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+		<!-- preload piwik js/image -->
+		<link rel="preload" as="script" href="https://piwik.jh0.eu/piwik.js" crossorigin="anonymous" />
+		<link rel="preload" as="image" href="https://piwik.jh0.eu/piwik.php?idsite=3" crossorigin="anonymous" />
 		
+		<!-- meta information & seo stuff -->
+		<link rel="canonical" href="https://hutt.io" />
+
 		<meta name="description" content="Website von Jannis Hutt. Politik, Photographie, Technik, Coffein." />
 		<meta name="keywords" content="Jannis Hutt, Janis, Yanis, Hut, Hutt, Die Linke, Karlsruhe, Berlin" />
 		<meta name="robots" content="index, follow" />
-
-		<!-- favicons & co. -->
-		<link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png" />
-		<link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png" />
-		<link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png" />
-		<link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png" />
-		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png" />
 
 		<!-- Twitter Tags -->
 		<meta name="twitter:card" content="summary_large_image" />
@@ -56,14 +49,22 @@
 		<meta name="twitter:image:alt" content="Portrait of Jannis Hutt." />
 
 		<!-- OpenGraph Tags -->
-		<meta property="og:url" content="https://hutt.io"/>
-		<meta property="og:title" content="Jannis Hutt"/>
-		<meta property="og:description" content="Website von Jannis Hutt. Ich interessiere mich für alles."/>
-		<meta property="og:image" content="https://hutt.io/img/profile.jpg"/>
-		<meta property="og:site_name" content="Jannis Hutt"/>
-		<meta property="og:locale" content="de_DE"/>
-		<meta property="og:locale:alternate" content="en_US"/>
-		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="https://hutt.io" />
+		<meta property="og:title" content="Jannis Hutt" />
+		<meta property="og:description" content="Website von Jannis Hutt. Ich interessiere mich für alles." />
+		<meta property="og:image" content="https://hutt.io/img/profile.jpg" />
+		<meta property="og:site_name" content="Jannis Hutt" />
+		<meta property="og:locale" content="de_DE" />
+		<meta property="og:locale:alternate" content="en_US" />
+		<meta property="og:type" content="website" />
+
+		<!-- favicons & co. -->
+		<link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png" />
+		<link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png" />
+		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png" />
 
 		<!-- Google Structured Data -->
 		<script type="application/ld+json">
@@ -81,11 +82,14 @@
 		</script>
 
 		<!-- generelle Styles -->
+		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
 		<link rel="stylesheet" href="css/style.css" />
+
 		<!-- fonts -->
 		<link rel="stylesheet" href="css/oswald.css" />
 		<link rel="stylesheet" href="css/open-sans.css" />
 		<link rel="stylesheet" href="css/font-awesome.css" />
+
 	</head>
 	<body>
 		<!-- top part of the site -->
@@ -662,12 +666,25 @@
 
 		<!-- Foursquare -->
 		<script type="text/javascript" src="js/foursquare.js"></script>
+
 		<!-- Custom -->
 		<script type="text/javascript" src="js/scripts.js"></script>
+
 		<!-- Piwik -->
-		<script type="text/javascript" src="js/piwik.js"></script>
-		<!-- Piwik-Fallback -->
-		<noscript><p><img src="https://piwik.jh0.eu/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+		<script type="text/javascript">
+			var _paq = _paq || [];
+			_paq.push(["disableCookies"]);
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+			var u="https://piwik.jh0.eu/";
+			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			_paq.push(['setSiteId', '3']);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			})();
+		</script>
+		<noscript><img src="https://piwik.jh0.eu/piwik.php?idsite=3" style="border:0;" alt="" /></noscript>
 
 		<!-- Was ist das für 1 Life? -->
 
