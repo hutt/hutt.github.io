@@ -70,6 +70,7 @@ a, a:hover, a:visited, a:active {
 /* langSwitch auf der Startseite */
 #top #langSwitch button {
 	font-size: 1.5vmax;
+	margin: 0 0 0 0;
 	color: #FFF;
 	border: dotted #FFF 1px;
 	box-shadow: inset 0px 0px 10px 10px rgba(0,0,0,0.05);
