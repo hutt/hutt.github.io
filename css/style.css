@@ -50,9 +50,9 @@ a, a:hover, a:visited, a:active {
 }
 
 #langSwitch button {
+	font-size: 14px;
 	color: #000;
 	background-color: transparent;
-	font-size: 11px;
 	padding: 5px;
 	border: dotted #000 1px;
 	text-decoration: none;
@@ -68,13 +68,11 @@ a, a:hover, a:visited, a:active {
 }
 
 /* langSwitch auf der Startseite */
-#top #langSwitch {
-	box-shadow: 0px 1px 128px 1px rgba(0,0,0,0.5);
-}
-
 #top #langSwitch button {
+	font-size: 1.5vmax;
 	color: #FFF;
 	border: dotted #FFF 1px;
+	box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.05);
 }
 
 #top #langSwitch button .current {
