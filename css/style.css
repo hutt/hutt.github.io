@@ -203,6 +203,7 @@ p.buzzwords {
 
 .joblist-item p a {
 	color: #313131;
+	font-weight: 400;
 }
 
 .joblist-item p a:hover {
