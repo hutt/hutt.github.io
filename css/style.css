@@ -21,10 +21,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-::selection {
-	background: #DDD;
-}
-
 a, a:hover, a:visited, a:active {
 	color: #000;
 	text-decoration: none;
@@ -35,10 +31,11 @@ a, a:hover, a:visited, a:active {
 	background-image: url('../img/background.jpg');
 	background-size: cover;
 	/*background-position: right top;*/
-	background-position: center center;
+	background-position: right 60%;
 	background-repeat: no-repeat;
 	background-color: #FFF;
 	color: #FFF;
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 #langSwitch {
@@ -545,8 +542,8 @@ input[type=checkbox]:checked ~ #contact {
 	}
 	
 	h1#name {
-		font-size: 77px;
-		margin-bottom: -26px;
+		/*font-size: 77px;*/
+		/*margin-bottom: -26px;*/
 	}
 
 	p.buzzwords {
@@ -565,7 +562,7 @@ input[type=checkbox]:checked ~ #contact {
 @media screen and (orientation:portrait) {
 
 	#top {
-		background-position: 27% 0%;
+		background-position: 82% 30%;
 	}
 
 	.container {
