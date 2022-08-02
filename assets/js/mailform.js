@@ -69,9 +69,11 @@ $('#kontaktformular').submit(function (event) {
 		success: function (data) {
 			// For Notification
 			const formStatus = $("#formStatus");
+
+			// time to wait until statusMessage disappears in ms. 1min = 60000ms
+			var waitingTime = 15000;
+
 			formStatus.show("slow", function(e){
-				// waiting time in ms. 1min = 60000ms
-				var waitingTime = 15000;
 				formStatus.delay(waitingTime).hide("slow");
 			});
 
@@ -81,7 +83,7 @@ $('#kontaktformular').submit(function (event) {
 			}else{
 			    formStatus.find('.icon').addClass('fa-info-circle');
 			    formStatus.find('.behind-icon').text(data.message);
-			    resetForm().delay(waitingTime);
+			    setTimeout(resetForm, waitingTime);
 			}
 		}
 	});
