@@ -69,7 +69,11 @@ $('#kontaktformular').submit(function (event) {
 		success: function (data) {
 			// For Notification
 			const formStatus = $("#formStatus");
-			formStatus.show("slow");
+			formStatus.show("slow", function(e){
+				// waiting time in ms. 1min = 60000ms
+				var waitingTime = 60000;
+				formStatus.delay(waitingTime).hide("slow");
+			});
 
 			if(data.error){
 				formStatus.find('.icon').addClass('fa-exclamation-circle');
