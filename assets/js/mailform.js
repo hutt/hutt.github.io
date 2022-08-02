@@ -13,12 +13,12 @@
 const form = document.getElementById('kontaktformular');
 
 function resetForm () {
-	form.elements.name = "";
-	form.elements.email = "";
+	form.elements.name.value = "";
+	form.elements.email.value = "";
 	form.elements.category.value = "blank";
 	form.elements.copy.checked = true;
 	form.elements.human.checked = false;
-	form.elements.message = "";
+	form.elements.message.value = "";
 }
 
 function validateMailAddress (input) {
