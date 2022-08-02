@@ -73,7 +73,6 @@ $('#kontaktformular').submit(function (event) {
 				// waiting time in ms. 1min = 60000ms
 				var waitingTime = 15000;
 				formStatus.delay(waitingTime).hide("slow");
-				resetForm();
 			});
 
 			if(data.error){
@@ -82,6 +81,7 @@ $('#kontaktformular').submit(function (event) {
 			}else{
 			    formStatus.find('.icon').addClass('fa-info-circle');
 			    formStatus.find('.behind-icon').text(data.message);
+			    resetForm().delay(waitingTime);
 			}
 		}
 	});
