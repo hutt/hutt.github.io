@@ -57,7 +57,7 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
         $subject = '[' . $category . '] ' . 'Kontaktformular auf hutt.io';
 
         // prepare a "pretty" version of the message
-        $body = "Nachricht von ". $name ." <". $email ."> über das Kontaktformular auf hutt.io:\r\n<br/>";
+        $body = "Nachricht von ". $name ." <". $email ."> über das Kontaktformular auf hutt.io:\r\n<br/>\r\n<br/>";
         $body .= "$message";
 
         // E-Mail-Adresse des Absenders verwenden, falls angegeben
@@ -78,7 +78,7 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
             $headers .= "Content-type: text/html\r\n";
 
             $subject = 'Kopie: [' . $category . '] ' . 'Kontaktformular auf hutt.io';
-            $body = "Hallo ". $name . ",\r\n" . "du hast mir folgende Nachricht über das Kontaktformular auf hutt.io gesendet:\r\n<br/>" . $body . "\r\n<br/>Beste Grüße\r\n<br/>Jannis Hutt";
+            $body = "Hallo ". $name . ",\r\n<br/>" . "du hast mir folgende Nachricht über das Kontaktformular auf hutt.io gesendet:\r\n<br/>\r\n<br/>" . $message . "\r\n<br/>\r\n<br/>Beste Grüße\r\n<br/>Jannis Hutt";
             mail($email, $subject, $body, $headers);
         }
 
