@@ -50,7 +50,7 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
     } else {
         //Alles gut.
 
-        // E-Mails gehen an an:     
+        // E-Mails gehen an:     
         $youremail = 'mailformular@hutt.io';
 
         // E-Mail zusammenbauen
@@ -74,8 +74,11 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
 
         if($copy == "true") {
             $headers = "From: " . $youremail . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-type: text/html\r\n";
+
             $subject = '[' . $category . '] ' . 'Kontaktformular auf hutt.io [Kopie]';
-            $body = "Hallo ". $name .",\r\Du hast mir folgende Nachricht über das Kontaktformular auf hutt.io gesendet:\r\n" . $body;
+            $body = "Hallo ". $name .",\r\Du hast mir folgende Nachricht über das Kontaktformular auf hutt.io gesendet:\r\n" . $body . "\r\nBeste Grüße\r\nJannis Hutt";
             mail($email, $subject, $body, $headers);
         }
 
