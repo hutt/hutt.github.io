@@ -71,8 +71,9 @@ $('#kontaktformular').submit(function (event) {
 			const formStatus = $("#formStatus");
 			formStatus.show("slow", function(e){
 				// waiting time in ms. 1min = 60000ms
-				var waitingTime = 60000;
+				var waitingTime = 30000;
 				formStatus.delay(waitingTime).hide("slow");
+				resetForm();
 			});
 
 			if(data.error){
