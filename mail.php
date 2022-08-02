@@ -95,11 +95,18 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
         }
     }
 
-} else {
+} elseif (isset($_POST['url']) && $_POST['url'] != '') {
 
     echo json_encode(array(
      'error'=> true,
      'message' => 'Ich nehme keinen Spam an.'
+    ));
+
+} else {
+
+    echo json_encode(array(
+     'error'=> true,
+     'message' => 'Hier gibt es nichts zu sehen.'
     ));
 
 }
