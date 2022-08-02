@@ -10,6 +10,7 @@
        url('../webfonts/raleway-v28-latin-ext_latin-600.woff') format('woff'), /* Modern Browsers */
        url('../webfonts/raleway-v28-latin-ext_latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../webfonts/raleway-v28-latin-ext_latin-600.svg#Raleway') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 /* raleway-800 - latin-ext_latin */
 @font-face {
@@ -23,6 +24,7 @@
        url('../webfonts/raleway-v28-latin-ext_latin-800.woff') format('woff'), /* Modern Browsers */
        url('../webfonts/raleway-v28-latin-ext_latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../webfonts/raleway-v28-latin-ext_latin-800.svg#Raleway') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 
 /* source-sans-pro-300 - latin-ext_latin */
@@ -37,6 +39,7 @@
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-300.woff') format('woff'), /* Modern Browsers */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-300.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 /* source-sans-pro-300italic - latin-ext_latin */
 @font-face {
@@ -50,6 +53,7 @@
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-300italic.woff') format('woff'), /* Modern Browsers */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-300italic.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 /* source-sans-pro-600 - latin-ext_latin */
 @font-face {
@@ -63,6 +67,7 @@
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-600.woff') format('woff'), /* Modern Browsers */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-600.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 /* source-sans-pro-600italic - latin-ext_latin */
 @font-face {
@@ -76,6 +81,7 @@
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-600italic.woff') format('woff'), /* Modern Browsers */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-600italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-600italic.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 /* source-sans-pro-700 - latin-ext_latin */
 @font-face {
@@ -89,6 +95,7 @@
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-700.woff') format('woff'), /* Modern Browsers */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-700.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 /* source-sans-pro-700italic - latin-ext_latin */
 @font-face {
@@ -102,3 +109,5 @@
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-700italic.woff') format('woff'), /* Modern Browsers */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../webfonts/source-sans-pro-v21-latin-ext_latin-700italic.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  font-display: swap;
+}
