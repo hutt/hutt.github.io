@@ -57,7 +57,7 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
         $subject = '[' . $category . '] ' . 'Kontaktformular auf hutt.io';
 
         // prepare a "pretty" version of the message
-        $body = "Nachricht von ". $name ." <". $email ."> über das Kontaktformular auf hutt.io:\n";
+        $body = "Nachricht von ". $name ." <". $email ."> über das Kontaktformular auf hutt.io:\r\n<br/>";
         $body .= "$message";
 
         // E-Mail-Adresse des Absenders verwenden, falls angegeben
@@ -77,8 +77,8 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-type: text/html\r\n";
 
-            $subject = '[' . $category . '] ' . 'Kontaktformular auf hutt.io [Kopie]';
-            $body = "Hallo ". $name .",\r\Du hast mir folgende Nachricht über das Kontaktformular auf hutt.io gesendet:\r\n" . $body . "\r\nBeste Grüße\r\nJannis Hutt";
+            $subject = 'Kopie: [' . $category . '] ' . 'Kontaktformular auf hutt.io';
+            $body = "Hallo ". $name . ",\r\n" . "du hast mir folgende Nachricht über das Kontaktformular auf hutt.io gesendet:\r\n<br/>" . $body . "\r\n<br/>Beste Grüße\r\n<br/>Jannis Hutt";
             mail($email, $subject, $body, $headers);
         }
 
@@ -99,7 +99,7 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
 
     echo json_encode(array(
      'error'=> true,
-     'message' => 'Ich nehme kein Spam an.'
+     'message' => 'Ich nehme keinen Spam an.'
     ));
 
 }

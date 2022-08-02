@@ -69,7 +69,7 @@ $('#kontaktformular').submit(function (event) {
 		success: function (data) {
 			// For Notification
 			const formStatus = document.getElementById("formStatus");
-			formStatus.show();
+			formStatus.display = 'block';
 			if(data.error){
 				formStatus.find('.icon').addClass('fa-exclamation-circle');
 				formStatus.find('.behind-icon').text(data.message);
