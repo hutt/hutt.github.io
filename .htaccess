@@ -2,17 +2,39 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteCond %{ENV:HTTPS} !=on
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
-AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript text/javascript
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css 
+applicatio$
 Header set Life "1 falsches"
 Header set Access-Control-Allow-Origin "*"
 
+# Cache favicon
 <filesMatch "\.ico$">
+ # 30 Tage = 2592000s
+ Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
+
+# Cache JavaScript and CSS
+<filesMatch "\.(js|css)$">
  # 7 Tage = 604800s
  Header set Cache-Control "max-age=604800, public"
 </filesMatch>
 
+# Cache Fonts
+<FilesMatch "\.(eot|svg|ttf|woff|woff2)$">
+ # 3 Monate = 7890000s
+ Header set Cache-Control "max-age=7890000, public"
+</FilesMatch>
+
+# Cache Images
+<FilesMatch "\.(png|jpg|jpeg|gif|webp)$">
+ # 1 Monat = 2630000s
+ Header set Cache-Control "max-age=2630000, public"
+</FilesMatch>
+
 <FilesMatch "\.(php|cgi|pl|htm)$">
 ExpiresDefault A0
-Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform"
+Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, 
+proxy$
 Header set Pragma "no-cache"
 </FilesMatch>
+
