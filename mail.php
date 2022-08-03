@@ -15,13 +15,13 @@ header('Content-Type: application/json');
 // if the url field is empty 
 if(isset($_POST['url']) && $_POST['url'] == ''){
     // Variablen:
-    $name = @$_POST['name'];
-    $email = @$_POST['email'];
-    $url = @$_POST['url'];
-    $category = @$_POST['category'];
-    $message = @$_POST['message'];
-    $copy = @$_POST['copy'];
-    $human = @$_POST['human'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $url = $_POST['url'];
+    $category = $_POST['category'];
+    $message = $_POST['message'];
+    $copy = $_POST['copy'];
+    $human = $_POST['human'];
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         // E-Mail-Adresse nicht valide
