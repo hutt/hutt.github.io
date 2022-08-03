@@ -2,8 +2,7 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteCond %{ENV:HTTPS} !=on
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
-AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css 
-applicatio$
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript text/javascript
 Header set Life "1 falsches"
 Header set Access-Control-Allow-Origin "*"
 
@@ -33,8 +32,7 @@ Header set Access-Control-Allow-Origin "*"
 
 <FilesMatch "\.(php|cgi|pl|htm)$">
 ExpiresDefault A0
-Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, 
-proxy$
+Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform"
 Header set Pragma "no-cache"
 </FilesMatch>
 
