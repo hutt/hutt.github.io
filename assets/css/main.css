@@ -142,7 +142,7 @@ html {
   html footer h1, html footer h2, html footer h3, html footer h4, html footer h5, html footer h6, html footer p, html footer ul, html footer li, html footer a {
     color: #000000;
   }
-  html div.content > section > header > h3, html div.content > section > header > p {
+  html div.content > section > header > h3, html div.content > section > header > p, html div.content > section > header > h3, html div.content > section > header > p > a {
     color: #000000;
   }
 }
@@ -390,7 +390,7 @@ section.referenz-item header ul, section.referenz-item div.content ul {
   margin-bottom: 0;
   margin-left: 0;
   line-height: 1rem;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 /* Row */
@@ -1981,7 +1981,7 @@ input[type=radio] + label {
 span.image, span.image > a {
   font-size: 0.8rem;
   line-height: initial;
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .image {
@@ -2348,7 +2348,6 @@ ul.icons li .icon:hover {
     text-align: center;
     line-height: 2.5rem;
     border-radius: 2.5rem;
-    color: rgba(0, 0, 0, 0.8);
   }
   footer ul.icons li .icon:before {
     font-size: 1.75rem;

@@ -35,7 +35,7 @@
 			}
 
 			/* Font Color von geschachtelten Sections dunkel machen */
-			div.content > section > header > h3, div.content > section > header > p {
+			div.content > section > header > h3, div.content > section > header > p, div.content > section > header > h3, div.content > section > header > p > a, {
 				color: _palette(fg);
 			}
 		}
@@ -326,7 +326,7 @@
 				margin-left: 0;
 
 				line-height: 1rem;
-				color: _palette(fg-light);
+				color: _palette(fg-light-alt);
 			}
 		}
 	}
