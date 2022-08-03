@@ -59,59 +59,53 @@
 		const w = window.innerWidth;
 		var s = 300;
 
-		switch (true){
-			case (w >= 300):
-				s = 300;
-				break;
-			case (w >= 600):
-				s = 600;
-				break;
-			case (w >= 900):
-				s = 900;
+		switch (true) {
+			case (w >= 2400):
+				if (window.devicePixelRatio >= 2){
+					s = 2400;
+				} else {
+					s = 1200;
+				}
 				break;
 			case (w >= 1200):
-				s = 900;
+				if (window.devicePixelRatio >= 2){
+					s = 1200;
+				} else {
+					s = 900;
+				}
 				break;
-			case (w >= 2400):
-				s = 1200;
+			case (w >= 900):
+				if (window.devicePixelRatio >= 2){
+					s = 1200;
+				} else {
+					s = 900;
+				}
+				break;
+			case (w >= 600):
+				if (window.devicePixelRatio >= 2){
+					s = 900;
+				} else {
+					s = 600;
+				}
+				break;
+			case (w >= 300):
+				if (window.devicePixelRatio >= 2){
+					s = 600;
+				} else {
+					s = 300;
+				}
 				break;
 		}
 		
 		webp.onload = function() {
 			// Browser kann WEBP
-			if (window.devicePixelRatio >= 2){
-				//load 2x
-				if (w >= 1200) {
-					s = s;
-				} else {
-					s = (s * 2);
-				}
-
-				var filename = "images/" + "header-" + s + ".webp";
-				addPreloadLink(filename, 'image/webp');
-			} else {
-				//load 1x
-				var filename = "images/" + "header-" + s + ".webp";
-				addPreloadLink(filename, 'image/webp');
-			}
+			var filename = "images/" + "header-" + s + ".webp";
+			addPreloadLink(filename, 'image/webp');
 		};
 		webp.onerror = function() {
 			// Browser kann nur JPG
-			if (window.devicePixelRatio >= 2){
-				//load 2x
-				if (w >= 1200) {
-					s = s;
-				} else {
-					s = (s * 2);
-				}
-
-				var filename = "images/" + "header-" + s + ".jpg";
-				addPreloadLink(filename, 'image/jpg');
-			} else {
-				//load 1x
-				var filename = "images/" + "header-" + s + ".jpg";
-				addPreloadLink(filename, 'image/jpg');
-			}
+			var filename = "images/" + "header-" + s + ".jpg";
+			addPreloadLink(filename, 'image/jpg');
 		};
 		</script>
 
