@@ -360,11 +360,51 @@ section.referenz-item header h3, section.referenz-item header h4, section.refere
   margin-bottom: 0;
 }
 section.referenz-item header ul {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  margin-bottom: 0;
 }
 section.referenz-item header ul li {
   display: block;
   padding: 0;
+}
+@media screen and (min-width: 737px) and (max-width: 1152px) {
+  section.referenz-item header h3 {
+    float: inline-start;
+  }
+  section.referenz-item header ul {
+    white-space: nowrap;
+  }
+  section.referenz-item header ul li {
+    color: rgba(0, 0, 0, 0.75);
+    display: inline;
+    padding: 0;
+    vertical-align: sub;
+  }
+  section.referenz-item header ul li:after {
+    content: " ·";
+  }
+  section.referenz-item header ul li:first-child {
+    padding-left: 0.5rem;
+  }
+  section.referenz-item header ul li:last-child:after {
+    content: none;
+  }
+}
+@media screen and (max-width: 736px) {
+  section.referenz-item header ul {
+    margin-bottom: 0.5rem;
+  }
+  section.referenz-item header ul li {
+    color: rgba(0, 0, 0, 0.75);
+    display: inline-block;
+    padding: 0;
+  }
+  section.referenz-item header ul li:after {
+    content: " ·";
+  }
+  section.referenz-item header ul li:last-child:after {
+    content: none;
+  }
 }
 section.referenz-item div.content p {
   line-height: 1.5rem;
@@ -372,6 +412,7 @@ section.referenz-item div.content p {
 }
 section.referenz-item div.content ul {
   font-size: 0.75rem;
+  margin-bottom: 0;
 }
 section.referenz-item div.content ul li {
   display: inline-block;
@@ -387,7 +428,6 @@ section.referenz-item header ul, section.referenz-item div.content ul {
   list-style: none;
   padding-left: 0;
   margin-top: 0;
-  margin-bottom: 0;
   margin-left: 0;
   line-height: 1rem;
   color: rgba(0, 0, 0, 0.75);
