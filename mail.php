@@ -6,7 +6,7 @@
  * **/
 
 // In der Produktion: Error-Reporting ausschalten
-//error_reporting(0);
+error_reporting(0);
 
 // Daten, die gesendet werden, sind in JSON-Format
 header('Content-Type: application/json');
