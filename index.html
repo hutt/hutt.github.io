@@ -77,8 +77,10 @@
 			// Browser kann WEBP
 			if (window.devicePixelRatio >= 2){
 				//load 2x
-				if (w < 1200) {
-					s = s * 2;
+				if (w >= 1200) {
+					s = s;
+				} else {
+					s = (s * 2);
 				}
 
 				var filename = "images/" + "header-" + s + ".webp";
@@ -93,8 +95,10 @@
 			// Browser kann nur JPG
 			if (window.devicePixelRatio >= 2){
 				//load 2x
-				if (w < 1200) {
-					s = s * 2;
+				if (w >= 1200) {
+					s = s;
+				} else {
+					s = (s * 2);
 				}
 
 				var filename = "images/" + "header-" + s + ".jpg";
