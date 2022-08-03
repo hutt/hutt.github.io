@@ -113,7 +113,7 @@
 							<h2>In Kürze</h2>
 						</header>
 						<div class="content">
-							<p><strong>Moin.</strong> Ich bin morgens meistens müde, mein Name ist Jannis und ich lebe, arbeite und studiere in Berlin. Seit 2015 treibe ich mich im Bundestag herum; seit 2017 als fester Mitarbeiter verschiedener Abgeordneter der Linksfraktion, wo ich Öffentlich&shy;keits- und Presse&shy;arbeit mache. Daran reizt mich besonders, politische Kern&shy;botschaften möglichst knackig und ziel&shy;gruppen&shy;gerecht zugespitzt rüber&shy;zubringen. Und das ist sehr viel mehr als schnöde Text&shy;arbeit: Dazu gehören gutes Grafik&shy;design, ein Auge für ausdrucksstarke Bild&shy;sprache, auf den Punkt geschnittene Videos und je nach Kampagne auch gut designte Websites. Bei mir gibt es das alles aus einem Guss.</p>
+							<p><strong id="begruessung">Moin.</strong> Ich bin müde, mein Name ist Jannis und ich lebe, arbeite und studiere in Berlin. Seit 2015 treibe ich mich in Parla&shy;menten herum; seit 2017 im Bundestag, wo ich als fester Mitarbeiter für verschiedene Ab&shy;ge&shy;ordnete der Linksfraktion Öffentlich&shy;keits- und Presse&shy;arbeit mache. Daran reizt mich besonders, politische Kern&shy;botschaften möglichst knackig und ziel&shy;gruppen&shy;gerecht zugespitzt rüber&shy;zubringen. Und das ist sehr viel mehr als schnöde Text&shy;arbeit: Dazu gehören gutes Grafik&shy;design, ein Auge für aus&shy;drucks&shy;starke Bild&shy;sprache, auf den Punkt ge&shy;schnit&shy;tene Videos und je nach Kampagne auch gut designte Websites. Bei mir gibt es das alles aus einem Guss.</p>
 						</div>
 					</section>
 
@@ -622,8 +622,8 @@
 
 		<!-- Scripts for index.html only -->
 			<script>
-				// show gallery if url contains 'photographie' anchor
 
+				// Sektionen ausklappen, wenn Anker gesetzt ist
 				function getAnchor() {
 					var urlParts = document.URL.split('#');	
 				    return (urlParts.length > 1) ? urlParts[1] : null;
@@ -648,6 +648,26 @@
 						} 
 					});
 				}
+
+				//Begrüßung abhängig von Uhrzeit.
+				const h = new Date().getHours();
+				var begruessung = "";
+
+				switch (true) {
+					case (h < 6):
+						begruessung = "N'Abend.";
+						break;
+					case (h < 16):
+						begruessung = "Moin.";
+						break;
+					case (h < 20):
+						begruessung = "Hi.";
+						break;
+					default:
+						begruessung = "N'Abend.";
+						break;
+				}
+				$('#begruessung').html(begruessung);
 			</script>
 
 			<!-- Piwik / Matomo -->
