@@ -34,7 +34,7 @@
 		<link rel="prefetch" as="font" href="assets/webfonts/fa-solid-900.woff2" type="font/woff2" />
 
 		<!-- preload main style -->
-		<link rel="preload" as="style" href="assets/css/main.css" />
+		<link rel="preload" as="style" href="assets/css/main.css?v=1.1" />
 
 		<!-- preload header image (WEBP if available, else JPG) -->
 		<script>
@@ -57,7 +57,7 @@
 
 		// herausfinden, welche Bildgröße vorgeladen werden muss
 		const w = window.screen.width;
-		var size;
+		var s = 300;
 		switch (true){
 			case (w <= 300):
 				s = 300;
@@ -77,28 +77,24 @@
 			// Browser kann WEBP
 			if (window.devicePixelRatio >= 2){
 				//load 2x
-				var filename = "images/" + "header-" + s + ".webp";
+				var filename = "images/" + "header-" + (s * 2) + ".webp";
 				addPreloadLink(filename, 'image/webp');
-				console.log(filename);
 			} else {
 				//load 1x
-				var filename = "images/" + "header-" + (s / 2) + ".webp";
+				var filename = "images/" + "header-" + s + ".webp";
 				addPreloadLink(filename, 'image/webp');
-				console.log(filename);
 			}
 		};
 		webp.onerror = function() {
 			// Browser kann nur JPG
 			if (window.devicePixelRatio >= 2){
 				//load 2x
-				var filename = "images/" + "header-" + s + ".jpg";
+				var filename = "images/" + "header-" + (s * 2) + ".jpg";
 				addPreloadLink(filename, 'image/jpg');
-				console.log(filename);
 			} else {
 				//load 1x
-				var filename = "images/" + "header-" + (s / 2) + ".jpg";
+				var filename = "images/" + "header-" + s + ".jpg";
 				addPreloadLink(filename, 'image/jpg');
-				console.log(filename);
 			}
 		};
 		</script>
@@ -108,12 +104,12 @@
 		<link rel="preload" as="script" href="assets/js/jquery.scrolly.min.js" />
 		<link rel="preload" as="script" href="assets/js/browser.min.js">
 		<link rel="preload" as="script" href="assets/js/breakpoints.min.js?v=1.1" />		
-		<link rel="preload" as="script" href="assets/js/main.js?v=1.2" />
+		<link rel="preload" as="script" href="assets/js/main.min.js?v=1.2" />
 
 		<!-- prefetch less important js -->
-		<link rel="prefetch" as="script" href="assets/js/util.js?v=1.1" />
-		<link rel="prefetch" as="script" href="assets/js/lazy.js?v=1.1">
-		<link rel="prefetch" as="script" href="assets/js/mailform.js?v=1.1">
+		<link rel="prefetch" as="script" href="assets/js/util.min.js?v=1.1" />
+		<link rel="prefetch" as="script" href="assets/js/lazy.min.js?v=1.1">
+		<link rel="prefetch" as="script" href="assets/js/mailform.min.js?v=1.1">
 
 		<!-- prefetch piwik/matomo -->
 		<link rel="prefetch" as="script" href="https://piwik.jh0.eu/matomo.js" crossorigin="anonymous" />
@@ -165,7 +161,7 @@
 		<meta property="og:type" content="website" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css?v=1.1" />
 	</head>
 	<body class="is-preload">
 
@@ -712,15 +708,15 @@
 
 			<script src="assets/js/breakpoints.min.js?v=1.1" defer></script>
 
-			<script src="assets/js/util.js?v=1.1" defer></script>
-			<script src="assets/js/main.js?v=1.2" defer></script>
+			<script src="assets/js/util.min.js?v=1.1" defer></script>
+			<script src="assets/js/main.min.js?v=1.2" defer></script>
 
-			<script src="assets/js/mailform.js?v=1.1" defer></script>
+			<script src="assets/js/mailform.min.js?v=1.1" defer></script>
 
-			<script src="assets/js/lazy.js?v=1.1" async></script>
+			<script src="assets/js/lazy.min.js?v=1.1" async></script>
 
 			<!-- Piwik / Matomo -->
-			<script>
+			<script async>
 				var _paq = window._paq || [];
 				_paq.push(['trackPageView']);
 				_paq.push(['enableLinkTracking']);
