@@ -14,8 +14,8 @@ Header set Access-Control-Allow-Origin "*"
 
 # Cache JavaScript and CSS
 <filesMatch "\.(js|css)$">
- # 7 Tage = 604800s
- Header set Cache-Control "max-age=604800, public"
+ # 1 Monat = 2630000s
+ Header set Cache-Control "max-age=2630000, public"
 </filesMatch>
 
 # Cache Fonts
