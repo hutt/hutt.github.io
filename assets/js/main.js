@@ -442,11 +442,8 @@ switch (true) {
 	case (h < 6):
 		begruessung = "N'Abend.";
 		break;
-	case (h < 16):
+	case (h < 23):
 		begruessung = "Moin.";
-		break;
-	case (h < 20):
-		begruessung = "Hi.";
 		break;
 	default:
 		begruessung = "N'Abend.";
