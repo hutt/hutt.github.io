@@ -406,3 +406,50 @@ $(document)
             }
         });
     });
+
+// Seiten-Funktionen
+// Sektionen ausklappen, wenn Anker gesetzt ist
+function getAnchor() {
+	var urlParts = document.URL.split('#');	
+    return (urlParts.length > 1) ? urlParts[1] : null;
+}
+
+if (getAnchor() == 'photographie') {
+	$('.photogalerie').slideToggle('slow', function(e){
+		if ($('.photogalerie').is(':hidden')) {
+			$('#photogalerie-toggle').addClass('primary');
+		} else { 
+			$('#photogalerie-toggle').removeClass('primary'); 
+		} 
+	});
+}
+
+if (getAnchor() == 'work') {
+	$('#referenzen').slideToggle('slow', function(e){
+		if ($('#referenzen').is(':hidden')) {
+			$('#referenzen-toggle').addClass('primary');
+		} else { 
+			$('#referenzen-toggle').removeClass('primary'); 
+		} 
+	});
+}
+
+//Begrüßung abhängig von Uhrzeit.
+const h = new Date().getHours();
+var begruessung = "";
+
+switch (true) {
+	case (h < 6):
+		begruessung = "N'Abend.";
+		break;
+	case (h < 16):
+		begruessung = "Moin.";
+		break;
+	case (h < 20):
+		begruessung = "Hi.";
+		break;
+	default:
+		begruessung = "N'Abend.";
+		break;
+}
+$('#begruessung').html(begruessung);

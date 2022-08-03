@@ -36,20 +36,84 @@
 		<!-- preload main style -->
 		<link rel="preload" as="style" href="assets/css/main.css" />
 
+		<!-- preload header image (WEBP if available, else JPG) -->
+		<script>
+		function addPreloadLink(img, type) {
+			var fileref = document.createElement('link');
+			fileref.setAttribute('rel', 'preload');
+			fileref.setAttribute('as', 'image');
+			fileref.setAttribute('href', img);
+			fileref.setAttribute('type', type);
+
+			document.head.appendChild(fileref);
+		}
+
+		function AddClass(c) {
+			document.documentElement.classList.add(c);
+		}
+		
+		var webp = new Image();
+		webp.src = 'data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
+
+		// herausfinden, welche Bildgröße vorgeladen werden muss
+		const w = window.screen.width;
+		var size;
+		switch (true){
+			case (w <= 300):
+				s = 300;
+				break;
+			case (w <= 600):
+				s = 600;
+				break;
+			case (w <= 900):
+				s = 900;
+				break;
+			case (w <= 1200):
+				s = 1200;
+				break;
+		}
+		
+		webp.onload = function() {
+			// Browser kann WEBP
+			if (window.devicePixelRatio >= 2){
+				//load 2x
+				var filename = "images/" + "header-" + s + ".webp";
+				addPreloadLink(filename, 'image/webp');
+				console.log(filename);
+			} else {
+				//load 1x
+				var filename = "images/" + "header-" + (s / 2) + ".webp";
+				addPreloadLink(filename, 'image/webp');
+				console.log(filename);
+			}
+		};
+		webp.onerror = function() {
+			// Browser kann nur JPG
+			if (window.devicePixelRatio >= 2){
+				//load 2x
+				var filename = "images/" + "header-" + s + ".jpg";
+				addPreloadLink(filename, 'image/jpg');
+				console.log(filename);
+			} else {
+				//load 1x
+				var filename = "images/" + "header-" + (s / 2) + ".jpg";
+				addPreloadLink(filename, 'image/jpg');
+				console.log(filename);
+			}
+		};
+		</script>
+
 		<!-- preload important js -->
 		<link rel="preload" as="script" href="assets/js/jquery.min.js" />
 		<link rel="preload" as="script" href="assets/js/jquery.scrolly.min.js" />
 		<link rel="preload" as="script" href="assets/js/browser.min.js">
 		<link rel="preload" as="script" href="assets/js/breakpoints.min.js?v=1.1" />		
-		<link rel="preload" as="script" href="assets/js/main.js?v=1.1" />
+		<link rel="preload" as="script" href="assets/js/main.js?v=1.2" />
 
 		<!-- prefetch less important js -->
 		<link rel="prefetch" as="script" href="assets/js/util.js?v=1.1" />
 		<link rel="prefetch" as="script" href="assets/js/lazy.js?v=1.1">
 		<link rel="prefetch" as="script" href="assets/js/mailform.js?v=1.1">
-
-		<!-- preload header image -->
-		<link rel="preload" as="image" href="images/header-300.webp" imagesrcset="header-1200.webp 1200w, header-900.webp 900w, header-600.webp 600w, header-300.webp 300w">
 
 		<!-- prefetch piwik/matomo -->
 		<link rel="prefetch" as="script" href="https://piwik.jh0.eu/matomo.js" crossorigin="anonymous" />
@@ -123,14 +187,14 @@
 									<source media="(min-width: 1200px)" type="image/webp" srcset="images/header-1200.webp 1x, images/header-2400.webp 2x" />
 									<source media="(min-width: 1200px)" type="image/jpeg" srcset="images/header-1200.jpg 1x, images/header-2400.jpg 2x" />
 
-									<source media="(min-width: 900px)" type="image/webp" srcset="images/header-900.webp 1x, images/header-1200.webp 2x" />
-									<source media="(min-width: 900px)" type="image/jpeg" srcset="images/header-900.jpg 1x, images/header-1200.jpg 2x" />
+									<source media="(min-width: 900px)" type="image/webp" srcset="images/header-900.webp 1x, images/header-1200.webp 2x, images/header-2400.webp 3x" />
+									<source media="(min-width: 900px)" type="image/jpeg" srcset="images/header-900.jpg 1x, images/header-1200.jpg 2x, images/header-2400.jpg 3x" />
 									
-									<source media="(min-width: 640px)" type="image/webp" srcset="images/header-600.webp 1x, images/header-900.webp 2x" />
-									<source media="(min-width: 640px)" type="image/jpeg" srcset="images/header-600.jpg 1x, images/header-900.jpg 2x" />
+									<source media="(min-width: 600px)" type="image/webp" srcset="images/header-600.webp 1x, images/header-900.webp 2x, images/header-1200.webp 3x" />
+									<source media="(min-width: 600px)" type="image/jpeg" srcset="images/header-600.jpg 1x, images/header-900.jpg 2x, images/header-1200.jpg 3x" />
 									
-									<source media="(min-width: 320px)" type="image/webp" srcset="images/header-300.webp 1x, images/header-600.webp 2x" />
-									<source media="(min-width: 320px)" type="image/jpeg" srcset="images/header-300.jpg 1x, images/header-600.jpg 2x" />
+									<source media="(min-width: 300px)" type="image/webp" srcset="images/header-300.webp 1x, images/header-600.webp 2x, images/header-900.webp 3x" />
+									<source media="(min-width: 300px)" type="image/jpeg" srcset="images/header-300.jpg 1x, images/header-600.jpg 2x, images/header-900.jpg 3x" />
 
 									<img loading="lazy" srcset="header-2400.jpg 2400w, header-1200.jpg 1200w, header-900.jpg 900w, header-600.jpg 600s, header-300.jpg 300w" src="images/header-300.jpg" alt="the internet was made for cats." />
 								</picture>
@@ -649,60 +713,11 @@
 			<script src="assets/js/breakpoints.min.js?v=1.1" defer></script>
 
 			<script src="assets/js/util.js?v=1.1" defer></script>
-			<script src="assets/js/main.js?v=1.1" defer></script>
+			<script src="assets/js/main.js?v=1.2" defer></script>
+
+			<script src="assets/js/mailform.js?v=1.1" defer></script>
 
 			<script src="assets/js/lazy.js?v=1.1" async></script>
-			<script src="assets/js/mailform.js?v=1.1" async></script>
-
-		<!-- Scripts for index.html only -->
-			<script>
-
-				// Sektionen ausklappen, wenn Anker gesetzt ist
-				function getAnchor() {
-					var urlParts = document.URL.split('#');	
-				    return (urlParts.length > 1) ? urlParts[1] : null;
-				}
-
-				if (getAnchor() == 'photographie') {
-					$('.photogalerie').slideToggle('slow', function(e){
-						if ($('.photogalerie').is(':hidden')) {
-							$('#photogalerie-toggle').addClass('primary');
-						} else { 
-							$('#photogalerie-toggle').removeClass('primary'); 
-						} 
-					});
-				}
-
-				if (getAnchor() == 'work') {
-					$('#referenzen').slideToggle('slow', function(e){
-						if ($('#referenzen').is(':hidden')) {
-							$('#referenzen-toggle').addClass('primary');
-						} else { 
-							$('#referenzen-toggle').removeClass('primary'); 
-						} 
-					});
-				}
-
-				//Begrüßung abhängig von Uhrzeit.
-				const h = new Date().getHours();
-				var begruessung = "";
-
-				switch (true) {
-					case (h < 6):
-						begruessung = "N'Abend.";
-						break;
-					case (h < 16):
-						begruessung = "Moin.";
-						break;
-					case (h < 20):
-						begruessung = "Hi.";
-						break;
-					default:
-						begruessung = "N'Abend.";
-						break;
-				}
-				$('#begruessung').html(begruessung);
-			</script>
 
 			<!-- Piwik / Matomo -->
 			<script>
