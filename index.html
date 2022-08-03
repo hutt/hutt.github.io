@@ -14,23 +14,34 @@
 
 		-->
 
-		<!-- preload fonts -->
-		<link rel="preload" as="font" href="assets/webfonts/raleway-v28-latin-ext_latin-600.woff2" type="font/woff2" />
-		<link rel="preload" as="font" href="assets/webfonts/raleway-v28-latin-ext_latin-800.woff2" type="font/woff2" />
-
-		<link rel="preload" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-300.woff2" type="font/woff2" />
-		<link rel="preload" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-300italic.woff2" type="font/woff2" />
-		<link rel="preload" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-600.woff2" type="font/woff2" />
-		<link rel="preload" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-600italic.woff2" type="font/woff2" />
+		<!-- preload important fonts (first heading's font) -->
 		<link rel="preload" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-700.woff2" type="font/woff2" />
-		<link rel="preload" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-700italic.woff2" type="font/woff2" />
 
-		<link rel="preload" as="font" href="assets/webfonts/fa-regular-400.woff2" type="font/woff2" />
-		<link rel="preload" as="font" href="assets/webfonts/fa-brands-400.woff2" type="font/woff2" />
-		<link rel="preload" as="font" href="assets/webfonts/fa-solid-900.woff2" type="font/woff2" />
+		<!-- prefetch less important fonts -->
+		<link rel="prefetch" as="font" href="assets/webfonts/raleway-v28-latin-ext_latin-600.woff2" type="font/woff2" />
+
+		<link rel="prefetch" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-300.woff2" type="font/woff2" />
+		<link rel="prefetch" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-600.woff2" type="font/woff2" />
+		<link rel="prefetch" as="font" href="assets/webfonts/raleway-v28-latin-ext_latin-800.woff2" type="font/woff2" />
+
+		<link rel="prefetch" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-300italic.woff2" type="font/woff2" />
+		<link rel="prefetch" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-600italic.woff2" type="font/woff2" />
+		<link rel="prefetch" as="font" href="assets/webfonts/source-sans-pro-v21-latin-ext_latin-700italic.woff2" type="font/woff2" />
+
+		<link rel="prefetch" as="font" href="assets/webfonts/fa-regular-400.woff2" type="font/woff2" />
+		<link rel="prefetch" as="font" href="assets/webfonts/fa-brands-400.woff2" type="font/woff2" />
+		<link rel="prefetch" as="font" href="assets/webfonts/fa-solid-900.woff2" type="font/woff2" />
 
 		<!-- preload main style -->
 		<link rel="preload" as="style" href="assets/css/main.css" />
+
+		<!-- preload important js -->
+		<link rel="preload" as="script" href="assets/js/jquery.min.js" />
+		<link rel="preload" as="script" href="assets/js/breakpoints.min.js" />
+		<link rel="preload" as="script" href="assets/js/main.js" />
+
+		<!-- prefetch less important js -->
+		<link rel="prefetch" as="script" href="assets/js/util.js" />
 
 		<!-- prefetch piwik/matomo -->
 		<link rel="prefetch" as="script" href="https://piwik.jh0.eu/matomo.js" crossorigin="anonymous" />
@@ -44,22 +55,24 @@
 		<meta name="robots" content="index, follow" />
 
 		<!-- favicons -->
-		<link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
-		<link rel="manifest" href="images/favicons/manifest.json">
+		<link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png" crossorigin="use-credentials">
+		<link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png" crossorigin="use-credentials">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png" crossorigin="use-credentials">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-icon-76x76.png" crossorigin="use-credentials">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-icon-114x114.png" crossorigin="use-credentials">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-icon-120x120.png" crossorigin="use-credentials">
+		<link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png" crossorigin="use-credentials">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png" crossorigin="use-credentials">
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png" crossorigin="use-credentials">
+		<link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png" crossorigin="use-credentials">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png" crossorigin="use-credentials">
+		<link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png" crossorigin="use-credentials">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png" crossorigin="use-credentials">
+		
+		<link rel="manifest" href="images/favicons/manifest.json" crossorigin="use-credentials">
+
 		<meta name="msapplication-TileColor" content="#0a4445">
-		<meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
+		<meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png" crossorigin="use-credentials">
 		<meta name="theme-color" content="#0a4445">
 
 		<!-- Twitter Tags -->
@@ -612,13 +625,15 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/lazy.js"></script>
-			<script src="assets/js/mailform.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js" defer></script>
+			<script src="assets/js/browser.min.js" defer></script>
+			<script src="assets/js/breakpoints.min.js" defer></script>
+
+			<script src="assets/js/util.js" defer></script>
+			<script src="assets/js/main.js" defer></script>
+
+			<script src="assets/js/lazy.js" async></script>
+			<script src="assets/js/mailform.js" async></script>
 
 		<!-- Scripts for index.html only -->
 			<script>
