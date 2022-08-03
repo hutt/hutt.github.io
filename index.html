@@ -56,19 +56,23 @@
 		webp.src = 'data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
 
 		// herausfinden, welche Bildgröße vorgeladen werden muss
-		const w = window.screen.width;
+		const w = window.innerWidth;
 		var s = 300;
+
 		switch (true){
-			case (w <= 300):
+			case (w >= 300):
 				s = 300;
 				break;
-			case (w <= 600):
+			case (w >= 600):
 				s = 600;
 				break;
-			case (w <= 900):
+			case (w >= 900):
 				s = 900;
 				break;
-			case (w <= 1200):
+			case (w >= 1200):
+				s = 900;
+				break;
+			case (w >= 2400):
 				s = 1200;
 				break;
 		}
@@ -193,8 +197,11 @@
 						<div class="content">
 							<span class="image fill" data-position="center">
 								<picture>
-									<source media="(min-width: 1200px)" type="image/webp" srcset="images/header-1200.webp 1x, images/header-1200.webp 2x" />
-									<source media="(min-width: 1200px)" type="image/jpeg" srcset="images/header-1200.jpg 1x, images/header-1200.jpg 2x" />
+									<source media="(min-width: 2400px)" type="image/webp" srcset="images/header-1200.webp 1x, images/header-2400.webp 2x" />
+									<source media="(min-width: 2400px)" type="image/jpeg" srcset="images/header-1200.jpg 1x, images/header-2400.jpg 2x" />
+
+									<source media="(min-width: 1200px)" type="image/webp" srcset="images/header-900.webp 1x, images/header-1200.webp 2x" />
+									<source media="(min-width: 1200px)" type="image/jpeg" srcset="images/header-900.jpg 1x, images/header-1200.jpg 2x" />
 
 									<source media="(min-width: 900px)" type="image/webp" srcset="images/header-900.webp 1x, images/header-1200.webp 2x" />
 									<source media="(min-width: 900px)" type="image/jpeg" srcset="images/header-900.jpg 1x, images/header-1200.jpg 2x" />
