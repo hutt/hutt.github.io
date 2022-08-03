@@ -77,7 +77,11 @@
 			// Browser kann WEBP
 			if (window.devicePixelRatio >= 2){
 				//load 2x
-				var filename = "images/" + "header-" + (s * 2) + ".webp";
+				if (w < 1200) {
+					s = s * 2;
+				}
+
+				var filename = "images/" + "header-" + s + ".webp";
 				addPreloadLink(filename, 'image/webp');
 			} else {
 				//load 1x
@@ -89,7 +93,11 @@
 			// Browser kann nur JPG
 			if (window.devicePixelRatio >= 2){
 				//load 2x
-				var filename = "images/" + "header-" + (s * 2) + ".jpg";
+				if (w < 1200) {
+					s = s * 2;
+				}
+
+				var filename = "images/" + "header-" + s + ".jpg";
 				addPreloadLink(filename, 'image/jpg');
 			} else {
 				//load 1x
@@ -179,10 +187,10 @@
 							</ul>
 						</header>
 						<div class="content">
-							<span class="image fill" data-position="top">
+							<span class="image fill" data-position="center">
 								<picture>
-									<source media="(min-width: 1200px)" type="image/webp" srcset="images/header-1200.webp 1x, images/header-2400.webp 2x" />
-									<source media="(min-width: 1200px)" type="image/jpeg" srcset="images/header-1200.jpg 1x, images/header-2400.jpg 2x" />
+									<source media="(min-width: 1200px)" type="image/webp" srcset="images/header-1200.webp 1x, images/header-1200.webp 2x" />
+									<source media="(min-width: 1200px)" type="image/jpeg" srcset="images/header-1200.jpg 1x, images/header-1200.jpg 2x" />
 
 									<source media="(min-width: 900px)" type="image/webp" srcset="images/header-900.webp 1x, images/header-1200.webp 2x" />
 									<source media="(min-width: 900px)" type="image/jpeg" srcset="images/header-900.jpg 1x, images/header-1200.jpg 2x" />
