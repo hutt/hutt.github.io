@@ -2,6 +2,8 @@
 	Paradigm Shift by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	js v1.4
 */
 
 (function($) {
@@ -414,17 +416,31 @@ function getAnchor() {
     return (urlParts.length > 1) ? urlParts[1] : null;
 }
 
-if (getAnchor() == 'photographie') {
+function getGetVar() {
+	var urlParts = document.URL.split('?');
+	return (urlParts.length > 1) ? urlParts[1] : null;
+}
+
+function scrollToAnchor(aid){
+    var aTag = $("section[id='"+ aid +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
+
+if (getAnchor() == 'photographie' || getGetVar() == 'photographie') {
 	$('.photogalerie').slideToggle('slow', function(e){
 		if ($('.photogalerie').is(':hidden')) {
 			$('#photogalerie-toggle').addClass('primary');
 		} else { 
 			$('#photogalerie-toggle').removeClass('primary'); 
-		} 
+		}
 	});
+
+	if(getGetVar() != null) {
+		scrollToAnchor('photographie');
+	}
 }
 
-if (getAnchor() == 'work') {
+if (getAnchor() == 'work' || getGetVar() == 'work') {
 	$('#referenzen').slideToggle('slow', function(e){
 		if ($('#referenzen').is(':hidden')) {
 			$('#referenzen-toggle').addClass('primary');
@@ -432,6 +448,10 @@ if (getAnchor() == 'work') {
 			$('#referenzen-toggle').removeClass('primary'); 
 		} 
 	});
+
+	if(getGetVar() != null) {
+		scrollToAnchor('referenzen');
+	}
 }
 
 //Begrüßung abhängig von Uhrzeit.
