@@ -185,6 +185,16 @@
 				line-height: 1rem;
 				font-size: 0.75rem;
 
+				@include breakpoint('<=medium') {
+					line-height: 1rem;
+					font-size: 0.8rem;
+				}
+
+				@include breakpoint('<=small') {
+					line-height: 0.65rem;
+					font-size: 0.5rem;
+				}	
+
 				strong, em {
 					color: inherit;
 				}
