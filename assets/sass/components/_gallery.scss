@@ -55,6 +55,14 @@
 				}
 			}
 
+			&.ultrawide {
+				width: 100%;
+
+				img {
+					height: 20vw;
+				}
+			}
+
 			&.portrait {
 				img {
 					height: 30vw;
@@ -238,5 +246,14 @@
 					}
 				}
 			}
+		}
+	}
+
+	div.gallery.referenz {
+
+		padding-bottom: 1rem;
+		
+		@include breakpoint('<=medium') {
+			padding-top: 1rem;
 		}
 	}
