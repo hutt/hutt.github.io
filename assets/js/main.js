@@ -410,6 +410,29 @@ $(document)
     });
 
 // Seiten-Funktionen
+// YouTube-Video laden
+var playYTStatus = 0;
+
+function playVideo(id, vid) {
+	id = '#' + id;
+
+	if (playYTStatus == 0){
+		$(id).find('img').addClass('grayedout');
+		$(id).children('.confirm').show();
+		playYTStatus = 1;
+	} else if (playYTStatus == 1){
+		// build iframe embed code
+		var videoFrame = '<iframe src="https://www.youtube-nocookie.com/embed/' + vid + '" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+		//remove image and inject iframe
+		$(id).empty();
+		$(id).removeClass();
+		$(id).addClass('video');
+		$(id).append(videoFrame);
+		playYTStatus = 2;
+	}
+}
+
 // Sektionen ausklappen, wenn Anker gesetzt ist
 function getAnchor() {
 	var urlParts = document.URL.split('#');	

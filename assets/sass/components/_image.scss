@@ -20,6 +20,15 @@
 
 		img {
 			display: block;
+
+			&.grayedout {
+				-webkit-filter: brightness(33%);
+				   -moz-filter: brightness(33%);
+				     -o-filter: brightness(33%);
+				    -ms-filter: brightness(33%);
+				        filter: brightness(33%);
+
+			}
 		}
 
 		&[data-position] {
@@ -154,6 +163,31 @@
 
 			&:first-child {
 				margin-top: 0;
+			}
+		}
+
+		&.textoverlay {
+			position: relative;
+			margin-bottom: 0 !important;
+			padding-bottom: 1rem;
+
+			text-align: center;
+			color: white;
+			cursor: pointer;
+
+			p.confirm {
+				color: #ffffff;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+
+				line-height: 1rem;
+				font-size: 0.75rem;
+
+				strong, em {
+					color: inherit;
+				}
 			}
 		}
 
