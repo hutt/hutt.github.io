@@ -12,7 +12,7 @@ error_reporting(0);
 header('Content-Type: application/json');
 
 
-// if the url field is empty 
+// Überprüfen, ob das Feld "url" leer ist
 if(isset($_POST['url']) && $_POST['url'] == ''){
     // Variablen:
     $name = $_POST['name'];
