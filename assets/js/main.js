@@ -413,23 +413,39 @@ $(document)
 // YouTube-Video laden
 var playYTStatus = 0;
 
-function playVideo(id, vid) {
-	id = '#' + id;
+function playVideo() {
 
 	if (playYTStatus == 0){
-		$(id).find('img').addClass('grayedout');
-		$(id).children('.confirm').show();
-		playYTStatus = 1;
-	} else if (playYTStatus == 1){
-		// build iframe embed code
-		var videoFrame = '<iframe src="https://www.youtube-nocookie.com/embed/' + vid + '" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 
-		//remove image and inject iframe
-		$(id).empty();
-		$(id).removeClass();
-		$(id).addClass('video');
-		$(id).append(videoFrame);
+		$(".yt").each(function(index){
+			$(this).find('img').addClass('grayedout');
+			$(this).children('.confirm').show();
+		});
+
+		playYTStatus = 1;
+
+	} else if (playYTStatus == 1){
+
+		$(".yt").each(function(index){
+
+			//get video id from data selector in dom
+			var vid = $(this).data("vid");
+
+			// build iframe embed code
+			var videoFrame = '<iframe src="https://www.youtube-nocookie.com/embed/' + vid + '" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+			//remove image
+			$(this).empty();
+			$(this).removeClass();
+			$(this).addClass('video');
+
+			// inject iframe
+			$(this).append(videoFrame);
+
+		});
+
 		playYTStatus = 2;
+
 	}
 }
 
@@ -463,7 +479,7 @@ if (getAnchor() == 'photographie' || getGetVar() == 'photographie') {
 	}
 }
 
-if (getAnchor() == 'work' || getGetVar() == 'work') {
+if (getAnchor() == 'jobs' || getGetVar() == 'jobs') {
 	$('#referenzen').slideToggle('slow', function(e){
 		if ($('#referenzen').is(':hidden')) {
 			$('#referenzen-toggle').addClass('primary');
@@ -474,6 +490,20 @@ if (getAnchor() == 'work' || getGetVar() == 'work') {
 
 	if(getGetVar() != null) {
 		scrollToAnchor('referenzen');
+	}
+}
+
+if (getAnchor() == 'kampagnen' || getGetVar() == 'kampagnen') {
+	$('#kampagnen').slideToggle('slow', function(e){
+		if ($('#kampagnen').is(':hidden')) {
+			$('#kampagnen-toggle').addClass('primary');
+		} else { 
+			$('#kampagnen-toggle').removeClass('primary'); 
+		} 
+	});
+
+	if(getGetVar() != null) {
+		scrollToAnchor('kampagnen');
 	}
 }
 
