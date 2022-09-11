@@ -36,3 +36,5 @@ Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, proxy-
 Header set Pragma "no-cache"
 </FilesMatch>
 
+# Redirect /photos/ to index.html#photographie
+RedirectMatch "^/photos/?$" "https://hutt.io/#photographie"
