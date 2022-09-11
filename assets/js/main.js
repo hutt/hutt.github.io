@@ -474,6 +474,10 @@ if (getAnchor() == 'photographie' || getGetVar() == 'photographie') {
 		}
 	});
 
+	$('#photogalerie-toggle').html(function(i, text){
+		return text === 'Galerie ausklappen' ? 'Galerie einklappen' : 'Galerie ausklappen'; 
+	});
+
 	if(getGetVar() != null) {
 		scrollToAnchor('photographie');
 	}

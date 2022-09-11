@@ -111,7 +111,7 @@
 		<link rel="preload" as="script" href="assets/js/browser.min.js?v=1">
 
 		<link rel="preload" as="script" href="assets/js/breakpoints.min.js?v=1.1" />		
-		<link rel="preload" as="script" href="assets/js/main.min.js?v=1.6" />
+		<link rel="preload" as="script" href="assets/js/main.min.js?v=1.7" />
 
 		<!-- prefetch less important js -->
 		<link rel="prefetch" as="script" href="assets/js/util.min.js?v=1.1" />
@@ -273,7 +273,7 @@
 											<source type="image/webp" srcset="images/gallery/thumbs/spot-dielinke-niedersachsen.webp" />
 											<img class="" src="images/gallery/thumbs/spot-dielinke-niedersachsen.jpg" alt="Werbespot bei YouTube abspielen." />
 										</picture>
-										<p class="confirm" style="display: none;"><strong>Noch einmal klicken, um das Video zu laden.</strong><br/>Mit diesem Klick erklärst du dich damit einverstanden, dass personenbezogene Daten an <em>YouTube</em>, ein Unternehmen der <em>Google LLC.</em>, USA, gesendet werden. Aufgrund nationaler Gesetze kann dieser Anbieter gezwungen sein, diese Daten auf Anforderung an Sicherheitsbehörden herauszugeben, ohne dass Sie diese Herausgabe in einem unabhängigen gerichtlichen Verfahren prüfen lassen können.</p>
+										<p class="confirm" style="display: none;"><strong>Noch einmal klicken, um die Videos auf dieser Seite zu laden.</strong><br/>Mit diesem Klick erklärst du dich damit einverstanden, dass personenbezogene Daten an <em>YouTube</em>, ein Unternehmen der <em>Google LLC.</em>, USA, gesendet werden. Aufgrund nationaler Gesetze kann dieser Anbieter gezwungen sein, diese Daten auf Anforderung an Sicherheitsbehörden herauszugeben, ohne dass Sie diese Herausgabe in einem unabhängigen gerichtlichen Verfahren prüfen lassen können.</p>
 									</div>
 									<p><strong>Wahlwerbespot für DIE LINKE. Niedersachsen</strong> zur Landtagswahl 2021.</p>
 									<ul>
@@ -336,7 +336,7 @@
 											<source type="image/webp" srcset="images/gallery/thumbs/spot-friederike.webp" />
 											<img class="" src="images/gallery/thumbs/spot-friederike.jpg" alt="Werbespot bei YouTube abspielen." />
 										</picture>
-										<p class="confirm" style="display: none;"><strong>Noch einmal klicken, um das Video zu laden.</strong><br/>Mit diesem Klick erklärst du dich damit einverstanden, dass personenbezogene Daten an <em>YouTube</em>, ein Unternehmen der <em>Google LLC.</em>, USA, gesendet werden. Aufgrund nationaler Gesetze kann dieser Anbieter gezwungen sein, diese Daten auf Anforderung an Sicherheitsbehörden herauszugeben, ohne dass Sie diese Herausgabe in einem unabhängigen gerichtlichen Verfahren prüfen lassen können.</p>
+										<p class="confirm" style="display: none;"><strong>Noch einmal klicken, um die Videos auf dieser Seite zu laden.</strong><br/>Mit diesem Klick erklärst du dich damit einverstanden, dass personenbezogene Daten an <em>YouTube</em>, ein Unternehmen der <em>Google LLC.</em>, USA, gesendet werden. Aufgrund nationaler Gesetze kann dieser Anbieter gezwungen sein, diese Daten auf Anforderung an Sicherheitsbehörden herauszugeben, ohne dass Sie diese Herausgabe in einem unabhängigen gerichtlichen Verfahren prüfen lassen können.</p>
 									</div>
 									<p><strong>Wahlwerbespot für Friederike Benda</strong>, Direkt&shy;kandidatin zur Wahl des Berliner Abgeordneten&shy;hauses 2021.</p>
 									<ul>
@@ -601,7 +601,7 @@
 						<div class="content">
 							<p><strong>Ich will nicht lügen.</strong> Einer der Gründe, aus denen ich so gerne photographiere, ist dass ich dabei nie&shy;man&shy;den über Politik zutexten muss. Statt&shy;dessen hat man – so geht es zumindest mir – ein Auge für die be&shy;son&shy;deren Details in seiner Umgebung. Auf Ecken, die man sonst nicht beachten würde, auf das Licht und die Menschen mit ihren Wider&shy;sprüchen. Deshalb fühle ich mich vor allem der Street-, Architektur- und Land&shy;schafts&shy;photographie verbunden. Immer mit dabei ist meine Fuji&shy;film X-T4 mit ihren wunderbaren Film&shy;simulationen. Warum diese keines&shy;falls ein nos&shy;tal&shy;gisches Gimmick sind, sondern gerade im Zeit&shy;alter der digitalen Bild&shy;bearbeitung das Zeug haben, die Photo&shy;graphie zu retten, habe ich übrigens <a href="https://bloggenswertes.de/wie-fuji-filmsimulationen-die-photographie-im-zeitalter-der-digitalen-optimierung-retten/" title="Bloggenswertes: Warum Fuji-Filmsimulationen das Zeug haben, die Photographie im Zeitalter ihrer digital optimierten Beliebigkeit zu retten">auf meinem Blog auf&shy;geschrieben</a>.</p>
 							<ul class="actions">
-								<li><button id="photogalerie-toggle" class="button primary icon solid fa-images" onclick="$('.photogalerie').slideToggle('slow', function(e){ if ($('.photogalerie').is(':hidden')) { $('#photogalerie-toggle').addClass('primary'); } else { $('#photogalerie-toggle').removeClass('primary'); } });">Galerie</button></li>
+								<li><button id="photogalerie-toggle" class="button primary icon solid fa-images" onclick="$('.photogalerie').slideToggle('slow', function(e){ if ($('.photogalerie').is(':hidden')) { $('#photogalerie-toggle').addClass('primary'); } else { $('#photogalerie-toggle').removeClass('primary'); } }); $(this).html(function(i, text){return text === 'Galerie ausklappen' ? 'Galerie einklappen' : 'Galerie ausklappen'; });">Galerie ausklappen</button></li>
 								<li><a href="https://instagram.com/aluhutt.jpg" class="button icon brands fa-instagram">Instagram</a></li>
 								<li><a href="https://flickr.com/jannishutt" class="button icon brands fa-flickr">Flickr</a></li>
 							</ul>
@@ -741,7 +741,7 @@
 									<p></p>
 
 									<ul class="actions" style="float: right;">
-										<li><button class="button small" onclick="$('.photogalerie').slideToggle('slow', function(e){ if ($('.photogalerie').is(':hidden')) { $('#photogalerie-toggle').addClass('primary'); } else { $('#photogalerie-toggle').removeClass('primary'); } });">Galerie wieder einklappen</button></li>
+										<li><button class="button small" onclick="$('.photogalerie').slideToggle('slow', function(e){ if ($('.photogalerie').is(':hidden')) { $('#photogalerie-toggle').addClass('primary'); } else { $('#photogalerie-toggle').removeClass('primary'); } }); $('#photogalerie-toggle').html(function(i, text){return text === 'Galerie ausklappen' ? 'Galerie einklappen' : 'Galerie ausklappen'; });">Galerie wieder einklappen</button></li>
 									</ul>
 
 									<hr/>
@@ -856,7 +856,7 @@
 			<script src="assets/js/breakpoints.min.js?v=1.1" defer></script>
 
 			<script src="assets/js/util.min.js?v=1.1" defer></script>
-			<script src="assets/js/main.min.js?v=1.6" defer></script>
+			<script src="assets/js/main.min.js?v=1.7" defer></script>
 
 			<script src="assets/js/mailform.min.js?v=1.1" defer></script>
 
