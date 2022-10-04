@@ -38,3 +38,12 @@ Header set Pragma "no-cache"
 
 # Redirect /photos/ to index.html#photographie
 RedirectMatch "^/photos/?$" "https://hutt.io/#photographie"
+
+# Redirect /jobs/ to index.html#jobs
+RedirectMatch "^/jobs/?$" "https://hutt.io/#jobs"
+
+# Redirect /kampagnen/ to index.html#kampagnen
+RedirectMatch "^/kampagnen/?$" "https://hutt.io/#kampagnen"
+
+# Redirect /projekte/ to index.html#kampagnen
+RedirectMatch "^/projekte/?$" "https://hutt.io/#kampagnen"
