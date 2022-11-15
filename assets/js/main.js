@@ -511,6 +511,20 @@ if (getAnchor() == 'kampagnen' || getGetVar() == 'kampagnen') {
 	}
 }
 
+if (getAnchor() == 'projekte' || getGetVar() == 'projekte') {
+	$('#kampagnen').slideToggle('slow', function(e){
+		if ($('#kampagnen').is(':hidden')) {
+			$('#kampagnen-toggle').addClass('primary');
+		} else { 
+			$('#kampagnen-toggle').removeClass('primary'); 
+		} 
+	});
+
+	if(getGetVar() != null) {
+		scrollToAnchor('kampagnen');
+	}
+}
+
 //Begrüßung abhängig von Uhrzeit.
 const h = new Date().getHours();
 var begruessung = "";
