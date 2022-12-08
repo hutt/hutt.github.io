@@ -9,7 +9,8 @@ Header set Access-Control-Allow-Origin "*"
 # Cache favicon
 <filesMatch "\.ico$">
  # 30 Tage = 2592000s
- Header set Cache-Control "max-age=2592000, public"
+ # 3 Monate = 7776000s
+ Header set Cache-Control "max-age=7776000, public"
 </filesMatch>
 
 # Cache JavaScript and CSS
