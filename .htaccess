@@ -15,14 +15,13 @@ Header set Access-Control-Allow-Origin "*"
 
 # Cache JavaScript and CSS
 <filesMatch "\.(js|css)$">
- # 1 Monat = 2630000s
- Header set Cache-Control "max-age=2630000, public"
+ Header set Cache-Control "max-age=7776000s, public"
 </filesMatch>
 
 # Cache Fonts
 <FilesMatch "\.(eot|svg|ttf|woff|woff2)$">
- # 3 Monate = 7890000s
- Header set Cache-Control "max-age=7890000, public"
+ # 3 Monate = 7776000s
+ Header set Cache-Control "max-age=7776000s, public"
 </FilesMatch>
 
 # Cache Images
