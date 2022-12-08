@@ -27,8 +27,7 @@ Header set Access-Control-Allow-Origin "*"
 
 # Cache Images
 <FilesMatch "\.(png|jpg|jpeg|gif|webp)$">
- # 1 Monat = 2630000s
- Header set Cache-Control "max-age=2630000, public"
+ Header set Cache-Control "max-age=7776000s, public"
 </FilesMatch>
 
 <FilesMatch "\.(php|cgi|pl|htm)$">
