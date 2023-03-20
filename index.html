@@ -177,6 +177,67 @@
 
 		<!-- preconnect to piwik/matomo server -->
 		<link rel="preconnect" href="https://piwik.jh0.eu/" />
+
+		<!-- structured data -->
+		<script type="application/ld+json">
+			{
+			    "@context": "http://www.schema.org",
+			    "@type": "Person",
+			    "@id": "https://hutt.io/#person",
+			    "name": "Jannis Hutt",
+			    "familyName": "Hutt",
+			    "givenName": "Jannis",
+			    "description": "Berater für politische Kommunikation, Fotograf und Wissenschafts- und Technikhistoriker.",
+			    "jobTitle": "MdB-Mitarbeiter und Fotograf",
+			    "workLocation": [{
+			    	"@type": "Place",
+		        	"address": [{
+		        		"@type": "PostalAddress",
+		        		"streetAddress": "Platz der Republik 1",
+		        		"postalCode": "11011",
+		        		"addressLocality": "Berlin",
+		        		"addressCountry": "DE"
+		        	}],
+		        	"geo": [{
+		        		"@type": "GeoCoordinates",
+						"latitude": 52.51865,
+						"longitude": 13.37600
+		        	}]
+			    }],
+			    "worksFor": [{
+		        	"@type": "Organization",
+		        	"name": "Jan Korte",
+		        	"description": "Erster Parlamentarischer Geschäftsführer",
+		        	"url": "https://jankorte.de",
+		        	"sameAs": [
+			            "https://twitter.com/jankortemdb",
+			            "https://social.linksfraktion.de/@jankorte",
+			            "https://www.facebook.com/jankortemdb",
+			            "https://instagram.com/jankorte77"
+		        	],
+		        	"memberOf": [{
+				        "@type": "Organization",
+				        "name": "Fraktion DIE LINKE. im Bundestag",
+				        "url": "https://linksfraktion.de",
+				        "sameAs": [
+				            "https://twitter.com/linksfraktion",
+				            "https://social.linksfraktion.de/@linksfraktion",
+				            "https://www.facebook.com/linksfraktion",
+				            "https://instagram.com/linksfraktion"
+				        ]
+				    }]
+			    }],
+			    "url": "https://hutt.io",
+			    "image": "https://hutt.io/images/header-300.jpg",
+			    "sameAs": [
+			        "https://twitter.com/aluhutt",
+			        "https://hutt.social/@jannis",
+			        "https://instagram.com/hutt.jpg",
+			        "https://www.flickr.com/photos/jannishutt/",
+			        "https://github.com/hutt"
+			    ]
+			}
+		</script>
 	</head>
 
 	<body>
@@ -244,7 +305,7 @@
 							</ul>
 							<p><strong>Meine erste Website habe ich mit zwölf geschrieben und meinen ersten Twitter-<wbr/>Account habe ich mir 2009 geklickt</strong> – auf einem alten iPhone Classic, das für die Entwicklung des heutigen Internets mindestens genauso maßgeblich war, wie der Apple II für die Verbreitung des Heimcomputers. Damit war ich hautnah dabei, als sich unsere Gesell&shy;schaft an die heute nicht mehr weg&shy;zu&shy;denkenden digitalen Kommunikations&shy;kanäle heran&shy;getastet und ihren heutigen Umgang damit entwickelt hat. Ich war dabei, als die Trans&shy;formation des damals noch (vergleichsweise) viel dezentraleren <i>Web 2.0</i> zum Plattform&shy;kapitalismus begann. Trotzdem oder gerade deshalb habe ich meinen Technik&shy;optimismus nicht über Bord geworden: Ich habe gesehen, ja selbst erlebt, wie das Internet als eman&shy;zi&shy;pa&shy;tives Medium Menschen zusammen&shy;bringen kann; wie sich dort Gesell&shy;schaft zum besseren ver&shy;ändern ließ und lässt. Diesen Ideal&shy;ismus, wie man ihn heute am ehesten beim jährlichen Congress des Chaos Computer Clubs spüren kann, möchte ich mir bewahren. Und ich finde, er hat mich bisher auch immer gut geleitet: <strong>Immer mittendrin, an der Schnitt&shy;stelle zwischen Technologie, Politik und Gesellschaft</strong>.</p>
 							<ul class="actions">
-								<li><button id="kampagnen-toggle" class="button primary icon solid fa-flag" onclick="$('#kampagnen').slideToggle('slow', function(e){ if ($('#kampagnen').is(':hidden')) { $('#kampagnen-toggle').addClass('primary'); } else { $('#kampagnen-toggle').removeClass('primary'); } });">Projekte</button></li>
+								<li><button id="kampagnen-toggle" class="button primary icon solid fa-flag" onclick="$('#kampagnen').slideToggle('slow', function(e){ if ($('#kampagnen').is(':hidden')) { $('#kampagnen-toggle').addClass('primary'); } else { $('#kampagnen-toggle').removeClass('primary'); } });">Projekte / Portfolio</button></li>
 								<li><button id="referenzen-toggle" class="button primary icon solid fa-briefcase" onclick="$('#referenzen').slideToggle('slow', function(e){ if ($('#referenzen').is(':hidden')) { $('#referenzen-toggle').addClass('primary'); } else { $('#referenzen-toggle').removeClass('primary'); } });">Jobs</button></li>
 							</ul>
 						</div>
@@ -253,7 +314,7 @@
 					<!-- Kampagnen -->
 					<section id="kampagnen" style="display: none;">
 						<header>
-							<h2>Projekte</h2>
+							<h2>Projekte / Portfolio</h2>
 						</header>
 						<div class="content">
 
@@ -639,7 +700,7 @@
 							<ul class="actions">
 								<li><button id="photogalerie-toggle" class="button primary icon solid fa-images" onclick="$('.photogalerie').slideToggle('slow', function(e){ if ($('.photogalerie').is(':hidden')) { $('#photogalerie-toggle').addClass('primary'); } else { $('#photogalerie-toggle').removeClass('primary'); } }); $(this).html(function(i, text){return text === 'Galerie ausklappen' ? 'Galerie einklappen' : 'Galerie ausklappen'; });">Galerie ausklappen</button></li>
 								<li><a href="https://flickr.com/jannishutt" class="button icon brands fa-flickr">Flickr</a></li>
-								<li><a href="https://instagram.com/aluhutt.jpg" class="button icon brands fa-instagram">Instagram</a></li>
+								<li><a href="https://instagram.com/hutt.jpg" class="button icon brands fa-instagram">Instagram</a></li>
 							</ul>
 
 							<!-- Section -->
@@ -871,7 +932,7 @@
 					</section>
 
 				<!-- Copyright -->
-					<div class="copyright">&copy; 2010 – 2022 Jannis Hutt &middot; <a href="./datenschutz.html" title="Datenschutzerklärung">Datenschutz</a> &middot; <a href="#impressum" title="Impressum" onclick="$('#impressum').slideToggle('slow')">Impressum</a></div>
+					<div class="copyright">&copy; 2010 – 2023 Jannis Hutt &middot; <a href="./datenschutz.html" title="Datenschutzerklärung">Datenschutz</a> &middot; <a href="#impressum" title="Impressum" onclick="$('#impressum').slideToggle('slow')">Impressum</a></div>
 
 			</div>
 
