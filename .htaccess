@@ -46,3 +46,6 @@ RedirectMatch "^/kampagnen/?$" "https://hutt.io/#kampagnen"
 
 # Redirect /projekte/ to index.html#kampagnen
 RedirectMatch "^/projekte/?$" "https://hutt.io/#kampagnen"
+
+# Redirect /termine/ to termine.html
+RedirectMatch "^/termine/?$" "https://hutt.io/termine.html"
