@@ -51,6 +51,5 @@ RedirectMatch "^/projekte/?$" "https://hutt.io/#kampagnen"
 RedirectMatch "^/termine/?$" "https://hutt.io/termine.html"
 
 # Redirect to Mastodon
-RewriteEngine On
 RewriteRule ^.well-known/webfinger(.*)$ 
 https://hutt.social/.well-known/webfinger?resource=acct:jannis@hutt.social [L,R=301]
