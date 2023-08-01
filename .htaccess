@@ -2,6 +2,11 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteCond %{ENV:HTTPS} !=on
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+# redirect to mastodon
+RewriteRule ^.well-known/webfinger(.*)$ 
+https://hutt.social/.well-known/webfinger?resource=acct:jannis@hutt.social [L,R=301]
+
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript text/javascript
 Header set Life "1 falsches"
 Header set Access-Control-Allow-Origin "*"
@@ -50,6 +55,3 @@ RedirectMatch "^/projekte/?$" "https://hutt.io/#kampagnen"
 # Redirect /termine/ to termine.html
 RedirectMatch "^/termine/?$" "https://hutt.io/termine.html"
 
-# Redirect to Mastodon
-RewriteRule ^.well-known/webfinger(.*)$ 
-https://hutt.social/.well-known/webfinger?resource=acct:jannis@hutt.social [L,R=301]
