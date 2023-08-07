@@ -51,7 +51,7 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
         //Alles gut.
 
         // E-Mails gehen an:     
-        $youremail = 'mailformular@hutt.io';
+        $youremail = 'kontaktformular@hutt.io';
 
         // E-Mail zusammenbauen
         $subject = '[' . $category . '] ' . 'Kontaktformular auf hutt.io';
