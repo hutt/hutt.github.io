@@ -3,4 +3,3 @@ _site/
 .sass-cache/
 .DS_Store
 _templates/
-mail.php
