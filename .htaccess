@@ -1,7 +1,7 @@
 RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteCond %{ENV:HTTPS} !=on
-RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+#RewriteCond %{HTTPS} !=on
+#RewriteCond %{ENV:HTTPS} !=on
+#RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
 
 # redirect webfinger to mastodon
 RewriteRule ^.well-known/webfinger(.*)$ https://hutt.social/.well-known/webfinger?resource=acct:jannis@hutt.social [L,R=301]
