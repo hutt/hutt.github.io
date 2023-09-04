@@ -6,6 +6,10 @@ RewriteEngine On
 # redirect webfinger to mastodon
 RewriteRule ^.well-known/webfinger(.*)$ https://hutt.social/.well-known/webfinger?resource=acct:jannis@hutt.social [L,R=301]
 
+# redirect matrix delegation requests
+RewriteCond %{REQUEST_URI} .well-known/matrix
+RewriteRule ^(.*)$ https://matrix.hutt.io/$1 [R,L]
+
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript text/javascript
 Header set Life "1 falsches"
 Header set Access-Control-Allow-Origin "*"
