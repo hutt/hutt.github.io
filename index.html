@@ -53,40 +53,55 @@
 
 		// herausfinden, welche Bildgröße vorgeladen werden muss
 		const w = window.innerWidth;
+		const devicePixelRatio = window.devicePixelRatio;
 		var s = 300;
 
 		switch (true) {
 			case (w >= 2400):
-				if (window.devicePixelRatio >= 2){
+				if (devicePixelRatio >= 2){
 					s = 2400;
 				} else {
 					s = 1200;
 				}
 				break;
 			case (w >= 1200):
-				if (window.devicePixelRatio >= 2){
+				if (devicePixelRatio >= 2){
 					s = 1200;
 				} else {
 					s = 900;
 				}
 				break;
 			case (w >= 900):
-				if (window.devicePixelRatio >= 2){
+				if (devicePixelRatio >= 2){
 					s = 1200;
 				} else {
 					s = 900;
 				}
 				break;
 			case (w >= 600):
-				if (window.devicePixelRatio >= 2){
+				if (devicePixelRatio >= 2){
 					s = 900;
 				} else {
 					s = 600;
 				}
 				break;
-			case (w >= 300):
-				if (window.devicePixelRatio >= 2){
+			case (w >= 500):
+				if (devicePixelRatio >= 2){
 					s = 600;
+				} else {
+					s = 500;
+				}
+				break;
+			case (w >= 400):
+				if (devicePixelRatio >= 2){
+					s = 500;
+				} else {
+					s = 400;
+				}
+				break;
+			case (w >= 300):
+				if (devicePixelRatio >= 2){
+					s = 400;
 				} else {
 					s = 300;
 				}
