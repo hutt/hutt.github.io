@@ -33,7 +33,7 @@ Header set Access-Control-Allow-Origin "*"
 </FilesMatch>
 
 # Cache Images
-<FilesMatch "\.(png|jpg|jpeg|gif|webp)$">
+<FilesMatch "\.(png|jpg|jpeg|gif|webp|avif)$">
  Header set Cache-Control "max-age=7776000s, public"
 </FilesMatch>
 
