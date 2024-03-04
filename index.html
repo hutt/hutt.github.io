@@ -47,6 +47,12 @@
 		function AddClass(c) {
 			document.documentElement.classList.add(c);
 		}
+
+		var supportsAVIF = true;
+		var supportsWEBP = true;
+
+		var avif = new Image();
+		avif.src = "data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgANogQEAwgMg8f8D///8WfhwB8+ErK42A=";
 		
 		var webp = new Image();
 		webp.src = 'data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
@@ -107,6 +113,16 @@
 				}
 				break;
 		}
+
+		avif.onload = function () {
+			// Browser kann AVIF
+			var filename = "images/" + "header-" + s + ".avif";
+			addPreloadLink(filename, 'image/avif');
+		};
+
+		avif.onerror = function () {
+			supportsAVIF = false;
+		};
 		
 		webp.onload = function() {
 			// Browser kann WEBP
@@ -114,10 +130,14 @@
 			addPreloadLink(filename, 'image/webp');
 		};
 		webp.onerror = function() {
+			supportsWEBP = false;
+		};
+
+		if (!supportsAVIF && !supportsWEBP) {
 			// Browser kann nur JPG
 			var filename = "images/" + "header-" + s + ".jpg";
 			addPreloadLink(filename, 'image/jpg');
-		};
+		}
 		</script>
 
 		<!-- preload important js -->
