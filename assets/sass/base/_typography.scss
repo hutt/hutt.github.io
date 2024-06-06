@@ -351,15 +351,41 @@
 				margin-bottom: 0.1rem;
 			}
 
-			ol {
-				padding-left: 2rem;
+			ol.paragraph, ul.paragraph {
+				padding-left: 0.75rem;
 				padding-right: 1.1rem;
+
+				margin-bottom: 0.5em;
+
+				font-size: inherit;
+				color: inherit;
+
 
 				li {
 					margin-top: 0.4rem;
 					line-height: 1.4;
+
+					&:after {
+						content: "";
+					}
 				}
 
+			}
+
+			ol.paragraph {
+				list-style: decimal inside;
+			}
+
+			ul.paragraph {
+				list-style: disc inside;
+
+				&.newspaper > li:before {
+					content: "📰 ";
+				}
+
+				&.bot > li:before {
+					content: "🤖 ";
+				}
 			}
 
 			ul {
