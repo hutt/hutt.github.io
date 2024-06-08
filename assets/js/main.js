@@ -465,24 +465,6 @@ function scrollToAnchor(aid){
     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 }
 
-if (getAnchor() == 'photographie' || getGetVar() == 'photographie') {
-	$('.photogalerie').slideToggle('slow', function(e){
-		if ($('.photogalerie').is(':hidden')) {
-			$('#photogalerie-toggle').addClass('primary');
-		} else { 
-			$('#photogalerie-toggle').removeClass('primary'); 
-		}
-	});
-
-	$('#photogalerie-toggle').html(function(i, text){
-		return text === 'Galerie ausklappen' ? 'Galerie einklappen' : 'Galerie ausklappen'; 
-	});
-
-	if(getGetVar() != null) {
-		scrollToAnchor('photographie');
-	}
-}
-
 if (getAnchor() == 'jobs' || getGetVar() == 'jobs') {
 	$('#referenzen').slideToggle('slow', function(e){
 		if ($('#referenzen').is(':hidden')) {
