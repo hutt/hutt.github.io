@@ -51,7 +51,7 @@
 				width: 100%;
 
 				img {
-					height: 30vw;
+					height: 25vw;
 				}
 			}
 
@@ -167,6 +167,62 @@
 				&:before {
 					@include vendor('transition-delay', '0s');
 					opacity: 0;
+				}
+			}
+		}
+
+		@include breakpoint('>xlarge') {
+			a {
+				img {
+					height: 20rem;
+				}
+
+				&.landscape {
+					img {
+						height: 30rem;
+					}
+				}
+
+				&.portrait {
+					img {
+						height: 20rem;
+					}
+				}
+			}
+
+			.modal {
+				.inner {
+					img {
+						max-width: 100vw;
+					}
+				}
+			}
+		}
+
+		@include breakpoint('>large') {
+			a {
+				img {
+					height: 20rem;
+				}
+
+				&.landscape {
+					img {
+						height: 25rem;
+					}
+				}
+
+				&.portrait {
+					img {
+						height: 25rem;
+					}
+				}
+			}
+
+			.modal {
+				.inner {
+					img {
+						max-width: 100vw;
+					}
 				}
 			}
 		}
