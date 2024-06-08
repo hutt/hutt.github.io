@@ -333,7 +333,7 @@
 })(jQuery);
 
 /** Matomo Tracking Status **/
-const piwikServerUrl = "https://piwik.jh0.eu/";
+const piwikServerUrl = "https://matomo.jh0.eu/";
 var piwikAjaxOptOutIsTracked = true;
 
 // Tracking aktivieren
