@@ -1,20 +1,17 @@
 BEGIN:VCARD
 VERSION:3.0
-PRODID:-//Apple Inc.//macOS 13.5.2//EN
 N:Hutt;Jannis;;;
 FN:Jannis Hutt
 EMAIL;type=INTERNET;type=HOME;type=pref:jannis@hutt.io
+EMAIL;type=INTERNET;type=WORK:jannis.hutt@die-linke.de
+EMAIL;type=INTERNET;type=WORK:jan.korte.ma07@bundestag.de
 item1.EMAIL;type=INTERNET:hutt@campus.tu-berlin.de
 item1.X-ABLabel:uni
-EMAIL;type=INTERNET;type=WORK:jan.korte.ma07@bundestag.de
 TEL;type=CELL;type=VOICE;type=pref:+49 175 4939782
-TEL;type=WORK;type=VOICE:+49 30 227 71104
-item2.URL;type=pref:https://hutt.io
-item2.X-ABLabel:web
-item3.URL:https://matrix.to/#/@jannis:hutt.io
-item3.X-ABLabel:Matrix
-item4.URL:https://hutt.social/@jannis
-item4.X-ABLabel:Mastodon
+item2.TEL;type=WORK;type=VOICE:+49 30 227 71104
+item2.X-ABLabel:Bundestag
+item3.URL;type=pref:https://hutt.io
+item3.X-ABLabel:web
 PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAA
  AAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAIAKADAAQAAAABAA
  AIAAAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCy
