@@ -3,7 +3,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
-	js v1.4
+	js v2.1
 */
 
 (function($) {
@@ -332,82 +332,6 @@
 
 })(jQuery);
 
-/** Matomo Tracking Status **/
-const piwikServerUrl = "https://matomo.jh0.eu/";
-var piwikAjaxOptOutIsTracked = true;
-
-// Tracking aktivieren
-function piwikAjaxOptOutTrack () {
-    $.ajax({
-        url:      piwikServerUrl + "index.php?module=API&method=AjaxOptOut.doTrack&format=json",
-        jsonp:    "callback",
-        dataType: "jsonp",
-        success:  function (d) {
-            piwikAjaxOptOutIsTracked = true;
-            updateText();
-        }
-    });
-}
-
-
-// Tracking deaktivieren
-function piwikAjaxOptOutUntrack () {
-    $.ajax({
-        url:      piwikServerUrl + "index.php?module=API&method=AjaxOptOut.doIgnore&format=json",
-        jsonp:    "callback",
-        dataType: "jsonp",
-        success:  function (d) {
-            piwikAjaxOptOutIsTracked = false;
-            updateText();
-        }
-    });
-}
-
-
-// Tracking-Status updaten
-function updateText () {
-    if (piwikAjaxOptOutIsTracked === true) {
-        $('#matomoTrackingStatus span').hide();
-		$('#piwikAjaxOptOutUntrack').show();
-		$('#piwikAjaxOptOutTrack').hide();
-    } else {
-        $('#matomoTrackingStatus span').show();
-        $('#piwikAjaxOptOutTrack').show();
-        $('#piwikAjaxOptOutUntrack').hide();;
-    }
-}
-
-$(document)
-    .ready(function () {
-        // Add listener for the "do track" button.
-        $('#piwikAjaxOptOutTrack')
-            .click(function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                piwikAjaxOptOutTrack();
-            });
-
-        // Add listener for the "do not track" button.
-        $('#piwikAjaxOptOutUntrack')
-            .click(function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                piwikAjaxOptOutUntrack();
-            });
-
-        // Retrieve initial status from piwik installation.
-        $.ajax({
-            url:      piwikServerUrl + "index.php?module=API&method=AjaxOptOut.isTracked&format=json",
-            jsonp:    "callback",
-            dataType: "jsonp",
-            success:  function (d) {
-                piwikAjaxOptOutIsTracked = d.value;
-                updateText();
-            }
-        });
-    });
 
 // Seiten-Funktionen
 // YouTube-Video laden
