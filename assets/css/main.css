@@ -232,7 +232,7 @@ em, i {
 }
 
 p {
-  margin: 0 0 2rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -407,7 +407,7 @@ section.referenz-item header ul li {
 }
 section.referenz-item div.content p {
   line-height: 1.5rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.5rem;
 }
 section.referenz-item div.content ol.paragraph, section.referenz-item div.content ul.paragraph {
   padding-left: 0.25rem;
@@ -2313,6 +2313,7 @@ ul.actions {
   cursor: default;
   list-style: none;
   margin-left: -1rem;
+  margin-top: 1.5rem;
   padding-left: 0;
 }
 ul.actions li {
