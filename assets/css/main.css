@@ -2234,6 +2234,14 @@ span.image, span.image > a {
   position: absolute;
   top: 0;
   width: 100%;
+  transition: filter 0.1s ease-out;
+}
+.image.fill img[style*=background-image] {
+  filter: blur(4px);
+  transform: scale(1.01);
+}
+.image.fill img.loaded {
+  filter: blur(0px);
 }
 
 /* List */
@@ -2312,8 +2320,8 @@ ul.actions {
   display: flex;
   cursor: default;
   list-style: none;
-  margin-left: -1rem;
   margin-top: 1.5rem;
+  margin-left: -1rem;
   padding-left: 0;
 }
 ul.actions li {

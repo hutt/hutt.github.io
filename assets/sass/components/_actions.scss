@@ -10,6 +10,7 @@
 		@include vendor('display', 'flex');
 		cursor: default;
 		list-style: none;
+		margin-top: 1.5rem;
 		margin-left: (_size(element-margin) * -0.5);
 		padding-left: 0;
 

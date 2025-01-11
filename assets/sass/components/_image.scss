@@ -193,7 +193,7 @@
 				@include breakpoint('<=small') {
 					line-height: 0.65rem;
 					font-size: 0.5rem;
-				}	
+				}
 
 				strong, em {
 					color: inherit;
@@ -216,6 +216,16 @@
 				position: absolute;
 				top: 0;
 				width: 100%;
+				transition: filter 0.1s ease-out;
+
+				&[style*="background-image"] {
+					filter: blur(4px);
+					transform: scale(1.01);
+				}
+				
+				&.loaded {
+					filter: blur(0px);
+				}
 			}
 		}
 	}
