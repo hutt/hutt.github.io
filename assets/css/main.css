@@ -2227,6 +2227,7 @@ span.image, span.image > a {
   position: absolute;
   top: 0;
   width: 100%;
+  overflow: hidden;
 }
 .image.fill img {
   height: 100%;
@@ -2235,13 +2236,15 @@ span.image, span.image > a {
   top: 0;
   width: 100%;
   transition: filter 0.1s ease-out;
+  transition: transform 0.75s ease-in;
 }
 .image.fill img[style*=background-image] {
-  filter: blur(4px);
+  filter: blur(5px);
   transform: scale(1.01);
 }
 .image.fill img.loaded {
   filter: blur(0px);
+  transform: scale(1);
 }
 
 /* List */
@@ -3240,6 +3243,12 @@ ul.feature-icons li:nth-child(1), ul.feature-icons li:nth-child(2) {
 }
 #wrapper > section.intro > header:before {
   left: auto;
+}
+#wrapper > section.intro > header h1 {
+  line-height: 1;
+}
+#wrapper > section.intro > header p {
+  line-height: 1.5;
 }
 #wrapper > section.intro > .content {
   height: 100vh;

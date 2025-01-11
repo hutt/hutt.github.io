@@ -308,17 +308,25 @@
 							padding-top: 4rem;
 
 							// Hack: Chrome's grid implementation screws up absolute element placement within a static child element.
-								width: 100%;
+							width: 100%;
 
-								// Set width on all child elements and right-align.
-									> * {
-										margin-left: auto;
-									}
+							// Set width on all child elements and right-align.
+							> * {
+								margin-left: auto;
+							}
 
-								// Line.
-									&:before {
-										left: auto;
-									}
+							// Line.
+							&:before {
+								left: auto;
+							}
+
+							h1 {
+								line-height: 1;
+							}
+
+							p {
+								line-height: 1.5;
+							}
 
 						}
 
