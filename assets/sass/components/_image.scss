@@ -217,12 +217,12 @@
 				position: absolute;
 				top: 0;
 				width: 100%;
-				transition: filter 0.1s ease-out;
+				transition: filter 0.05s ease-out;
 				transition: transform 0.75s ease-in;
 
 				&[style*="background-image"] {
-					filter: blur(5px);
-					transform: scale(1.01);
+					filter: blur(1px);
+					transform: scale(1.02);
 				}
 				
 				&.loaded {
