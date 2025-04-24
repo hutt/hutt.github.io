@@ -3,15 +3,10 @@ VERSION:3.0
 N:Hutt;Jannis;;;
 FN:Jannis Hutt
 EMAIL;type=INTERNET;type=HOME;type=pref:jannis@hutt.io
-EMAIL;type=INTERNET;type=WORK:jannis.hutt@die-linke.de
-EMAIL;type=INTERNET;type=WORK:jan.korte.ma07@bundestag.de
-item1.EMAIL;type=INTERNET:hutt@campus.tu-berlin.de
-item1.X-ABLabel:Uni
+EMAIL;type=INTERNET;type=WORK:jannis.hutt@dielinkebt.de
 TEL;type=CELL;type=VOICE;type=pref:+49 175 4939782
-item2.TEL;type=WORK;type=VOICE:+49 30 227 71104
-item2.X-ABLabel:Bundestag
-item3.URL;type=pref:https://hutt.io
-item3.X-ABLabel:Website
+item1.URL;type=pref:https://hutt.io
+item1.X-ABLabel:Website
 PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAA
  AAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAIAKADAAQAAAABAA
  AIAAAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCy
