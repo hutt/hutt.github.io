@@ -29,6 +29,7 @@
     "cssnano": "^7.1.9",
     "lite-youtube-embed": "^0.3.4",
     "postcss": "^8.5.25",
+    "sharp": "^0.35.4",
     "terser": "^5.48.0"
   },
   "allowScripts": {

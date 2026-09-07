@@ -1,5 +1,6 @@
-const Image = require("@11ty/eleventy-img");
-const sharp = require("@11ty/eleventy-img/node_modules/sharp");
+// const Image = require("@11ty/eleventy-img");
+const Image = require("@11ty/eleventy-img").default ?? require("@11ty/eleventy-img");
+const sharp = require("sharp");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
